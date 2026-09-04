@@ -1,0 +1,24 @@
+# API keys and machine-specific settings must never be committed.
+.env
+
+# Python build/test clutter.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+dist/
+build/
+*.egg-info/
+
+# The attached book is paid/private.  Its extracted text and vector index stay local.
+data/private/**
+!data/private/.gitkeep
+
+# Generated research reports may contain time-sensitive investment data.
+outputs/**
+!outputs/.gitkeep
+
+# macOS metadata.
+.DS_Store
+

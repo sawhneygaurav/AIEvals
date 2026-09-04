@@ -1,0 +1,4205 @@
+{
+  "title": "PNGJL Competitive Investment Scoring Briefing",
+  "mode": "demo",
+  "as_of_date": "2026-09-02",
+  "target": {
+    "name": "P N Gadgil Jewellers Limited",
+    "ticker": "PNGJL",
+    "exchange": "NSE",
+    "comparison_reason": "User-selected target company."
+  },
+  "companies": [
+    {
+      "research": {
+        "company": {
+          "name": "Thangamayil Jewellery Limited",
+          "ticker": "THANGAMAYL",
+          "exchange": "NSE",
+          "comparison_reason": "Listed regional jewellery peer with a Tamil Nadu base."
+        },
+        "sources": [
+          {
+            "source_id": "thangamayil_official_report",
+            "company_ticker": "THANGAMAYL",
+            "title": "Thangamayil Jewellery annual-report reference",
+            "url": "https://www.thangamayil.com/corporate/wp-content/uploads/2026/07/26th-Annual-Report-2025-2026.pdf",
+            "publisher": "www.thangamayil.com",
+            "source_type": "demo_reference_only",
+            "published_at": null,
+            "accessed_at": "2026-09-02T12:00:00Z",
+            "excerpt": "Reference URL only; no live retrieval occurs in demo mode.",
+            "tags": [
+              "illustrative",
+              "not-live-evidence"
+            ],
+            "search_query": null,
+            "search_uuid": null,
+            "search_endpoint": null,
+            "search_latency_seconds": null,
+            "result_rank": null,
+            "extraction_mode": null,
+            "authority": "primary_company"
+          },
+          {
+            "source_id": "thangamayil_nse_quote",
+            "company_ticker": "THANGAMAYL",
+            "title": "NSE quote page for THANGAMAYL",
+            "url": "https://www.nseindia.com/get-quotes/equity?symbol=THANGAMAYL",
+            "publisher": "www.nseindia.com",
+            "source_type": "demo_reference_only",
+            "published_at": null,
+            "accessed_at": "2026-09-02T12:00:00Z",
+            "excerpt": "Reference URL only; technical values are illustrative.",
+            "tags": [
+              "illustrative",
+              "not-live-evidence"
+            ],
+            "search_query": null,
+            "search_uuid": null,
+            "search_endpoint": null,
+            "search_latency_seconds": null,
+            "result_rank": null,
+            "extraction_mode": null,
+            "authority": "primary_regulatory"
+          }
+        ],
+        "business": {
+          "agent": "Business Agent",
+          "score": 80.0,
+          "status": "complete",
+          "summary": "Illustrative Tamil-Nadu-focused jewellery retailer profile.",
+          "strengths": [
+            "High-return regional specialist",
+            "Regional company-operated retail network"
+          ],
+          "risks": [
+            "Single-state concentration",
+            "Premium valuation",
+            "Commodity and inventory-profit-related earnings volatility"
+          ],
+          "metrics": [],
+          "source_ids": [
+            "thangamayil_official_report",
+            "thangamayil_nse_quote"
+          ],
+          "confidence": 0.84,
+          "growth_score": null
+        },
+        "fundamentals": {
+          "agent": "Fundamentals Agent",
+          "score": 65.8,
+          "status": "complete",
+          "summary": "Illustrative ROE 28.0%, ROCE 26.0%, revenue growth 35.0%.",
+          "strengths": [
+            "High-return demo growth with regional concentration."
+          ],
+          "risks": [],
+          "metrics": [
+            {
+              "code": "revenue",
+              "label": "Revenue",
+              "value": 8500.0,
+              "unit": "INR crore",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "pat",
+              "label": "Profit after tax",
+              "value": 360.0,
+              "unit": "INR crore",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "ebitda_margin",
+              "label": "EBITDA margin",
+              "value": 6.4,
+              "unit": "%",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "pat_margin",
+              "label": "PAT margin",
+              "value": 4.2,
+              "unit": "%",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "roe",
+              "label": "ROE",
+              "value": 28.0,
+              "unit": "%",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "roce",
+              "label": "ROCE",
+              "value": 26.0,
+              "unit": "%",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "operating_cash_flow",
+              "label": "Operating cash flow",
+              "value": 250.0,
+              "unit": "INR crore",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "free_cash_flow",
+              "label": "Free cash flow",
+              "value": 150.0,
+              "unit": "INR crore",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "cfo_pat",
+              "label": "CFO/PAT",
+              "value": 0.69,
+              "unit": "x",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "debt_equity",
+              "label": "Debt/equity",
+              "value": 0.58,
+              "unit": "x",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "interest_coverage",
+              "label": "Interest coverage",
+              "value": 5.5,
+              "unit": "x",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "current_ratio",
+              "label": "Current ratio",
+              "value": 1.2,
+              "unit": "x",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "inventory_days",
+              "label": "Inventory days",
+              "value": 120.0,
+              "unit": "days",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "working_capital_days",
+              "label": "Working-capital days",
+              "value": 112.0,
+              "unit": "days",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "history_years",
+              "label": "Comparable history",
+              "value": 8.0,
+              "unit": "years",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "ssgr",
+              "label": "Self-sustainable growth",
+              "value": 20.0,
+              "unit": "%",
+              "period": "Illustrative multi-year period ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "multi_year",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "revenue_growth",
+              "label": "Revenue growth",
+              "value": 35.0,
+              "unit": "%",
+              "period": "Illustrative multi-year period ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "multi_year",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "profit_growth",
+              "label": "PAT growth",
+              "value": 40.0,
+              "unit": "%",
+              "period": "Illustrative multi-year period ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "multi_year",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "same_store_sales_growth",
+              "label": "Same-store sales growth",
+              "value": 22.0,
+              "unit": "%",
+              "period": "Illustrative multi-year period ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "multi_year",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            }
+          ],
+          "source_ids": [
+            "thangamayil_official_report",
+            "thangamayil_nse_quote"
+          ],
+          "confidence": 0.84,
+          "growth_score": 80.1
+        },
+        "management": {
+          "agent": "Management Agent",
+          "score": 80.0,
+          "status": "complete",
+          "summary": "Illustrative governance and execution profile; not a live conclusion.",
+          "strengths": [
+            "Regional execution",
+            "Inventory discipline"
+          ],
+          "risks": [
+            "Geographic concentration",
+            "Expansion outside core markets",
+            "Commodity-related profit normalization"
+          ],
+          "metrics": [
+            {
+              "code": "credit_rating",
+              "label": "Credit rating",
+              "value": "A+ Stable (illustrative)",
+              "unit": "",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            }
+          ],
+          "source_ids": [
+            "thangamayil_official_report",
+            "thangamayil_nse_quote"
+          ],
+          "confidence": 0.84,
+          "growth_score": null
+        },
+        "technicals": {
+          "agent": "Technicals Agent",
+          "score": 90.0,
+          "status": "complete",
+          "summary": "Illustrative close 5300.0; SMA20 5180.0; SMA50 4940.0; RSI(14) 64.0.",
+          "strengths": [
+            "positive_demo_trend"
+          ],
+          "risks": [],
+          "metrics": [
+            {
+              "code": "close",
+              "label": "Close",
+              "value": 5300.0,
+              "unit": "INR",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "sma20",
+              "label": "20-day SMA",
+              "value": 5180.0,
+              "unit": "INR",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "sma50",
+              "label": "50-day SMA",
+              "value": 4940.0,
+              "unit": "INR",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "rsi14",
+              "label": "RSI(14)",
+              "value": 64.0,
+              "unit": "index",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            }
+          ],
+          "source_ids": [
+            "thangamayil_official_report",
+            "thangamayil_nse_quote"
+          ],
+          "confidence": 0.84,
+          "growth_score": null
+        },
+        "valuation": {
+          "agent": "Valuation Agent",
+          "score": 58.02,
+          "status": "complete",
+          "summary": "Strong demo returns with limited valuation cushion.",
+          "strengths": [],
+          "risks": [
+            "Illustrative premium valuation"
+          ],
+          "metrics": [
+            {
+              "code": "market_cap",
+              "label": "Market capitalisation",
+              "value": 16500.0,
+              "unit": "INR crore",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "pe_ttm",
+              "label": "TTM P/E",
+              "value": 40.0,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "ev_ebitda",
+              "label": "TTM EV/EBITDA",
+              "value": 27.0,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "price_book",
+              "label": "Price/book",
+              "value": 11.0,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "peg",
+              "label": "PEG",
+              "value": 1.0,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "price_sales",
+              "label": "Price/sales",
+              "value": 1.94,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "gsec_10y_yield",
+              "label": "10-year G-sec yield",
+              "value": 6.9,
+              "unit": "%",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "thangamayil_official_report",
+                "thangamayil_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            }
+          ],
+          "source_ids": [
+            "thangamayil_official_report",
+            "thangamayil_nse_quote"
+          ],
+          "confidence": 0.84,
+          "growth_score": null
+        },
+        "core_score": 71.97,
+        "confidence": 0.84,
+        "warnings": []
+      },
+      "book_score": {
+        "score_version": "peaceful_investing_v1",
+        "company": {
+          "name": "Thangamayil Jewellery Limited",
+          "ticker": "THANGAMAYL",
+          "exchange": "NSE",
+          "comparison_reason": "Listed regional jewellery peer with a Tamil Nadu base."
+        },
+        "as_of_date": "2026-09-02",
+        "document_hash": "ca62991f0a96074c124c25686b55fb3158b272094bcee01aa79f1db281263dff",
+        "categories": [
+          {
+            "id": "financial_strength",
+            "label": "Financial strength and consistency",
+            "weight": 20,
+            "score": 4,
+            "weighted_points": 16.0,
+            "rationale": "D/E=0.58, interest cover=5.5, current ratio=1.2; the long-history cap is applied where required.",
+            "book_basis": [
+              {
+                "principle_id": "PI-FIN-01",
+                "chapter": "Final Checklist for Buying Stocks",
+                "printed_page": 182,
+                "pdf_page": 183,
+                "chunk_id": "p183-c00",
+                "paraphrase": "Look for durable growth, stable margins, sensible leverage, liquidity, and adequate interest coverage."
+              },
+              {
+                "principle_id": "PI-FIN-01",
+                "chapter": "How to do Financial Analysis of a Company",
+                "printed_page": 46,
+                "pdf_page": 47,
+                "chunk_id": "p047-c00",
+                "paraphrase": "Look for durable growth, stable margins, sensible leverage, liquidity, and adequate interest coverage."
+              }
+            ],
+            "company_source_ids": [
+              "thangamayil_official_report",
+              "thangamayil_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "earnings_quality",
+            "label": "Earnings quality and cash conversion",
+            "weight": 20,
+            "score": 3,
+            "weighted_points": 12.0,
+            "rationale": "CFO/PAT=0.69; free cash flow is 150.0.",
+            "book_basis": [
+              {
+                "principle_id": "PI-CASH-01",
+                "chapter": "Financial Shenanigans",
+                "printed_page": 54,
+                "pdf_page": 55,
+                "chunk_id": "p055-c00",
+                "paraphrase": "Compare reported profit with operating cash, free cash flow, and working-capital behavior."
+              },
+              {
+                "principle_id": "PI-CASH-01",
+                "chapter": "Margin of Safety",
+                "printed_page": 168,
+                "pdf_page": 169,
+                "chunk_id": "p169-c01",
+                "paraphrase": "Compare reported profit with operating cash, free cash flow, and working-capital behavior."
+              }
+            ],
+            "company_source_ids": [
+              "thangamayil_official_report",
+              "thangamayil_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "moat_growth",
+            "label": "Business moat and self-sustainable growth",
+            "weight": 20,
+            "score": 3,
+            "weighted_points": 12.0,
+            "rationale": "Business-quality score=80; revenue growth=35.0%; profit growth=40.0%; SSGR=20.0%.",
+            "book_basis": [
+              {
+                "principle_id": "PI-MOAT-01",
+                "chapter": "Business & Industry Analysis",
+                "printed_page": 109,
+                "pdf_page": 110,
+                "chunk_id": "p110-c00",
+                "paraphrase": "Reward growth that the business can fund and defend, not growth dependent mainly on debt or accounting effects."
+              },
+              {
+                "principle_id": "PI-MOAT-01",
+                "chapter": "Self-Sustainable Growth Rate",
+                "printed_page": 62,
+                "pdf_page": 63,
+                "chunk_id": "p063-c01",
+                "paraphrase": "Reward growth that the business can fund and defend, not growth dependent mainly on debt or accounting effects."
+              }
+            ],
+            "company_source_ids": [
+              "thangamayil_official_report",
+              "thangamayil_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "management",
+            "label": "Management integrity and capital allocation",
+            "weight": 20,
+            "score": 4,
+            "weighted_points": 16.0,
+            "rationale": "The evidence-backed management assessment is 80/100.",
+            "book_basis": [
+              {
+                "principle_id": "PI-MGMT-01",
+                "chapter": "Assess Management Quality - Part 3",
+                "printed_page": 157,
+                "pdf_page": 158,
+                "chunk_id": "p158-c00",
+                "paraphrase": "Test integrity, minority-shareholder alignment, disclosure, execution, succession, and capital allocation."
+              }
+            ],
+            "company_source_ids": [
+              "thangamayil_official_report",
+              "thangamayil_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "valuation",
+            "label": "Valuation and margin of safety",
+            "weight": 15,
+            "score": 2,
+            "weighted_points": 6.0,
+            "rationale": "P/E=40.00 (earnings yield 2.50%); PEG=1.0; P/S=1.94; current G-sec evidence=6.9%.",
+            "book_basis": [
+              {
+                "principle_id": "PI-VAL-01",
+                "chapter": "Margin of Safety",
+                "printed_page": 163,
+                "pdf_page": 164,
+                "chunk_id": "p164-c00",
+                "paraphrase": "Require a valuation cushion using normalized earnings, cash generation, growth, and margin-of-safety tests."
+              },
+              {
+                "principle_id": "PI-VAL-01",
+                "chapter": "How to do Valuation Analysis of a Company",
+                "printed_page": 69,
+                "pdf_page": 70,
+                "chunk_id": "p070-c00",
+                "paraphrase": "Require a valuation cushion using normalized earnings, cash generation, growth, and margin-of-safety tests."
+              }
+            ],
+            "company_source_ids": [
+              "thangamayil_official_report",
+              "thangamayil_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "credit_resilience",
+            "label": "Credit and downside resilience",
+            "weight": 5,
+            "score": 4,
+            "weighted_points": 4.0,
+            "rationale": "The resolved rating signal is A+ Stable (illustrative); rating sensitivities still require review.",
+            "book_basis": [
+              {
+                "principle_id": "PI-CREDIT-01",
+                "chapter": "Why Investors Should Read Credit Rating Reports",
+                "printed_page": 172,
+                "pdf_page": 173,
+                "chunk_id": "p173-c00",
+                "paraphrase": "Use rating reports and liquidity/debt sensitivities to judge downside resilience."
+              }
+            ],
+            "company_source_ids": [
+              "thangamayil_official_report",
+              "thangamayil_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          }
+        ],
+        "coverage_weight": 100,
+        "total_score": 66.0,
+        "score_band": "Good book alignment",
+        "hard_red_flags": [],
+        "decision_status": "complete"
+      },
+      "final_score": 70.78,
+      "rank": 1
+    },
+    {
+      "research": {
+        "company": {
+          "name": "P N Gadgil Jewellers Limited",
+          "ticker": "PNGJL",
+          "exchange": "NSE",
+          "comparison_reason": "User-selected target company."
+        },
+        "sources": [
+          {
+            "source_id": "pngjl_official_ir",
+            "company_ticker": "PNGJL",
+            "title": "P N Gadgil Jewellers investor-relations page",
+            "url": "https://www.pngjewellers.com/pages/investors",
+            "publisher": "www.pngjewellers.com",
+            "source_type": "demo_reference_only",
+            "published_at": null,
+            "accessed_at": "2026-09-02T12:00:00Z",
+            "excerpt": "Reference URL only; no live retrieval occurs in demo mode.",
+            "tags": [
+              "illustrative",
+              "not-live-evidence"
+            ],
+            "search_query": null,
+            "search_uuid": null,
+            "search_endpoint": null,
+            "search_latency_seconds": null,
+            "result_rank": null,
+            "extraction_mode": null,
+            "authority": "primary_company"
+          },
+          {
+            "source_id": "pngjl_nse_quote",
+            "company_ticker": "PNGJL",
+            "title": "NSE quote page for PNGJL",
+            "url": "https://www.nseindia.com/get-quotes/equity?symbol=PNGJL",
+            "publisher": "www.nseindia.com",
+            "source_type": "demo_reference_only",
+            "published_at": null,
+            "accessed_at": "2026-09-02T12:00:00Z",
+            "excerpt": "Reference URL only; technical values are illustrative.",
+            "tags": [
+              "illustrative",
+              "not-live-evidence"
+            ],
+            "search_query": null,
+            "search_uuid": null,
+            "search_endpoint": null,
+            "search_latency_seconds": null,
+            "result_rank": null,
+            "extraction_mode": null,
+            "authority": "primary_regulatory"
+          }
+        ],
+        "business": {
+          "agent": "Business Agent",
+          "score": 78.0,
+          "status": "complete",
+          "summary": "Illustrative western-India-led jewellery retailer profile.",
+          "strengths": [
+            "Heritage-led trusted regional brand",
+            "Predominantly company-operated retail with expansion"
+          ],
+          "risks": [
+            "Regional concentration",
+            "Inventory-intensive expansion",
+            "Execution and funding risk during store rollout"
+          ],
+          "metrics": [],
+          "source_ids": [
+            "pngjl_official_ir",
+            "pngjl_nse_quote"
+          ],
+          "confidence": 0.9,
+          "growth_score": null
+        },
+        "fundamentals": {
+          "agent": "Fundamentals Agent",
+          "score": 43.8,
+          "status": "complete",
+          "summary": "Illustrative ROE 23.0%, ROCE 22.0%, revenue growth 36.0%.",
+          "strengths": [
+            "Strong demo growth with a working-capital watch item."
+          ],
+          "risks": [
+            "Illustrative negative operating cash flow"
+          ],
+          "metrics": [
+            {
+              "code": "revenue",
+              "label": "Revenue",
+              "value": 10800.0,
+              "unit": "INR crore",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "pat",
+              "label": "Profit after tax",
+              "value": 450.0,
+              "unit": "INR crore",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "ebitda_margin",
+              "label": "EBITDA margin",
+              "value": 7.7,
+              "unit": "%",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "pat_margin",
+              "label": "PAT margin",
+              "value": 4.2,
+              "unit": "%",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "roe",
+              "label": "ROE",
+              "value": 23.0,
+              "unit": "%",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "roce",
+              "label": "ROCE",
+              "value": 22.0,
+              "unit": "%",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "operating_cash_flow",
+              "label": "Operating cash flow",
+              "value": -350.0,
+              "unit": "INR crore",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "free_cash_flow",
+              "label": "Free cash flow",
+              "value": -420.0,
+              "unit": "INR crore",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "cfo_pat",
+              "label": "CFO/PAT",
+              "value": -0.78,
+              "unit": "x",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "debt_equity",
+              "label": "Debt/equity",
+              "value": 0.82,
+              "unit": "x",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "interest_coverage",
+              "label": "Interest coverage",
+              "value": 5.2,
+              "unit": "x",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "current_ratio",
+              "label": "Current ratio",
+              "value": 1.18,
+              "unit": "x",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "inventory_days",
+              "label": "Inventory days",
+              "value": 112.0,
+              "unit": "days",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "working_capital_days",
+              "label": "Working-capital days",
+              "value": 98.0,
+              "unit": "days",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "history_years",
+              "label": "Comparable history",
+              "value": 4.0,
+              "unit": "years",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "ssgr",
+              "label": "Self-sustainable growth",
+              "value": 14.0,
+              "unit": "%",
+              "period": "Illustrative multi-year period ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "multi_year",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "revenue_growth",
+              "label": "Revenue growth",
+              "value": 36.0,
+              "unit": "%",
+              "period": "Illustrative multi-year period ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "multi_year",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "profit_growth",
+              "label": "PAT growth",
+              "value": 44.0,
+              "unit": "%",
+              "period": "Illustrative multi-year period ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "multi_year",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "same_store_sales_growth",
+              "label": "Same-store sales growth",
+              "value": 20.0,
+              "unit": "%",
+              "period": "Illustrative multi-year period ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "multi_year",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            }
+          ],
+          "source_ids": [
+            "pngjl_official_ir",
+            "pngjl_nse_quote"
+          ],
+          "confidence": 0.9,
+          "growth_score": 69.6
+        },
+        "management": {
+          "agent": "Management Agent",
+          "score": 78.0,
+          "status": "complete",
+          "summary": "Illustrative governance and execution profile; not a live conclusion.",
+          "strengths": [
+            "Brand stewardship",
+            "Growth execution"
+          ],
+          "risks": [
+            "Capital-allocation discipline",
+            "Equity dilution and inventory funding",
+            "Geographic diversification"
+          ],
+          "metrics": [
+            {
+              "code": "credit_rating",
+              "label": "Credit rating",
+              "value": "A+ Stable (illustrative)",
+              "unit": "",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            }
+          ],
+          "source_ids": [
+            "pngjl_official_ir",
+            "pngjl_nse_quote"
+          ],
+          "confidence": 0.9,
+          "growth_score": null
+        },
+        "technicals": {
+          "agent": "Technicals Agent",
+          "score": 90.0,
+          "status": "complete",
+          "summary": "Illustrative close 580.0; SMA20 572.0; SMA50 548.0; RSI(14) 57.0.",
+          "strengths": [
+            "positive_demo_trend"
+          ],
+          "risks": [],
+          "metrics": [
+            {
+              "code": "close",
+              "label": "Close",
+              "value": 580.0,
+              "unit": "INR",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "sma20",
+              "label": "20-day SMA",
+              "value": 572.0,
+              "unit": "INR",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "sma50",
+              "label": "50-day SMA",
+              "value": 548.0,
+              "unit": "INR",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "rsi14",
+              "label": "RSI(14)",
+              "value": 57.0,
+              "unit": "index",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            }
+          ],
+          "source_ids": [
+            "pngjl_official_ir",
+            "pngjl_nse_quote"
+          ],
+          "confidence": 0.9,
+          "growth_score": null
+        },
+        "valuation": {
+          "agent": "Valuation Agent",
+          "score": 82.4,
+          "status": "complete",
+          "summary": "Moderate demo valuation relative to the growth inputs.",
+          "strengths": [
+            "Illustrative valuation cushion"
+          ],
+          "risks": [],
+          "metrics": [
+            {
+              "code": "market_cap",
+              "label": "Market capitalisation",
+              "value": 9000.0,
+              "unit": "INR crore",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "pe_ttm",
+              "label": "TTM P/E",
+              "value": 20.0,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "ev_ebitda",
+              "label": "TTM EV/EBITDA",
+              "value": 14.0,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "price_book",
+              "label": "Price/book",
+              "value": 4.3,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "peg",
+              "label": "PEG",
+              "value": 0.56,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "price_sales",
+              "label": "Price/sales",
+              "value": 0.83,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "gsec_10y_yield",
+              "label": "10-year G-sec yield",
+              "value": 6.9,
+              "unit": "%",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "pngjl_official_ir",
+                "pngjl_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            }
+          ],
+          "source_ids": [
+            "pngjl_official_ir",
+            "pngjl_nse_quote"
+          ],
+          "confidence": 0.9,
+          "growth_score": null
+        },
+        "core_score": 70.07,
+        "confidence": 0.9,
+        "warnings": []
+      },
+      "book_score": {
+        "score_version": "peaceful_investing_v1",
+        "company": {
+          "name": "P N Gadgil Jewellers Limited",
+          "ticker": "PNGJL",
+          "exchange": "NSE",
+          "comparison_reason": "User-selected target company."
+        },
+        "as_of_date": "2026-09-02",
+        "document_hash": "ca62991f0a96074c124c25686b55fb3158b272094bcee01aa79f1db281263dff",
+        "categories": [
+          {
+            "id": "financial_strength",
+            "label": "Financial strength and consistency",
+            "weight": 20,
+            "score": 3,
+            "weighted_points": 12.0,
+            "rationale": "D/E=0.82, interest cover=5.2, current ratio=1.18; the long-history cap is applied where required.",
+            "book_basis": [
+              {
+                "principle_id": "PI-FIN-01",
+                "chapter": "Final Checklist for Buying Stocks",
+                "printed_page": 182,
+                "pdf_page": 183,
+                "chunk_id": "p183-c00",
+                "paraphrase": "Look for durable growth, stable margins, sensible leverage, liquidity, and adequate interest coverage."
+              },
+              {
+                "principle_id": "PI-FIN-01",
+                "chapter": "How to do Financial Analysis of a Company",
+                "printed_page": 46,
+                "pdf_page": 47,
+                "chunk_id": "p047-c00",
+                "paraphrase": "Look for durable growth, stable margins, sensible leverage, liquidity, and adequate interest coverage."
+              }
+            ],
+            "company_source_ids": [
+              "pngjl_official_ir",
+              "pngjl_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "earnings_quality",
+            "label": "Earnings quality and cash conversion",
+            "weight": 20,
+            "score": 1,
+            "weighted_points": 4.0,
+            "rationale": "CFO/PAT=-0.78; free cash flow is -420.0.",
+            "book_basis": [
+              {
+                "principle_id": "PI-CASH-01",
+                "chapter": "Financial Shenanigans",
+                "printed_page": 54,
+                "pdf_page": 55,
+                "chunk_id": "p055-c00",
+                "paraphrase": "Compare reported profit with operating cash, free cash flow, and working-capital behavior."
+              },
+              {
+                "principle_id": "PI-CASH-01",
+                "chapter": "Margin of Safety",
+                "printed_page": 168,
+                "pdf_page": 169,
+                "chunk_id": "p169-c01",
+                "paraphrase": "Compare reported profit with operating cash, free cash flow, and working-capital behavior."
+              }
+            ],
+            "company_source_ids": [
+              "pngjl_official_ir",
+              "pngjl_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "moat_growth",
+            "label": "Business moat and self-sustainable growth",
+            "weight": 20,
+            "score": 3,
+            "weighted_points": 12.0,
+            "rationale": "Business-quality score=78; revenue growth=36.0%; profit growth=44.0%; SSGR=14.0%.",
+            "book_basis": [
+              {
+                "principle_id": "PI-MOAT-01",
+                "chapter": "Business & Industry Analysis",
+                "printed_page": 109,
+                "pdf_page": 110,
+                "chunk_id": "p110-c00",
+                "paraphrase": "Reward growth that the business can fund and defend, not growth dependent mainly on debt or accounting effects."
+              },
+              {
+                "principle_id": "PI-MOAT-01",
+                "chapter": "Self-Sustainable Growth Rate",
+                "printed_page": 62,
+                "pdf_page": 63,
+                "chunk_id": "p063-c01",
+                "paraphrase": "Reward growth that the business can fund and defend, not growth dependent mainly on debt or accounting effects."
+              }
+            ],
+            "company_source_ids": [
+              "pngjl_official_ir",
+              "pngjl_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "management",
+            "label": "Management integrity and capital allocation",
+            "weight": 20,
+            "score": 4,
+            "weighted_points": 16.0,
+            "rationale": "The evidence-backed management assessment is 78/100.",
+            "book_basis": [
+              {
+                "principle_id": "PI-MGMT-01",
+                "chapter": "Assess Management Quality - Part 3",
+                "printed_page": 157,
+                "pdf_page": 158,
+                "chunk_id": "p158-c00",
+                "paraphrase": "Test integrity, minority-shareholder alignment, disclosure, execution, succession, and capital allocation."
+              }
+            ],
+            "company_source_ids": [
+              "pngjl_official_ir",
+              "pngjl_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "valuation",
+            "label": "Valuation and margin of safety",
+            "weight": 15,
+            "score": 4,
+            "weighted_points": 12.0,
+            "rationale": "P/E=20.00 (earnings yield 5.00%); PEG=0.56; P/S=0.83; current G-sec evidence=6.9%.",
+            "book_basis": [
+              {
+                "principle_id": "PI-VAL-01",
+                "chapter": "Margin of Safety",
+                "printed_page": 163,
+                "pdf_page": 164,
+                "chunk_id": "p164-c00",
+                "paraphrase": "Require a valuation cushion using normalized earnings, cash generation, growth, and margin-of-safety tests."
+              },
+              {
+                "principle_id": "PI-VAL-01",
+                "chapter": "How to do Valuation Analysis of a Company",
+                "printed_page": 69,
+                "pdf_page": 70,
+                "chunk_id": "p070-c00",
+                "paraphrase": "Require a valuation cushion using normalized earnings, cash generation, growth, and margin-of-safety tests."
+              }
+            ],
+            "company_source_ids": [
+              "pngjl_official_ir",
+              "pngjl_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "credit_resilience",
+            "label": "Credit and downside resilience",
+            "weight": 5,
+            "score": 4,
+            "weighted_points": 4.0,
+            "rationale": "The resolved rating signal is A+ Stable (illustrative); rating sensitivities still require review.",
+            "book_basis": [
+              {
+                "principle_id": "PI-CREDIT-01",
+                "chapter": "Why Investors Should Read Credit Rating Reports",
+                "printed_page": 172,
+                "pdf_page": 173,
+                "chunk_id": "p173-c00",
+                "paraphrase": "Use rating reports and liquidity/debt sensitivities to judge downside resilience."
+              }
+            ],
+            "company_source_ids": [
+              "pngjl_official_ir",
+              "pngjl_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          }
+        ],
+        "coverage_weight": 100,
+        "total_score": 60.0,
+        "score_band": "Mixed book alignment",
+        "hard_red_flags": [],
+        "decision_status": "complete"
+      },
+      "final_score": 68.06,
+      "rank": 2
+    },
+    {
+      "research": {
+        "company": {
+          "name": "Kalyan Jewellers India Limited",
+          "ticker": "KALYANKJIL",
+          "exchange": "NSE",
+          "comparison_reason": "Listed national jewellery retailer with a scaled network."
+        },
+        "sources": [
+          {
+            "source_id": "kalyan_official_reports",
+            "company_ticker": "KALYANKJIL",
+            "title": "Kalyan Jewellers annual-report page",
+            "url": "https://www.kalyanjewellers.net/investors/annual-report/annual-reports.php",
+            "publisher": "www.kalyanjewellers.net",
+            "source_type": "demo_reference_only",
+            "published_at": null,
+            "accessed_at": "2026-09-02T12:00:00Z",
+            "excerpt": "Reference URL only; no live retrieval occurs in demo mode.",
+            "tags": [
+              "illustrative",
+              "not-live-evidence"
+            ],
+            "search_query": null,
+            "search_uuid": null,
+            "search_endpoint": null,
+            "search_latency_seconds": null,
+            "result_rank": null,
+            "extraction_mode": null,
+            "authority": "primary_company"
+          },
+          {
+            "source_id": "kalyan_nse_quote",
+            "company_ticker": "KALYANKJIL",
+            "title": "NSE quote page for KALYANKJIL",
+            "url": "https://www.nseindia.com/get-quotes/equity?symbol=KALYANKJIL",
+            "publisher": "www.nseindia.com",
+            "source_type": "demo_reference_only",
+            "published_at": null,
+            "accessed_at": "2026-09-02T12:00:00Z",
+            "excerpt": "Reference URL only; technical values are illustrative.",
+            "tags": [
+              "illustrative",
+              "not-live-evidence"
+            ],
+            "search_query": null,
+            "search_uuid": null,
+            "search_endpoint": null,
+            "search_latency_seconds": null,
+            "result_rank": null,
+            "extraction_mode": null,
+            "authority": "primary_regulatory"
+          }
+        ],
+        "business": {
+          "agent": "Business Agent",
+          "score": 88.0,
+          "status": "complete",
+          "summary": "Illustrative scaled India-and-international jewellery profile.",
+          "strengths": [
+            "Scaled national wedding-jewellery brand",
+            "Mixed owned and franchise-operated network"
+          ],
+          "risks": [
+            "Premium valuation",
+            "Franchise execution consistency",
+            "Margin pressure during rapid expansion"
+          ],
+          "metrics": [],
+          "source_ids": [
+            "kalyan_official_reports",
+            "kalyan_nse_quote"
+          ],
+          "confidence": 0.92,
+          "growth_score": null
+        },
+        "fundamentals": {
+          "agent": "Fundamentals Agent",
+          "score": 60.4,
+          "status": "complete",
+          "summary": "Illustrative ROE 24.5%, ROCE 24.0%, revenue growth 30.0%.",
+          "strengths": [
+            "Broad-based demo growth supported by an asset-light mix."
+          ],
+          "risks": [],
+          "metrics": [
+            {
+              "code": "revenue",
+              "label": "Revenue",
+              "value": 36000.0,
+              "unit": "INR crore",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "pat",
+              "label": "Profit after tax",
+              "value": 1400.0,
+              "unit": "INR crore",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "ebitda_margin",
+              "label": "EBITDA margin",
+              "value": 7.0,
+              "unit": "%",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "pat_margin",
+              "label": "PAT margin",
+              "value": 3.9,
+              "unit": "%",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "roe",
+              "label": "ROE",
+              "value": 24.5,
+              "unit": "%",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "roce",
+              "label": "ROCE",
+              "value": 24.0,
+              "unit": "%",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "operating_cash_flow",
+              "label": "Operating cash flow",
+              "value": 900.0,
+              "unit": "INR crore",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "free_cash_flow",
+              "label": "Free cash flow",
+              "value": 500.0,
+              "unit": "INR crore",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "cfo_pat",
+              "label": "CFO/PAT",
+              "value": 0.64,
+              "unit": "x",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "debt_equity",
+              "label": "Debt/equity",
+              "value": 0.9,
+              "unit": "x",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "interest_coverage",
+              "label": "Interest coverage",
+              "value": 4.5,
+              "unit": "x",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "current_ratio",
+              "label": "Current ratio",
+              "value": 1.1,
+              "unit": "x",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "inventory_days",
+              "label": "Inventory days",
+              "value": 145.0,
+              "unit": "days",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "working_capital_days",
+              "label": "Working-capital days",
+              "value": 118.0,
+              "unit": "days",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "history_years",
+              "label": "Comparable history",
+              "value": 6.0,
+              "unit": "years",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "ssgr",
+              "label": "Self-sustainable growth",
+              "value": 18.0,
+              "unit": "%",
+              "period": "Illustrative multi-year period ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "multi_year",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "revenue_growth",
+              "label": "Revenue growth",
+              "value": 30.0,
+              "unit": "%",
+              "period": "Illustrative multi-year period ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "multi_year",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "profit_growth",
+              "label": "PAT growth",
+              "value": 35.0,
+              "unit": "%",
+              "period": "Illustrative multi-year period ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "multi_year",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "same_store_sales_growth",
+              "label": "Same-store sales growth",
+              "value": 18.0,
+              "unit": "%",
+              "period": "Illustrative multi-year period ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "multi_year",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            }
+          ],
+          "source_ids": [
+            "kalyan_official_reports",
+            "kalyan_nse_quote"
+          ],
+          "confidence": 0.92,
+          "growth_score": 73.65
+        },
+        "management": {
+          "agent": "Management Agent",
+          "score": 87.0,
+          "status": "complete",
+          "summary": "Illustrative governance and execution profile; not a live conclusion.",
+          "strengths": [
+            "Scaled execution",
+            "Network expansion",
+            "Debt discipline"
+          ],
+          "risks": [
+            "Franchise controls",
+            "New-format profitability",
+            "Margin dilution"
+          ],
+          "metrics": [
+            {
+              "code": "credit_rating",
+              "label": "Credit rating",
+              "value": "AA- Stable (illustrative)",
+              "unit": "",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            }
+          ],
+          "source_ids": [
+            "kalyan_official_reports",
+            "kalyan_nse_quote"
+          ],
+          "confidence": 0.92,
+          "growth_score": null
+        },
+        "technicals": {
+          "agent": "Technicals Agent",
+          "score": 70.0,
+          "status": "complete",
+          "summary": "Illustrative close 590.0; SMA20 602.0; SMA50 565.0; RSI(14) 49.0.",
+          "strengths": [
+            "mixed_demo_trend"
+          ],
+          "risks": [],
+          "metrics": [
+            {
+              "code": "close",
+              "label": "Close",
+              "value": 590.0,
+              "unit": "INR",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "sma20",
+              "label": "20-day SMA",
+              "value": 602.0,
+              "unit": "INR",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "sma50",
+              "label": "50-day SMA",
+              "value": 565.0,
+              "unit": "INR",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "rsi14",
+              "label": "RSI(14)",
+              "value": 49.0,
+              "unit": "index",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            }
+          ],
+          "source_ids": [
+            "kalyan_official_reports",
+            "kalyan_nse_quote"
+          ],
+          "confidence": 0.92,
+          "growth_score": null
+        },
+        "valuation": {
+          "agent": "Valuation Agent",
+          "score": 53.71,
+          "status": "complete",
+          "summary": "High demo quality accompanied by a premium multiple.",
+          "strengths": [],
+          "risks": [
+            "Illustrative premium valuation"
+          ],
+          "metrics": [
+            {
+              "code": "market_cap",
+              "label": "Market capitalisation",
+              "value": 60000.0,
+              "unit": "INR crore",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "pe_ttm",
+              "label": "TTM P/E",
+              "value": 42.0,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "ev_ebitda",
+              "label": "TTM EV/EBITDA",
+              "value": 25.0,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "price_book",
+              "label": "Price/book",
+              "value": 9.0,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "peg",
+              "label": "PEG",
+              "value": 1.2,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "price_sales",
+              "label": "Price/sales",
+              "value": 1.67,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "gsec_10y_yield",
+              "label": "10-year G-sec yield",
+              "value": 6.9,
+              "unit": "%",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "kalyan_official_reports",
+                "kalyan_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            }
+          ],
+          "source_ids": [
+            "kalyan_official_reports",
+            "kalyan_nse_quote"
+          ],
+          "confidence": 0.92,
+          "growth_score": null
+        },
+        "core_score": 67.66,
+        "confidence": 0.92,
+        "warnings": []
+      },
+      "book_score": {
+        "score_version": "peaceful_investing_v1",
+        "company": {
+          "name": "Kalyan Jewellers India Limited",
+          "ticker": "KALYANKJIL",
+          "exchange": "NSE",
+          "comparison_reason": "Listed national jewellery retailer with a scaled network."
+        },
+        "as_of_date": "2026-09-02",
+        "document_hash": "ca62991f0a96074c124c25686b55fb3158b272094bcee01aa79f1db281263dff",
+        "categories": [
+          {
+            "id": "financial_strength",
+            "label": "Financial strength and consistency",
+            "weight": 20,
+            "score": 3,
+            "weighted_points": 12.0,
+            "rationale": "D/E=0.9, interest cover=4.5, current ratio=1.1; the long-history cap is applied where required.",
+            "book_basis": [
+              {
+                "principle_id": "PI-FIN-01",
+                "chapter": "Final Checklist for Buying Stocks",
+                "printed_page": 182,
+                "pdf_page": 183,
+                "chunk_id": "p183-c00",
+                "paraphrase": "Look for durable growth, stable margins, sensible leverage, liquidity, and adequate interest coverage."
+              },
+              {
+                "principle_id": "PI-FIN-01",
+                "chapter": "How to do Financial Analysis of a Company",
+                "printed_page": 46,
+                "pdf_page": 47,
+                "chunk_id": "p047-c00",
+                "paraphrase": "Look for durable growth, stable margins, sensible leverage, liquidity, and adequate interest coverage."
+              }
+            ],
+            "company_source_ids": [
+              "kalyan_official_reports",
+              "kalyan_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "earnings_quality",
+            "label": "Earnings quality and cash conversion",
+            "weight": 20,
+            "score": 3,
+            "weighted_points": 12.0,
+            "rationale": "CFO/PAT=0.64; free cash flow is 500.0.",
+            "book_basis": [
+              {
+                "principle_id": "PI-CASH-01",
+                "chapter": "Financial Shenanigans",
+                "printed_page": 54,
+                "pdf_page": 55,
+                "chunk_id": "p055-c00",
+                "paraphrase": "Compare reported profit with operating cash, free cash flow, and working-capital behavior."
+              },
+              {
+                "principle_id": "PI-CASH-01",
+                "chapter": "Margin of Safety",
+                "printed_page": 168,
+                "pdf_page": 169,
+                "chunk_id": "p169-c01",
+                "paraphrase": "Compare reported profit with operating cash, free cash flow, and working-capital behavior."
+              }
+            ],
+            "company_source_ids": [
+              "kalyan_official_reports",
+              "kalyan_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "moat_growth",
+            "label": "Business moat and self-sustainable growth",
+            "weight": 20,
+            "score": 3,
+            "weighted_points": 12.0,
+            "rationale": "Business-quality score=88; revenue growth=30.0%; profit growth=35.0%; SSGR=18.0%.",
+            "book_basis": [
+              {
+                "principle_id": "PI-MOAT-01",
+                "chapter": "Business & Industry Analysis",
+                "printed_page": 109,
+                "pdf_page": 110,
+                "chunk_id": "p110-c00",
+                "paraphrase": "Reward growth that the business can fund and defend, not growth dependent mainly on debt or accounting effects."
+              },
+              {
+                "principle_id": "PI-MOAT-01",
+                "chapter": "Self-Sustainable Growth Rate",
+                "printed_page": 62,
+                "pdf_page": 63,
+                "chunk_id": "p063-c01",
+                "paraphrase": "Reward growth that the business can fund and defend, not growth dependent mainly on debt or accounting effects."
+              }
+            ],
+            "company_source_ids": [
+              "kalyan_official_reports",
+              "kalyan_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "management",
+            "label": "Management integrity and capital allocation",
+            "weight": 20,
+            "score": 4,
+            "weighted_points": 16.0,
+            "rationale": "The evidence-backed management assessment is 87/100.",
+            "book_basis": [
+              {
+                "principle_id": "PI-MGMT-01",
+                "chapter": "Assess Management Quality - Part 3",
+                "printed_page": 157,
+                "pdf_page": 158,
+                "chunk_id": "p158-c00",
+                "paraphrase": "Test integrity, minority-shareholder alignment, disclosure, execution, succession, and capital allocation."
+              }
+            ],
+            "company_source_ids": [
+              "kalyan_official_reports",
+              "kalyan_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "valuation",
+            "label": "Valuation and margin of safety",
+            "weight": 15,
+            "score": 2,
+            "weighted_points": 6.0,
+            "rationale": "P/E=42.00 (earnings yield 2.38%); PEG=1.2; P/S=1.67; current G-sec evidence=6.9%.",
+            "book_basis": [
+              {
+                "principle_id": "PI-VAL-01",
+                "chapter": "Margin of Safety",
+                "printed_page": 163,
+                "pdf_page": 164,
+                "chunk_id": "p164-c00",
+                "paraphrase": "Require a valuation cushion using normalized earnings, cash generation, growth, and margin-of-safety tests."
+              },
+              {
+                "principle_id": "PI-VAL-01",
+                "chapter": "How to do Valuation Analysis of a Company",
+                "printed_page": 69,
+                "pdf_page": 70,
+                "chunk_id": "p070-c00",
+                "paraphrase": "Require a valuation cushion using normalized earnings, cash generation, growth, and margin-of-safety tests."
+              }
+            ],
+            "company_source_ids": [
+              "kalyan_official_reports",
+              "kalyan_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "credit_resilience",
+            "label": "Credit and downside resilience",
+            "weight": 5,
+            "score": 5,
+            "weighted_points": 5.0,
+            "rationale": "The resolved rating signal is AA- Stable (illustrative); rating sensitivities still require review.",
+            "book_basis": [
+              {
+                "principle_id": "PI-CREDIT-01",
+                "chapter": "Why Investors Should Read Credit Rating Reports",
+                "printed_page": 172,
+                "pdf_page": 173,
+                "chunk_id": "p173-c00",
+                "paraphrase": "Use rating reports and liquidity/debt sensitivities to judge downside resilience."
+              }
+            ],
+            "company_source_ids": [
+              "kalyan_official_reports",
+              "kalyan_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          }
+        ],
+        "coverage_weight": 100,
+        "total_score": 63.0,
+        "score_band": "Mixed book alignment",
+        "hard_red_flags": [],
+        "decision_status": "complete"
+      },
+      "final_score": 66.73,
+      "rank": 3
+    },
+    {
+      "research": {
+        "company": {
+          "name": "Senco Gold Limited",
+          "ticker": "SENCO",
+          "exchange": "NSE",
+          "comparison_reason": "Listed regional jewellery peer with an eastern India base."
+        },
+        "sources": [
+          {
+            "source_id": "senco_nse_filing",
+            "company_ticker": "SENCO",
+            "title": "NSE-hosted Senco Gold financial filing",
+            "url": "https://nsearchives.nseindia.com/corporate/ixbrl/INTEGRATED_FILING_INDAS_161677_26052026221807_iXBRL_WEB.html",
+            "publisher": "nsearchives.nseindia.com",
+            "source_type": "demo_reference_only",
+            "published_at": null,
+            "accessed_at": "2026-09-02T12:00:00Z",
+            "excerpt": "Reference URL only; no live retrieval occurs in demo mode.",
+            "tags": [
+              "illustrative",
+              "not-live-evidence"
+            ],
+            "search_query": null,
+            "search_uuid": null,
+            "search_endpoint": null,
+            "search_latency_seconds": null,
+            "result_rank": null,
+            "extraction_mode": null,
+            "authority": "primary_regulatory"
+          },
+          {
+            "source_id": "senco_nse_quote",
+            "company_ticker": "SENCO",
+            "title": "NSE quote page for SENCO",
+            "url": "https://www.nseindia.com/get-quotes/equity?symbol=SENCO",
+            "publisher": "www.nseindia.com",
+            "source_type": "demo_reference_only",
+            "published_at": null,
+            "accessed_at": "2026-09-02T12:00:00Z",
+            "excerpt": "Reference URL only; technical values are illustrative.",
+            "tags": [
+              "illustrative",
+              "not-live-evidence"
+            ],
+            "search_query": null,
+            "search_uuid": null,
+            "search_endpoint": null,
+            "search_latency_seconds": null,
+            "result_rank": null,
+            "extraction_mode": null,
+            "authority": "primary_regulatory"
+          }
+        ],
+        "business": {
+          "agent": "Business Agent",
+          "score": 70.0,
+          "status": "complete",
+          "summary": "Illustrative east-India-led jewellery retailer profile.",
+          "strengths": [
+            "Design and craftsmanship-led regional challenger",
+            "Mixed owned and franchise-operated network"
+          ],
+          "risks": [
+            "Long working-capital cycle",
+            "Earnings sensitivity to inventory gains",
+            "Subsidiary and acquisition execution"
+          ],
+          "metrics": [],
+          "source_ids": [
+            "senco_nse_filing",
+            "senco_nse_quote"
+          ],
+          "confidence": 0.78,
+          "growth_score": null
+        },
+        "fundamentals": {
+          "agent": "Fundamentals Agent",
+          "score": 39.1,
+          "status": "complete",
+          "summary": "Illustrative ROE 20.0%, ROCE 19.0%, revenue growth 24.0%.",
+          "strengths": [
+            "Value-looking demo profile with lower cash conversion."
+          ],
+          "risks": [
+            "Illustrative negative operating cash flow",
+            "Illustrative debt/equity above 1x",
+            "Illustrative long inventory cycle"
+          ],
+          "metrics": [
+            {
+              "code": "revenue",
+              "label": "Revenue",
+              "value": 9000.0,
+              "unit": "INR crore",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "pat",
+              "label": "Profit after tax",
+              "value": 400.0,
+              "unit": "INR crore",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "ebitda_margin",
+              "label": "EBITDA margin",
+              "value": 8.2,
+              "unit": "%",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "pat_margin",
+              "label": "PAT margin",
+              "value": 4.4,
+              "unit": "%",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "roe",
+              "label": "ROE",
+              "value": 20.0,
+              "unit": "%",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "roce",
+              "label": "ROCE",
+              "value": 19.0,
+              "unit": "%",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "operating_cash_flow",
+              "label": "Operating cash flow",
+              "value": -600.0,
+              "unit": "INR crore",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "free_cash_flow",
+              "label": "Free cash flow",
+              "value": -700.0,
+              "unit": "INR crore",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "cfo_pat",
+              "label": "CFO/PAT",
+              "value": -1.5,
+              "unit": "x",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "debt_equity",
+              "label": "Debt/equity",
+              "value": 1.05,
+              "unit": "x",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "interest_coverage",
+              "label": "Interest coverage",
+              "value": 3.0,
+              "unit": "x",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "current_ratio",
+              "label": "Current ratio",
+              "value": 1.05,
+              "unit": "x",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "inventory_days",
+              "label": "Inventory days",
+              "value": 215.0,
+              "unit": "days",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "working_capital_days",
+              "label": "Working-capital days",
+              "value": 195.0,
+              "unit": "days",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "history_years",
+              "label": "Comparable history",
+              "value": 6.0,
+              "unit": "years",
+              "period": "Illustrative FY ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "FY",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "ssgr",
+              "label": "Self-sustainable growth",
+              "value": 10.0,
+              "unit": "%",
+              "period": "Illustrative multi-year period ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "multi_year",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "revenue_growth",
+              "label": "Revenue growth",
+              "value": 24.0,
+              "unit": "%",
+              "period": "Illustrative multi-year period ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "multi_year",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "profit_growth",
+              "label": "PAT growth",
+              "value": 18.0,
+              "unit": "%",
+              "period": "Illustrative multi-year period ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "multi_year",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "same_store_sales_growth",
+              "label": "Same-store sales growth",
+              "value": 14.0,
+              "unit": "%",
+              "period": "Illustrative multi-year period ending 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "multi_year",
+              "accounting_basis": "consolidated",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            }
+          ],
+          "source_ids": [
+            "senco_nse_filing",
+            "senco_nse_quote"
+          ],
+          "confidence": 0.78,
+          "growth_score": 50.3
+        },
+        "management": {
+          "agent": "Management Agent",
+          "score": 68.0,
+          "status": "complete",
+          "summary": "Illustrative governance and execution profile; not a live conclusion.",
+          "strengths": [
+            "Regional brand knowledge",
+            "Product craftsmanship"
+          ],
+          "risks": [
+            "Cash conversion",
+            "Adjusted versus reported earnings",
+            "Acquisition integration"
+          ],
+          "metrics": [
+            {
+              "code": "credit_rating",
+              "label": "Credit rating",
+              "value": "A Stable (illustrative)",
+              "unit": "",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            }
+          ],
+          "source_ids": [
+            "senco_nse_filing",
+            "senco_nse_quote"
+          ],
+          "confidence": 0.78,
+          "growth_score": null
+        },
+        "technicals": {
+          "agent": "Technicals Agent",
+          "score": 20.0,
+          "status": "complete",
+          "summary": "Illustrative close 350.0; SMA20 360.0; SMA50 372.0; RSI(14) 42.0.",
+          "strengths": [],
+          "risks": [
+            "negative_demo_trend"
+          ],
+          "metrics": [
+            {
+              "code": "close",
+              "label": "Close",
+              "value": 350.0,
+              "unit": "INR",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "sma20",
+              "label": "20-day SMA",
+              "value": 360.0,
+              "unit": "INR",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "sma50",
+              "label": "50-day SMA",
+              "value": 372.0,
+              "unit": "INR",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "rsi14",
+              "label": "RSI(14)",
+              "value": 42.0,
+              "unit": "index",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            }
+          ],
+          "source_ids": [
+            "senco_nse_filing",
+            "senco_nse_quote"
+          ],
+          "confidence": 0.78,
+          "growth_score": null
+        },
+        "valuation": {
+          "agent": "Valuation Agent",
+          "score": 84.33,
+          "status": "complete",
+          "summary": "Low demo multiple offset by earnings-quality risks.",
+          "strengths": [
+            "Illustrative valuation cushion"
+          ],
+          "risks": [],
+          "metrics": [
+            {
+              "code": "market_cap",
+              "label": "Market capitalisation",
+              "value": 6000.0,
+              "unit": "INR crore",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "pe_ttm",
+              "label": "TTM P/E",
+              "value": 15.0,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "ev_ebitda",
+              "label": "TTM EV/EBITDA",
+              "value": 10.0,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "price_book",
+              "label": "Price/book",
+              "value": 2.3,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "peg",
+              "label": "PEG",
+              "value": 0.83,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "price_sales",
+              "label": "Price/sales",
+              "value": 0.67,
+              "unit": "x",
+              "period": "Illustrative TTM to 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "TTM",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            },
+            {
+              "code": "gsec_10y_yield",
+              "label": "10-year G-sec yield",
+              "value": 6.9,
+              "unit": "%",
+              "period": "Illustrative as of 2026-09-02",
+              "as_of_date": "2026-09-02",
+              "period_type": "point_in_time",
+              "accounting_basis": "not_applicable",
+              "measurement_type": "illustrative",
+              "source_ids": [
+                "senco_nse_filing",
+                "senco_nse_quote"
+              ],
+              "confidence": 0.9,
+              "definition": "",
+              "formula": "",
+              "input_metric_codes": [],
+              "flags": [
+                "illustrative"
+              ]
+            }
+          ],
+          "source_ids": [
+            "senco_nse_filing",
+            "senco_nse_quote"
+          ],
+          "confidence": 0.78,
+          "growth_score": null
+        },
+        "core_score": 56.52,
+        "confidence": 0.78,
+        "warnings": []
+      },
+      "book_score": {
+        "score_version": "peaceful_investing_v1",
+        "company": {
+          "name": "Senco Gold Limited",
+          "ticker": "SENCO",
+          "exchange": "NSE",
+          "comparison_reason": "Listed regional jewellery peer with an eastern India base."
+        },
+        "as_of_date": "2026-09-02",
+        "document_hash": "ca62991f0a96074c124c25686b55fb3158b272094bcee01aa79f1db281263dff",
+        "categories": [
+          {
+            "id": "financial_strength",
+            "label": "Financial strength and consistency",
+            "weight": 20,
+            "score": 2,
+            "weighted_points": 8.0,
+            "rationale": "D/E=1.05, interest cover=3.0, current ratio=1.05; the long-history cap is applied where required.",
+            "book_basis": [
+              {
+                "principle_id": "PI-FIN-01",
+                "chapter": "Final Checklist for Buying Stocks",
+                "printed_page": 182,
+                "pdf_page": 183,
+                "chunk_id": "p183-c00",
+                "paraphrase": "Look for durable growth, stable margins, sensible leverage, liquidity, and adequate interest coverage."
+              },
+              {
+                "principle_id": "PI-FIN-01",
+                "chapter": "How to do Financial Analysis of a Company",
+                "printed_page": 46,
+                "pdf_page": 47,
+                "chunk_id": "p047-c00",
+                "paraphrase": "Look for durable growth, stable margins, sensible leverage, liquidity, and adequate interest coverage."
+              }
+            ],
+            "company_source_ids": [
+              "senco_nse_filing",
+              "senco_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "earnings_quality",
+            "label": "Earnings quality and cash conversion",
+            "weight": 20,
+            "score": 1,
+            "weighted_points": 4.0,
+            "rationale": "CFO/PAT=-1.50; free cash flow is -700.0.",
+            "book_basis": [
+              {
+                "principle_id": "PI-CASH-01",
+                "chapter": "Financial Shenanigans",
+                "printed_page": 54,
+                "pdf_page": 55,
+                "chunk_id": "p055-c00",
+                "paraphrase": "Compare reported profit with operating cash, free cash flow, and working-capital behavior."
+              },
+              {
+                "principle_id": "PI-CASH-01",
+                "chapter": "Margin of Safety",
+                "printed_page": 168,
+                "pdf_page": 169,
+                "chunk_id": "p169-c01",
+                "paraphrase": "Compare reported profit with operating cash, free cash flow, and working-capital behavior."
+              }
+            ],
+            "company_source_ids": [
+              "senco_nse_filing",
+              "senco_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "moat_growth",
+            "label": "Business moat and self-sustainable growth",
+            "weight": 20,
+            "score": 2,
+            "weighted_points": 8.0,
+            "rationale": "Business-quality score=70; revenue growth=24.0%; profit growth=18.0%; SSGR=10.0%.",
+            "book_basis": [
+              {
+                "principle_id": "PI-MOAT-01",
+                "chapter": "Business & Industry Analysis",
+                "printed_page": 109,
+                "pdf_page": 110,
+                "chunk_id": "p110-c00",
+                "paraphrase": "Reward growth that the business can fund and defend, not growth dependent mainly on debt or accounting effects."
+              },
+              {
+                "principle_id": "PI-MOAT-01",
+                "chapter": "Self-Sustainable Growth Rate",
+                "printed_page": 62,
+                "pdf_page": 63,
+                "chunk_id": "p063-c01",
+                "paraphrase": "Reward growth that the business can fund and defend, not growth dependent mainly on debt or accounting effects."
+              }
+            ],
+            "company_source_ids": [
+              "senco_nse_filing",
+              "senco_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "management",
+            "label": "Management integrity and capital allocation",
+            "weight": 20,
+            "score": 3,
+            "weighted_points": 12.0,
+            "rationale": "The evidence-backed management assessment is 68/100.",
+            "book_basis": [
+              {
+                "principle_id": "PI-MGMT-01",
+                "chapter": "Assess Management Quality - Part 3",
+                "printed_page": 157,
+                "pdf_page": 158,
+                "chunk_id": "p158-c00",
+                "paraphrase": "Test integrity, minority-shareholder alignment, disclosure, execution, succession, and capital allocation."
+              }
+            ],
+            "company_source_ids": [
+              "senco_nse_filing",
+              "senco_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "valuation",
+            "label": "Valuation and margin of safety",
+            "weight": 15,
+            "score": 4,
+            "weighted_points": 12.0,
+            "rationale": "P/E=15.00 (earnings yield 6.67%); PEG=0.83; P/S=0.67; current G-sec evidence=6.9%.",
+            "book_basis": [
+              {
+                "principle_id": "PI-VAL-01",
+                "chapter": "Margin of Safety",
+                "printed_page": 163,
+                "pdf_page": 164,
+                "chunk_id": "p164-c00",
+                "paraphrase": "Require a valuation cushion using normalized earnings, cash generation, growth, and margin-of-safety tests."
+              },
+              {
+                "principle_id": "PI-VAL-01",
+                "chapter": "How to do Valuation Analysis of a Company",
+                "printed_page": 69,
+                "pdf_page": 70,
+                "chunk_id": "p070-c00",
+                "paraphrase": "Require a valuation cushion using normalized earnings, cash generation, growth, and margin-of-safety tests."
+              }
+            ],
+            "company_source_ids": [
+              "senco_nse_filing",
+              "senco_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          },
+          {
+            "id": "credit_resilience",
+            "label": "Credit and downside resilience",
+            "weight": 5,
+            "score": 4,
+            "weighted_points": 4.0,
+            "rationale": "The resolved rating signal is A Stable (illustrative); rating sensitivities still require review.",
+            "book_basis": [
+              {
+                "principle_id": "PI-CREDIT-01",
+                "chapter": "Why Investors Should Read Credit Rating Reports",
+                "printed_page": 172,
+                "pdf_page": 173,
+                "chunk_id": "p173-c00",
+                "paraphrase": "Use rating reports and liquidity/debt sensitivities to judge downside resilience."
+              }
+            ],
+            "company_source_ids": [
+              "senco_nse_filing",
+              "senco_nse_quote"
+            ],
+            "missing_data": [],
+            "sector_context": "Jewellery context: interpret gold-metal loans, inventory intensity, same-store sales, store expansion, hedging, and gold-price inventory gains separately; the literal book thresholds are not relaxed.",
+            "confidence": "high"
+          }
+        ],
+        "coverage_weight": 100,
+        "total_score": 48.0,
+        "score_band": "Weak book alignment",
+        "hard_red_flags": [],
+        "decision_status": "complete"
+      },
+      "final_score": 54.82,
+      "rank": 4
+    }
+  ],
+  "audit": {
+    "passed": true,
+    "retryable_tickers": [],
+    "findings": [
+      {
+        "severity": "info",
+        "company_ticker": null,
+        "code": "DEMO_ONLY",
+        "message": "All company numbers are invented fixture values; URLs are reference-only."
+      }
+    ],
+    "retry_count": 0
+  },
+  "conclusion": "Thangamayil Jewellery Limited ranks first in this illustrative demo at 70.78/100. Treat the ranking as a research starting point and inspect confidence, valuation assumptions, and downside triggers.",
+  "methodology": "Core Score = Fundamentals 25% + Growth 20% + Valuation 25% + Management 20% + Technicals 10%. Final Score = Core 80% + Peaceful Investing Book Alignment 20%. Business analysis informs the thesis and book/valuation assessments but is not double-counted in Core.",
+  "disclaimer": "Educational research system, not personalized financial advice or a buy/sell recommendation. Verify all live figures against exchange filings and consult a qualified adviser. Demo-mode figures are invented.",
+  "markdown": "# PNGJL Competitive Investment Scoring Briefing\n\n> **Illustrative demo:** every company number below is invented for software testing. Source URLs are reference-only and do not support the fixture values.\n\n**Research date:** 2026-09-02  \n**Target:** P N Gadgil Jewellers Limited (PNGJL:NSE)  \n**Horizon:** 2–3 years\n\n## Executive result\n\nThangamayil Jewellery Limited ranks first in this illustrative demo at 70.78/100. Treat the ranking as a research starting point and inspect confidence, valuation assumptions, and downside triggers.\n\n| Rank | Company | Core /100 | Book alignment /100 | Final /100 | Confidence |\n|---:|---|---:|---:|---:|---:|\n| 1 | Thangamayil Jewellery Limited (THANGAMAYL) | 71.97 | 66.00 | 70.78 | 84% |\n| 2 | P N Gadgil Jewellers Limited (PNGJL) | 70.07 | 60.00 | 68.06 | 90% |\n| 3 | Kalyan Jewellers India Limited (KALYANKJIL) | 67.66 | 63.00 | 66.73 | 92% |\n| 4 | Senco Gold Limited (SENCO) | 56.52 | 48.00 | 54.82 | 78% |\n\n## Comparable indicators\n\n| Company | ROE | ROCE | Revenue growth | P/E | Close | SMA20 | SMA50 | RSI(14) |\n|---|---:|---:|---:|---:|---:|---:|---:|---:|\n| THANGAMAYL | 28.0% | 26.0% | 35.0% | 40.0x | 5300.0 INR | 5180.0 INR | 4940.0 INR | 64.0 index |\n| PNGJL | 23.0% | 22.0% | 36.0% | 20.0x | 580.0 INR | 572.0 INR | 548.0 INR | 57.0 index |\n| KALYANKJIL | 24.5% | 24.0% | 30.0% | 42.0x | 590.0 INR | 602.0 INR | 565.0 INR | 49.0 index |\n| SENCO | 20.0% | 19.0% | 24.0% | 15.0x | 350.0 INR | 360.0 INR | 372.0 INR | 42.0 index |\n\n## 1. Thangamayil Jewellery Limited (THANGAMAYL)\n\n- **Business:** Illustrative Tamil-Nadu-focused jewellery retailer profile.\n- **Fundamentals and growth:** Illustrative ROE 28.0%, ROCE 26.0%, revenue growth 35.0%.\n- **Management:** Illustrative governance and execution profile; not a live conclusion.\n- **Valuation:** Strong demo returns with limited valuation cushion.\n- **Technical timing:** Illustrative close 5300.0; SMA20 5180.0; SMA50 4940.0; RSI(14) 64.0.\n\n### Peaceful Investing alignment\n\n| Category | Weight | Score | Points | Book pages (printed / PDF) |\n|---|---:|---:|---:|---|\n| Financial strength and consistency | 20% | 4/5 | 16.00 | 182 / 183, 46 / 47 |\n| Earnings quality and cash conversion | 20% | 3/5 | 12.00 | 54 / 55, 168 / 169 |\n| Business moat and self-sustainable growth | 20% | 3/5 | 12.00 | 109 / 110, 62 / 63 |\n| Management integrity and capital allocation | 20% | 4/5 | 16.00 | 157 / 158 |\n| Valuation and margin of safety | 15% | 2/5 | 6.00 | 163 / 164, 69 / 70 |\n| Credit and downside resilience | 5% | 4/5 | 4.00 | 172 / 173 |\n\nBook evidence coverage: **100%**. Status: **complete**.\n\n### Sources\n\n- [Thangamayil Jewellery annual-report reference](https://www.thangamayil.com/corporate/wp-content/uploads/2026/07/26th-Annual-Report-2025-2026.pdf) — reference only (demo)\n- [NSE quote page for THANGAMAYL](https://www.nseindia.com/get-quotes/equity?symbol=THANGAMAYL) — reference only (demo)\n\n## 2. P N Gadgil Jewellers Limited (PNGJL)\n\n- **Business:** Illustrative western-India-led jewellery retailer profile.\n- **Fundamentals and growth:** Illustrative ROE 23.0%, ROCE 22.0%, revenue growth 36.0%.\n- **Management:** Illustrative governance and execution profile; not a live conclusion.\n- **Valuation:** Moderate demo valuation relative to the growth inputs.\n- **Technical timing:** Illustrative close 580.0; SMA20 572.0; SMA50 548.0; RSI(14) 57.0.\n\n### Peaceful Investing alignment\n\n| Category | Weight | Score | Points | Book pages (printed / PDF) |\n|---|---:|---:|---:|---|\n| Financial strength and consistency | 20% | 3/5 | 12.00 | 182 / 183, 46 / 47 |\n| Earnings quality and cash conversion | 20% | 1/5 | 4.00 | 54 / 55, 168 / 169 |\n| Business moat and self-sustainable growth | 20% | 3/5 | 12.00 | 109 / 110, 62 / 63 |\n| Management integrity and capital allocation | 20% | 4/5 | 16.00 | 157 / 158 |\n| Valuation and margin of safety | 15% | 4/5 | 12.00 | 163 / 164, 69 / 70 |\n| Credit and downside resilience | 5% | 4/5 | 4.00 | 172 / 173 |\n\nBook evidence coverage: **100%**. Status: **complete**.\n\n### Sources\n\n- [P N Gadgil Jewellers investor-relations page](https://www.pngjewellers.com/pages/investors) — reference only (demo)\n- [NSE quote page for PNGJL](https://www.nseindia.com/get-quotes/equity?symbol=PNGJL) — reference only (demo)\n\n## 3. Kalyan Jewellers India Limited (KALYANKJIL)\n\n- **Business:** Illustrative scaled India-and-international jewellery profile.\n- **Fundamentals and growth:** Illustrative ROE 24.5%, ROCE 24.0%, revenue growth 30.0%.\n- **Management:** Illustrative governance and execution profile; not a live conclusion.\n- **Valuation:** High demo quality accompanied by a premium multiple.\n- **Technical timing:** Illustrative close 590.0; SMA20 602.0; SMA50 565.0; RSI(14) 49.0.\n\n### Peaceful Investing alignment\n\n| Category | Weight | Score | Points | Book pages (printed / PDF) |\n|---|---:|---:|---:|---|\n| Financial strength and consistency | 20% | 3/5 | 12.00 | 182 / 183, 46 / 47 |\n| Earnings quality and cash conversion | 20% | 3/5 | 12.00 | 54 / 55, 168 / 169 |\n| Business moat and self-sustainable growth | 20% | 3/5 | 12.00 | 109 / 110, 62 / 63 |\n| Management integrity and capital allocation | 20% | 4/5 | 16.00 | 157 / 158 |\n| Valuation and margin of safety | 15% | 2/5 | 6.00 | 163 / 164, 69 / 70 |\n| Credit and downside resilience | 5% | 5/5 | 5.00 | 172 / 173 |\n\nBook evidence coverage: **100%**. Status: **complete**.\n\n### Sources\n\n- [Kalyan Jewellers annual-report page](https://www.kalyanjewellers.net/investors/annual-report/annual-reports.php) — reference only (demo)\n- [NSE quote page for KALYANKJIL](https://www.nseindia.com/get-quotes/equity?symbol=KALYANKJIL) — reference only (demo)\n\n## 4. Senco Gold Limited (SENCO)\n\n- **Business:** Illustrative east-India-led jewellery retailer profile.\n- **Fundamentals and growth:** Illustrative ROE 20.0%, ROCE 19.0%, revenue growth 24.0%.\n- **Management:** Illustrative governance and execution profile; not a live conclusion.\n- **Valuation:** Low demo multiple offset by earnings-quality risks.\n- **Technical timing:** Illustrative close 350.0; SMA20 360.0; SMA50 372.0; RSI(14) 42.0.\n\n### Peaceful Investing alignment\n\n| Category | Weight | Score | Points | Book pages (printed / PDF) |\n|---|---:|---:|---:|---|\n| Financial strength and consistency | 20% | 2/5 | 8.00 | 182 / 183, 46 / 47 |\n| Earnings quality and cash conversion | 20% | 1/5 | 4.00 | 54 / 55, 168 / 169 |\n| Business moat and self-sustainable growth | 20% | 2/5 | 8.00 | 109 / 110, 62 / 63 |\n| Management integrity and capital allocation | 20% | 3/5 | 12.00 | 157 / 158 |\n| Valuation and margin of safety | 15% | 4/5 | 12.00 | 163 / 164, 69 / 70 |\n| Credit and downside resilience | 5% | 4/5 | 4.00 | 172 / 173 |\n\nBook evidence coverage: **100%**. Status: **complete**.\n\n### Sources\n\n- [NSE-hosted Senco Gold financial filing](https://nsearchives.nseindia.com/corporate/ixbrl/INTEGRATED_FILING_INDAS_161677_26052026221807_iXBRL_WEB.html) — reference only (demo)\n- [NSE quote page for SENCO](https://www.nseindia.com/get-quotes/equity?symbol=SENCO) — reference only (demo)\n\n## Evidence audit\n\nAudit passed: **yes**; targeted retries used: **0**.\n- INFO `DEMO_ONLY`: All company numbers are invented fixture values; URLs are reference-only.\n\n## Method\n\nCore Score = Fundamentals 25% + Growth 20% + Valuation 25% + Management 20% + Technicals 10%. Final Score = Core 80% + Peaceful Investing Book Alignment 20%. Business analysis informs the thesis and book/valuation assessments but is not double-counted in Core.\n\nThe book is used only as a private methodology source. Current company claims must come from dated company/exchange/web/market evidence. The book-alignment score measures framework fit; it is not a recommendation by itself.\n\n> Educational research system, not personalized financial advice or a buy/sell recommendation. Verify all live figures against exchange filings and consult a qualified adviser. Demo-mode figures are invented.\n"
+}

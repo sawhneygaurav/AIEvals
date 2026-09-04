@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pngjl-competitive-scoring"
+version = "0.1.0"
+description = "A LangGraph competitor-research and book-grounded investment scoring demo for PNGJL."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "chromadb>=1.0,<2",
+  "httpx>=0.27,<1",
+  "langgraph>=1.0,<2",
+  "openai>=2.0,<3",
+  "pandas>=2.2,<3",
+  "pydantic>=2.8,<3",
+  "pypdf>=6,<7",
+  "python-dotenv>=1,<2",
+  "streamlit>=1.40,<2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<10",
+  "ruff>=0.8,<1",
+]
+
+[project.scripts]
+competitive-scoring = "competitive_scoring.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
