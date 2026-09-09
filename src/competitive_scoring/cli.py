@@ -11,6 +11,7 @@ from .config import Settings
 from .graph import build_workflow, create_runtime, run_research
 from .publication import PublicationValidationError, require_publishable
 from .rag import BookKnowledgeBase
+from .tracing import span, trace_run
 
 
 def _settings(mode: str, book: str | None = None) -> Settings:
@@ -58,6 +59,14 @@ def main() -> None:
         print(graph.get_graph().draw_mermaid())
         return
 
+    with trace_run(settings) as diagnostics:
+        try:
+            _run_and_export(settings, args.output, diagnostics)
+        finally:
+            print(f"Run diagnostics: {diagnostics.directory}")
+
+
+def _run_and_export(settings: Settings, output_path: str, diagnostics) -> None:
     briefing, trace = run_research(settings)
     # The CLI and Streamlit share the same final safety boundary.  Validate
     # before creating a directory or writing either output file, so a failed
@@ -65,17 +74,20 @@ def main() -> None:
     try:
         require_publishable(briefing, tuple(trace))
     except PublicationValidationError as exc:
+        diagnostics.status = "unvalidated"
         print(f"Report was not written: {exc}")
         raise SystemExit(2) from exc
 
-    output = Path(args.output).expanduser().resolve()
-    output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(briefing.markdown, encoding="utf-8")
-    json_path = output.with_suffix(".json")
-    json_path.write_text(briefing.model_dump_json(indent=2), encoding="utf-8")
+    output = Path(output_path).expanduser().resolve()
+    with span("report.export"):
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(briefing.markdown, encoding="utf-8")
+        json_path = output.with_suffix(".json")
+        json_path.write_text(briefing.model_dump_json(indent=2), encoding="utf-8")
     print(f"Wrote {output}")
     print(f"Wrote {json_path}")
     print(f"Completed {len(trace)} trace events; audit passed={briefing.audit.passed}")
+    diagnostics.status = "succeeded"
 
 
 if __name__ == "__main__":

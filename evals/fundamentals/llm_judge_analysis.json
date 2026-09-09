@@ -1,0 +1,311 @@
+{
+  "checks": 18,
+  "verdicts": {
+    "pass": 12,
+    "fail": 6
+  },
+  "agreement_count": 18,
+  "rows": [
+    {
+      "case_id": "FUND-PNGJL-FY2026-001",
+      "field": "roe",
+      "period_end": "2026-03-31",
+      "verdict": "pass",
+      "issue": "none",
+      "numeric_within_tolerance": true,
+      "unit_correct": true,
+      "identity_correct": true,
+      "source_support": "supported",
+      "evidence_source_ids": [
+        "PNGJL-AR26-ROE"
+      ],
+      "reason": "Note 44 reports consolidated ROE of 0.21 as a decimal ratio for FY2025-26; converting by x100 gives 21.0 percent, matching the candidate. Correct company, period, basis, unit and citation.",
+      "existing_grade": "PASS",
+      "agreement": true
+    },
+    {
+      "case_id": "FUND-PNGJL-FY2026-001",
+      "field": "roce",
+      "period_end": "2026-03-31",
+      "verdict": "pass",
+      "issue": "none",
+      "numeric_within_tolerance": true,
+      "unit_correct": true,
+      "identity_correct": true,
+      "source_support": "supported",
+      "evidence_source_ids": [
+        "PNGJL-AR26-ROCE"
+      ],
+      "reason": "Note 44 reports consolidated ROCE of 0.30 (EBIT/Capital Employed) as a decimal ratio for FY2025-26; x100 gives 30.0 percent, matching the candidate. Correct company, period, basis, unit and citation.",
+      "existing_grade": "PASS",
+      "agreement": true
+    },
+    {
+      "case_id": "FUND-PNGJL-FY2026-001",
+      "field": "operating_cash_flow",
+      "period_end": "2026-03-31",
+      "verdict": "pass",
+      "issue": "none",
+      "numeric_within_tolerance": true,
+      "unit_correct": true,
+      "identity_correct": true,
+      "source_support": "supported",
+      "evidence_source_ids": [
+        "PNGJL-AR26-CFO"
+      ],
+      "reason": "Consolidated cash flow statement reports net cash outflow from operating activities after tax of (7,168.98) INR million for FY2025-26; /10 converts to -716.898 INR crore, preserving the negative sign. Matches candidate exactly with correct unit and citation.",
+      "existing_grade": "PASS",
+      "agreement": true
+    },
+    {
+      "case_id": "FUND-PNGJL-FY2026-002",
+      "field": "roe",
+      "period_end": "2026-03-31",
+      "verdict": "fail",
+      "issue": "missing_explicit_unavailable",
+      "numeric_within_tolerance": null,
+      "unit_correct": null,
+      "identity_correct": null,
+      "source_support": "not_applicable",
+      "evidence_source_ids": [],
+      "reason": "Candidate provided no ROE figure and no explicit unavailable record. Supplied evidence (balance sheet and P&L pages only) does not include Note 44 reported ROE, so an explicit unavailable=true, value=null record was required; mere omission fails.",
+      "existing_grade": "FAIL",
+      "agreement": true
+    },
+    {
+      "case_id": "FUND-PNGJL-FY2026-002",
+      "field": "roce",
+      "period_end": "2026-03-31",
+      "verdict": "fail",
+      "issue": "missing_explicit_unavailable",
+      "numeric_within_tolerance": null,
+      "unit_correct": null,
+      "identity_correct": null,
+      "source_support": "not_applicable",
+      "evidence_source_ids": [],
+      "reason": "Candidate provided no ROCE figure and no explicit unavailable record. Supplied evidence does not include Note 44 reported ROCE, so an explicit unavailable=true, value=null record was required; mere omission fails.",
+      "existing_grade": "FAIL",
+      "agreement": true
+    },
+    {
+      "case_id": "FUND-PNGJL-FY2026-002",
+      "field": "operating_cash_flow",
+      "period_end": "2026-03-31",
+      "verdict": "fail",
+      "issue": "missing_explicit_unavailable",
+      "numeric_within_tolerance": null,
+      "unit_correct": null,
+      "identity_correct": null,
+      "source_support": "not_applicable",
+      "evidence_source_ids": [],
+      "reason": "Candidate provided no operating cash flow figure and no explicit unavailable record. Supplied evidence contains no cash flow statement, so net cash from operating activities after tax cannot be supported; an explicit unavailable=true, value=null record was required and was not given.",
+      "existing_grade": "FAIL",
+      "agreement": true
+    },
+    {
+      "case_id": "FUND-PNGJL-FY2026-003",
+      "field": "roe",
+      "period_end": "2026-03-31",
+      "verdict": "pass",
+      "issue": "none",
+      "numeric_within_tolerance": true,
+      "unit_correct": true,
+      "identity_correct": true,
+      "source_support": "supported",
+      "evidence_source_ids": [
+        "PNGJL-AR26-ROE"
+      ],
+      "reason": "Note 44 reports ROE 0.21 (decimal) for FY2025-26 consolidated; 0.21*100=21.0 percent matches candidate with correct unit and citation.",
+      "existing_grade": "PASS",
+      "agreement": true
+    },
+    {
+      "case_id": "FUND-PNGJL-FY2026-003",
+      "field": "roce",
+      "period_end": "2026-03-31",
+      "verdict": "pass",
+      "issue": "none",
+      "numeric_within_tolerance": true,
+      "unit_correct": true,
+      "identity_correct": true,
+      "source_support": "supported",
+      "evidence_source_ids": [
+        "PNGJL-AR26-ROCE"
+      ],
+      "reason": "Note 44 reports ROCE 0.30 (decimal) for FY2025-26; 0.30*100=30.0 percent matches candidate with correct unit and citation.",
+      "existing_grade": "PASS",
+      "agreement": true
+    },
+    {
+      "case_id": "FUND-PNGJL-FY2026-003",
+      "field": "operating_cash_flow",
+      "period_end": "2026-03-31",
+      "verdict": "pass",
+      "issue": "none",
+      "numeric_within_tolerance": true,
+      "unit_correct": true,
+      "identity_correct": true,
+      "source_support": "supported",
+      "evidence_source_ids": [
+        "PNGJL-AR26-CFO"
+      ],
+      "reason": "Net cash outflow from operating activities after tax (7,168.98) million = -716.898 INR crore (/10 conversion), negative sign preserved; matches candidate exactly.",
+      "existing_grade": "PASS",
+      "agreement": true
+    },
+    {
+      "case_id": "FUND-PNGJL-FY2026-003",
+      "field": "roe",
+      "period_end": "2025-03-31",
+      "verdict": "fail",
+      "issue": "omitted_supported_value",
+      "numeric_within_tolerance": null,
+      "unit_correct": null,
+      "identity_correct": null,
+      "source_support": "not_applicable",
+      "evidence_source_ids": [
+        "PNGJL-AR26-ROE"
+      ],
+      "reason": "Evidence supports FY2024-25 ROE 0.14 (14%) but candidate provides no fact for this slot and no explicit unavailable record.",
+      "existing_grade": "FAIL",
+      "agreement": true
+    },
+    {
+      "case_id": "FUND-PNGJL-FY2026-003",
+      "field": "roce",
+      "period_end": "2025-03-31",
+      "verdict": "fail",
+      "issue": "omitted_supported_value",
+      "numeric_within_tolerance": null,
+      "unit_correct": null,
+      "identity_correct": null,
+      "source_support": "not_applicable",
+      "evidence_source_ids": [
+        "PNGJL-AR26-ROCE"
+      ],
+      "reason": "Evidence supports FY2024-25 ROCE 0.20 (20%) but candidate omits this slot entirely.",
+      "existing_grade": "FAIL",
+      "agreement": true
+    },
+    {
+      "case_id": "FUND-PNGJL-FY2026-003",
+      "field": "operating_cash_flow",
+      "period_end": "2025-03-31",
+      "verdict": "fail",
+      "issue": "omitted_supported_value",
+      "numeric_within_tolerance": null,
+      "unit_correct": null,
+      "identity_correct": null,
+      "source_support": "not_applicable",
+      "evidence_source_ids": [
+        "PNGJL-AR26-CFO"
+      ],
+      "reason": "Evidence supports FY2024-25 net operating cash flow of (6,754.44) million = -675.444 INR crore, but candidate omits this slot.",
+      "existing_grade": "FAIL",
+      "agreement": true
+    },
+    {
+      "case_id": "FUND-SYN-004",
+      "field": "roe",
+      "period_end": "2026-03-31",
+      "verdict": "pass",
+      "issue": "none",
+      "numeric_within_tolerance": true,
+      "unit_correct": true,
+      "identity_correct": true,
+      "source_support": "supported",
+      "evidence_source_ids": [
+        "SYN-CONS"
+      ],
+      "reason": "Consolidated evidence SYN-CONS reports ROE of 20 percent for FY2025-26; candidate asserts 20 percent with correct basis, period, unit and citation.",
+      "existing_grade": "PASS",
+      "agreement": true
+    },
+    {
+      "case_id": "FUND-SYN-004",
+      "field": "roce",
+      "period_end": "2026-03-31",
+      "verdict": "pass",
+      "issue": "none",
+      "numeric_within_tolerance": true,
+      "unit_correct": true,
+      "identity_correct": true,
+      "source_support": "supported",
+      "evidence_source_ids": [
+        "SYN-CONS"
+      ],
+      "reason": "Consolidated evidence SYN-CONS reports ROCE of 25 percent; candidate asserts 25 percent with correct basis, period, unit and citation.",
+      "existing_grade": "PASS",
+      "agreement": true
+    },
+    {
+      "case_id": "FUND-SYN-004",
+      "field": "operating_cash_flow",
+      "period_end": "2026-03-31",
+      "verdict": "pass",
+      "issue": "none",
+      "numeric_within_tolerance": true,
+      "unit_correct": true,
+      "identity_correct": true,
+      "source_support": "supported",
+      "evidence_source_ids": [
+        "SYN-CONS"
+      ],
+      "reason": "Consolidated evidence SYN-CONS reports after-tax CFO of 80 INR crore; candidate asserts 80 INR_crore with correct basis, period, unit and citation.",
+      "existing_grade": "PASS",
+      "agreement": true
+    },
+    {
+      "case_id": "FUND-SYN-005",
+      "field": "roe",
+      "period_end": "2026-03-31",
+      "verdict": "pass",
+      "issue": "none",
+      "numeric_within_tolerance": true,
+      "unit_correct": true,
+      "identity_correct": true,
+      "source_support": "supported",
+      "evidence_source_ids": [
+        "SYN-UNITS"
+      ],
+      "reason": "Evidence explicitly reports consolidated ROE of 25 percent for year ended 31 March 2026; candidate 25.0 percent matches exactly with correct unit, period, basis and citation.",
+      "existing_grade": "PASS",
+      "agreement": true
+    },
+    {
+      "case_id": "FUND-SYN-005",
+      "field": "roce",
+      "period_end": "2026-03-31",
+      "verdict": "pass",
+      "issue": "none",
+      "numeric_within_tolerance": true,
+      "unit_correct": true,
+      "identity_correct": true,
+      "source_support": "supported",
+      "evidence_source_ids": [
+        "SYN-UNITS"
+      ],
+      "reason": "Evidence explicitly reports consolidated ROCE of 30 percent for year ended 31 March 2026; candidate 30.0 percent matches with correct unit, period, basis and citation.",
+      "existing_grade": "PASS",
+      "agreement": true
+    },
+    {
+      "case_id": "FUND-SYN-005",
+      "field": "operating_cash_flow",
+      "period_end": "2026-03-31",
+      "verdict": "pass",
+      "issue": "none",
+      "numeric_within_tolerance": true,
+      "unit_correct": true,
+      "identity_correct": true,
+      "source_support": "supported",
+      "evidence_source_ids": [
+        "SYN-UNITS"
+      ],
+      "reason": "Evidence states net operating cash flow after income tax of 0 INR million, which converts to exactly 0 INR crore; candidate 0.0 INR_crore preserves the zero exactly with correct unit, period, basis and citation.",
+      "existing_grade": "PASS",
+      "agreement": true
+    }
+  ],
+  "note": "Judge explanations are verbatim. Correct unavailable representation is available=false; see llm_judge_report.md."
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "case_id": "EDIT-ME-001",
+  "agent": "EDIT: which agent or stage?",
+  "category": "straightforward",
+  "split": "development",
+  "data_origin": "synthetic",
+  "input": {
+    "question": "EDIT: what should the agent do?",
+    "as_of_date": "2026-09-01",
+    "evidence": [
+      {
+        "source_id": "EDIT-SOURCE-001",
+        "title": "EDIT: source title",
+        "published_at": "2026-08-31",
+        "source_locator": "EDIT: synthetic fixture identifier, real URL, or private local document ID",
+        "page": null,
+        "text": "EDIT: the exact evidence available to the agent"
+      }
+    ]
+  },
+  "reference": {
+    "expected_answer": "EDIT: a suggested correct answer, allowing equivalent wording",
+    "required_facts": {},
+    "pass_when": ["EDIT: necessary condition for passing"],
+    "fail_when": ["EDIT: a concrete mistake that must fail"],
+    "grading_method": "EDIT: deterministic, human review, or both"
+  },
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "reviewed_at": null,
+    "requested_edits": ""
+  }
+}

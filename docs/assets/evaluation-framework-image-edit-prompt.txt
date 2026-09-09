@@ -1,0 +1,6 @@
+Edit this evaluation workflow poster. Preserve its complete layout, all five stages, drawings, hand-lettered style, palette and all other text exactly. Make ONLY these targeted corrections for clarity:
+1. Completely remove both orange arrows and the "Answer key" label currently in the gap between Stage 1 and Stage 2. Leave that gap clean except for the existing black main test-flow arrow. The golden answer must never appear to be supplied to the agent.
+2. In Stage 2, replace the small "Expected | Predicted" two-column table with a single-column box headed "Predicted output" and the single example "ROE: 21 percent". The robot never sees the expected value.
+3. In Stage 3's RULE CHECKS card add a small subtitle directly below the heading: "Compare with golden answers". Make room by slightly adjusting spacing, retaining all five existing rule-check lines and their legibility.
+4. "Check dataset skew" is an analysis activity, not a failure category. Move that text from the red FAILURE BUCKETS card to the green METRICS card, below "Show counts and coverage". Leave the three true failure bucket labels in the red card: Missing value; Wrong number / unit / year; Unsupported claim.
+Keep all other content unchanged, including the bottom scope note and feedback arrows. Do not add new text, scores or decorations.

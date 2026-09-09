@@ -30,6 +30,7 @@ from pydantic import Field, JsonValue, ValidationError, field_validator, model_v
 
 from .models import FinalBriefing, StrictModel, TraceEvent
 from .publication import PublicationValidationError, require_publishable
+from .tracing import traced
 
 REPORT_SCHEMA_VERSION = 1
 DEFAULT_REPORT_STORE_BASE = Path("outputs/report_store")
@@ -159,6 +160,7 @@ class ReportStore:
         self._write_attempt(snapshot)
         return snapshot
 
+    @traced("report.save")
     def save_result(
         self,
         briefing: FinalBriefing,
@@ -338,9 +340,11 @@ class ReportStore:
             }
         )
 
+    @traced("report.write_attempt")
     def _write_attempt(self, snapshot: StoredReport) -> None:
         _atomic_write_text(self.latest_attempt_path, _serialize(snapshot))
 
+    @traced("report.promote")
     def _promote(self, snapshot: StoredReport) -> None:
         _require_passed_audit(snapshot)
         serialized = _serialize(snapshot)

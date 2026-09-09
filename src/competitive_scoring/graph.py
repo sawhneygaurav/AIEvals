@@ -49,6 +49,7 @@ from .scoring import rank_companies
 from .tools.free_sources import FreeSourceCollector
 from .tools.market_data import YahooChartClient
 from .tools.you_search import YouSearchClient
+from .tracing import event, span, trace_run, traced_node
 
 
 def _merge_by_ticker(left: dict | None, right: dict | None) -> dict:
@@ -305,14 +306,14 @@ def build_company_subgraph(runtime: RuntimeServices):
             )
         }
 
-    graph.add_node("source_research_agent", source_node)
-    graph.add_node("company_dossier_extractor", dossier_node)
-    graph.add_node("business_agent", business_node)
-    graph.add_node("fundamentals_agent", fundamentals_node)
-    graph.add_node("management_agent", management_node)
-    graph.add_node("technicals_agent", technicals_node)
-    graph.add_node("valuation_agent", valuation_node)
-    graph.add_node("assemble_company", assemble_node)
+    graph.add_node("source_research_agent", traced_node("graph.source_research_agent", source_node))
+    graph.add_node("company_dossier_extractor", traced_node("graph.company_dossier_extractor", dossier_node))
+    graph.add_node("business_agent", traced_node("graph.business_agent", business_node))
+    graph.add_node("fundamentals_agent", traced_node("graph.fundamentals_agent", fundamentals_node))
+    graph.add_node("management_agent", traced_node("graph.management_agent", management_node))
+    graph.add_node("technicals_agent", traced_node("graph.technicals_agent", technicals_node))
+    graph.add_node("valuation_agent", traced_node("graph.valuation_agent", valuation_node))
+    graph.add_node("assemble_company", traced_node("graph.assemble_company", assemble_node))
 
     graph.add_edge(START, "source_research_agent")
 
@@ -505,6 +506,9 @@ def build_workflow(runtime: RuntimeServices):
             mode=runtime.settings.mode,
             runtime_diagnostics=runtime.diagnostics_snapshot(),
         )
+        event("audit_result", passed=result.passed, finding_count=len(result.findings))
+        for finding in result.findings:
+            event("audit.finding", code=finding.code, ticker=finding.company_ticker)
         output = {
             "audit": result,
             "trace": [
@@ -544,7 +548,8 @@ def build_workflow(runtime: RuntimeServices):
         # company facts require new external evidence and are never hallucinated.
         replacements: dict[str, BookScore] = {}
         for ticker in state["audit"].retryable_tickers:
-            replacements[ticker] = score_with_book(runtime, state["company_reports"][ticker])
+            with span("book.retry", ticker=ticker, attempt=state.get("retry_count", 0) + 1):
+                replacements[ticker] = score_with_book(runtime, state["company_reports"][ticker])
         retry_count = state.get("retry_count", 0) + 1
         return {
             "book_scores": replacements,
@@ -634,16 +639,16 @@ def build_workflow(runtime: RuntimeServices):
             ],
         }
 
-    graph.add_node("orchestrator_intake", orchestrator_intake)
-    graph.add_node("peer_discovery", peer_discovery_node)
-    graph.add_node("company_worker", company_worker)
-    graph.add_node("company_join", company_join)
-    graph.add_node("prepare_book", prepare_book_node)
-    graph.add_node("book_worker", book_worker)
-    graph.add_node("book_join", book_join)
-    graph.add_node("evidence_auditor", auditor_node)
-    graph.add_node("targeted_retry", targeted_retry_node)
-    graph.add_node("final_synthesis", final_synthesis_node)
+    graph.add_node("orchestrator_intake", traced_node("graph.orchestrator_intake", orchestrator_intake))
+    graph.add_node("peer_discovery", traced_node("graph.peer_discovery", peer_discovery_node))
+    graph.add_node("company_worker", traced_node("graph.company_worker", company_worker))
+    graph.add_node("company_join", traced_node("graph.company_join", company_join))
+    graph.add_node("prepare_book", traced_node("graph.prepare_book", prepare_book_node))
+    graph.add_node("book_worker", traced_node("graph.book_worker", book_worker))
+    graph.add_node("book_join", traced_node("graph.book_join", book_join))
+    graph.add_node("evidence_auditor", traced_node("graph.evidence_auditor", auditor_node))
+    graph.add_node("targeted_retry", traced_node("graph.targeted_retry", targeted_retry_node))
+    graph.add_node("final_synthesis", traced_node("graph.final_synthesis", final_synthesis_node))
 
     graph.add_edge(START, "orchestrator_intake")
     graph.add_edge("orchestrator_intake", "peer_discovery")
@@ -711,17 +716,20 @@ def run_research(
 ) -> tuple[FinalBriefing, list[TraceEvent]]:
     """Convenience entry point used by both Streamlit and the CLI."""
 
-    settings.validate_for_run()
-    runtime = create_runtime(settings, progress_callback=progress_callback)
-    workflow = build_workflow(runtime)
-    try:
-        result = workflow.invoke(
-            {"company_reports": {}, "book_scores": {}, "trace": [], "retry_count": 0},
-            config={"recursion_limit": 50, "max_concurrency": settings.max_workers},
-        )
-        return result["final"], result["trace"]
-    finally:
-        # Streamlit users may run the graph many times in one process. Closing
-        # the shared HTTP client prevents idle connections accumulating.
-        if runtime.source_collector is not None:
-            runtime.source_collector.close()
+    with trace_run(settings) as diagnostics:
+        with span("run.preflight"):
+            settings.validate_for_run()
+        with span("run.runtime_setup"):
+            runtime = create_runtime(settings, progress_callback=progress_callback)
+            workflow = build_workflow(runtime)
+        try:
+            with span("run.workflow"):
+                result = workflow.invoke(
+                    {"company_reports": {}, "book_scores": {}, "trace": [], "retry_count": 0},
+                    config={"recursion_limit": 50, "max_concurrency": settings.max_workers},
+                )
+            diagnostics.status = "completed" if result["final"].audit.passed else "unvalidated"
+            return result["final"], result["trace"]
+        finally:
+            if runtime.source_collector is not None:
+                runtime.source_collector.close()

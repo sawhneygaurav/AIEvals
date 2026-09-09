@@ -1,0 +1,25 @@
+Built-in image generation tool (no CLI).
+Reference: pngjl-competitive-investment-scoring-architecture-final.png
+
+GENERATION PROMPT
+
+Create a polished hand-drawn educational infographic for a novice code guide, using the attached image ONLY as a visual style and layout reference. New content accurately documents the CURRENT IMPLEMENTATION. Landscape 3:2, high resolution, cream paper, black ink friendly robot illustrations, navy headings, green parallel arrows, orange scoring accents, jewellery motifs. Excellent large readable typography, ample spacing. Main title exactly "PNGJL COMPETITIVE INVESTMENT SCORING". Subtitle "A beginner's map of the code • 10 logical roles". Four numbered stage columns plus a narrow output column, all connected left to right, with a shared-state band below. Do not include financial recommendations, prices, timings or unsupported capability claims.
+
+Stage 1 heading "1 — SETUP". A friendly controller robot. Labels "Orchestrator" and "Fixed peer selection". Four badges: "PNGJL", "KALYANKJIL", "SENCO", "THANGAMAYL". Small caption "Validate settings, then start four company branches".
+
+Stage 2 widest column heading "2 — COMPANY RESEARCH". Four small company robots across top with green branching arrows, label "Four companies in parallel". Show one representative branch below, caption "Inside each company". Sequential box "Web + news + official filings", with connected local cache cylinder labelled "Local PDF cache — check freshness every run". Then split into two PARALLEL paths: LEFT "One shared Kimi dossier", which fans out to three small boxes "Business", "Fundamentals", "Management"; RIGHT "Technicals — local indicators". All four specialist boxes flow to a clear "JOIN ALL" diamond, then down to "Valuation — ratio / growth score". Make the branching structure unambiguous. Small note "One evidence repair if needed". No fair value, bull/base/bear labels.
+
+Stage 3 heading "3 — BOOK + AUDIT". Book titled "Peaceful Investing" goes into cylinder "Local Chroma". Label "Book scoring — four companies in parallel", four little scorecards /100. All converge into "Evidence auditor". Small caption "Checks evidence links, coverage and citations". A dotted loop only from audit back to BOOK SCORING labelled "Book citation retries: max 2". Do not draw a retry arrow to company research.
+
+Stage 4 heading "4 — SCORE + PUBLISH". Two cards "Core /100" and "Book /100". Under Core, exact weights "Fundamentals 25 • Growth 20 • Valuation 25 • Management 20 • Technicals 10". Large orange formula "FINAL = 80% CORE + 20% BOOK". Then gate "Publication checks". Two outcomes "Pass: save new report" and "Fail: keep last valid report".
+
+Right output column heading "RESEARCH BRIEF". Friendly reader with scorecard. Four checkmarked labels "Ranked scorecard", "Risks + catalysts", "Confidence", "Company + book citations".
+
+Bottom wide navy outlined shared-state cylinder labelled "LANGGRAPH SHARED STATE", smaller text "Sources • metrics • analysis • book citations • scores • audit". A separate small notebook badge "RUN LOGS — timings, cache hits, retries, failures".
+Bottom footer banner "The code checks consistency. Source facts still need verification."
+Use restrained illustrations that leave space for the exact text. Original reference does NOT override the updated content specified here.
+
+CORRECTION PROMPT
+
+Make one precise correction to this existing infographic. In Stage 2, at the bottom right, REMOVE the small green dotted upward arrow next to the clipboard that currently points to Technicals. Replace the text next to that clipboard with exactly: 'Fundamentals: one gap repair'. This label refers only to the Fundamentals specialist. Do not add any arrow from this label. Preserve every other word, diagram, shape, color, layout, resolution and aspect ratio exactly. In particular preserve all weights, all four company names, the shared Kimi dossier branching to Business/Fundamentals/Management, the Technicals path to JOIN ALL, book-only retry loop, the formula and footer. This is only a small correction, not a redesign.
+

@@ -29,8 +29,28 @@ from .config import (
     NebiusAPIStyle,
     ReasoningEffort,
 )
+from .tracing import event, span, traced
 
 SchemaT = TypeVar("SchemaT", bound=BaseModel)
+
+
+def _record_completion(response: Any) -> None:
+    """Read SDK operational fields only; never record completion content."""
+    usage = getattr(response, "usage", None)
+    choices = getattr(response, "choices", None)
+    reason = getattr(choices[0], "finish_reason", None) if choices else None
+    details = (getattr(usage, "completion_tokens_details", None)
+               or getattr(usage, "output_tokens_details", None))
+    event(
+        "llm.completion",
+        request_id=getattr(response, "_request_id", None) or getattr(response, "id", None),
+        finish_reason=reason or getattr(response, "status", None),
+        input_tokens=getattr(usage, "prompt_tokens", None)
+        if hasattr(usage, "prompt_tokens") else getattr(usage, "input_tokens", None),
+        output_tokens=getattr(usage, "completion_tokens", None)
+        if hasattr(usage, "completion_tokens") else getattr(usage, "output_tokens", None),
+        reasoning_tokens=getattr(details, "reasoning_tokens", None),
+    )
 
 
 # A retry is useful for two different transient failures:
@@ -133,6 +153,8 @@ def _validate_analysis_semantics(result: SchemaT) -> SchemaT:
     financial_codes = {
         "revenue",
         "pat",
+        "shareholders_equity",
+        "borrowings",
         "ebitda_margin",
         "pat_margin",
         "roe",
@@ -292,6 +314,7 @@ class StructuredLLM:
         response = self._client.responses.parse(
             **request,
         )
+        _record_completion(response)
 
         status = getattr(response, "status", None)
         if status != "completed":
@@ -357,6 +380,8 @@ class StructuredLLM:
         ) as stream:
             response = stream.get_final_completion()
 
+        _record_completion(response)
+
         choices = getattr(response, "choices", None)
         if not choices:
             raise RuntimeError("The model returned no completion choices.")
@@ -376,6 +401,7 @@ class StructuredLLM:
             return _validate_analysis_semantics(parsed)
         return _validate_analysis_semantics(schema.model_validate(parsed))
 
+    @traced("llm.generate")
     def generate(
         self,
         *,
@@ -418,30 +444,42 @@ class StructuredLLM:
                 )
 
             try:
-                with self._request_slots:
-                    use_chat = (
-                        self.provider == "nebius" and self.nebius_api_style == "chat_completions"
-                    )
-                    if use_chat:
-                        return self._generate_with_chat_completions(
-                            schema=schema,
-                            instructions=attempt_instructions,
-                            prompt=prompt,
-                            max_tokens=token_limit,
-                        )
-                    else:
-                        return self._generate_with_responses(
-                            schema=schema,
-                            instructions=attempt_instructions,
-                            prompt=prompt,
-                            max_tokens=token_limit,
-                        )
+                with span(
+                    "llm.attempt", provider=self.provider, model=self.model,
+                    schema=schema.__name__, attempt=attempt_number,
+                    max_attempts=self.max_attempts, max_tokens=token_limit,
+                    prompt_chars=len(prompt) + len(attempt_instructions),
+                ):
+                    with span("llm.queue_wait"):
+                        self._request_slots.acquire()
+                    try:
+                        with span("llm.provider"):
+                            use_chat = (
+                                self.provider == "nebius"
+                                and self.nebius_api_style == "chat_completions"
+                            )
+                            if use_chat:
+                                return self._generate_with_chat_completions(
+                                    schema=schema,
+                                    instructions=attempt_instructions,
+                                    prompt=prompt,
+                                    max_tokens=token_limit,
+                                )
+                            return self._generate_with_responses(
+                                schema=schema,
+                                instructions=attempt_instructions,
+                                prompt=prompt,
+                                max_tokens=token_limit,
+                            )
+                    finally:
+                        self._request_slots.release()
 
             except (OpenAIError, json.JSONDecodeError, ValidationError, RuntimeError) as error:
                 last_error = error
                 last_feedback = _validation_feedback(error)
                 if attempt_number == self.max_attempts:
                     break
+                event("llm.retry", attempt=attempt_number + 1, schema=schema.__name__)
 
         # ``max_attempts`` is validated above, so reaching this line guarantees
         # that ``last_error`` was set during the final failed attempt.

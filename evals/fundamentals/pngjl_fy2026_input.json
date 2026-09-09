@@ -1,0 +1,72 @@
+{
+  "case_id": "FUND-PNGJL-FY2026-001",
+  "question": "Using the supplied pages of P N Gadgil Jewellers Limited’s FY2025–26 annual report, provide these seven consolidated figures: ROE, ROCE, revenue from operations, PAT, shareholders’ equity attributable to owners, total borrowings, and net operating cash flow. Use the year ended 31 March 2026 for annual figures and 31 March 2026 for balance sheet figures. For ROE and ROCE, use the reported ratios in consolidated Note 44 and express them as percentages; do not recompute them using another definition. Express all monetary figures in INR crore. Total borrowings means current plus non-current borrowings, including gold loans and excluding separately reported lease liabilities. Operating cash flow means net cash from operating activities after income taxes. Preserve negative signs. Give the source ID and printed page for each figure, and identify any aggregation or unit conversion. If a figure cannot be supported by the supplied evidence, mark it unavailable rather than estimate it.",
+  "research_cutoff": "2026-09-07",
+  "company": {
+    "name": "P N Gadgil Jewellers Limited",
+    "symbol": "PNGJL",
+    "cin": "L36912PN2013PLC149288"
+  },
+  "accounting_basis": "consolidated",
+  "annual_period": {
+    "start": "2025-04-01",
+    "end": "2026-03-31"
+  },
+  "balance_sheet_date": "2026-03-31",
+  "requested_fields": [
+    "roe",
+    "roce",
+    "revenue",
+    "pat",
+    "shareholders_equity",
+    "borrowings",
+    "operating_cash_flow"
+  ],
+  "required_output_units": {
+    "roe": "percent",
+    "roce": "percent",
+    "monetary_fields": "INR_crore"
+  },
+  "sources": [
+    {
+      "source_id": "PNGJL-AR-2026",
+      "title": "P N Gadgil Jewellers Limited Annual Report 2025–26",
+      "publisher": "P N Gadgil Jewellers Limited",
+      "discovery_url": "https://www.pngjewellers.com/pages/investors",
+      "url": "https://cdn.shopify.com/s/files/1/0730/2578/1979/files/P_N_Gadgil_Jewellers_Ltd_AR_25-26-Spread-12mb.pdf?v=1788602897",
+      "local_path_relative_to_repository": "data/private/evaluation_sources/pngjl_annual_report_2025_26.pdf",
+      "sha256": "146a6db89d5a39e890618e6e1dc29943bc1d5a157c330a2bf4feb33e14eacaae",
+      "retrieved_on": "2026-09-07",
+      "publication_date": null,
+      "financial_statement_signature_date": "2026-05-14",
+      "pdf_page_count": 117,
+      "supplied_pages": [
+        {
+          "pdf_page_1_based": 92,
+          "printed_pages": [
+            180,
+            181
+          ],
+          "section": "Consolidated balance sheet and profit and loss"
+        },
+        {
+          "pdf_page_1_based": 93,
+          "printed_pages": [
+            182,
+            183
+          ],
+          "section": "Consolidated cash flow statement"
+        },
+        {
+          "pdf_page_1_based": 116,
+          "printed_pages": [
+            228,
+            229
+          ],
+          "section": "Consolidated notes, Note 44 financial ratios"
+        }
+      ],
+      "input_delivery": "Supply only these three physical PDF pages with this question; this JSON records their location but does not embed the PDF."
+    }
+  ]
+}

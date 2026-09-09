@@ -27,6 +27,7 @@ from competitive_scoring.presentation import build_summary_table
 from competitive_scoring.rag import BookKnowledgeBase
 from competitive_scoring.report_store import ReportStore, ReportStoreError, StoredReport
 from competitive_scoring.run_manager import RunManager, RunSnapshot
+from competitive_scoring.tracing import recent_summaries, run_directory
 from competitive_scoring.uploads import save_private_upload
 
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -180,6 +181,77 @@ def render_refresh_panel(manager: RunManager, *, selected_mode: str) -> None:
                     f"{snapshot.error_type or 'Error'}: {snapshot.error_detail}",
                     language="text",
                 )
+
+
+def render_run_diagnostics(mode: str) -> None:
+    """Include failed and unfinished runs even when no report was published."""
+    summaries = recent_summaries(mode)
+    if not summaries:
+        return
+    with st.expander("Run timings and logs", expanded=False):
+        by_id = {item["run_id"]: item for item in summaries}
+        selected = st.selectbox(
+            "Research run", options=list(by_id), key=f"diagnostic_run_{mode}",
+            format_func=lambda run_id: (
+                f"{by_id[run_id]['started_at'][:19]} UTC · {by_id[run_id]['status']} "
+                f"· {run_id[:8]}"
+            ),
+        )
+        summary = by_id[selected]
+        st.caption(f"Run ID: {selected} · Recorded elapsed time: "
+                   f"{format_duration(summary['wall_seconds'])}")
+        if summary["status"] == "running":
+            st.caption("No completion recorded yet. This run may still be running or may have "
+                       "been interrupted; the event log retains the last started steps.")
+        if summary.get("active_steps"):
+            st.write("Last recorded active steps: " + ", ".join(
+                f"{row['operation']} ({row['metadata'].get('ticker', 'all')})"
+                for row in summary["active_steps"]
+            ))
+        operations = summary.get("operations", [])
+        if operations:
+            st.dataframe(pd.DataFrame(operations).rename(columns={
+                "operation": "Step", "count": "Calls", "total_seconds": "Total seconds",
+                "max_seconds": "Longest call (s)", "failed": "Failed calls",
+            }), hide_index=True, width="stretch")
+            st.caption(summary["timing_note"])
+        failures = summary.get("failed_attempts", [])
+        if failures:
+            st.write("Failed calls remain in these diagnostics even when a later retry succeeds.")
+            st.dataframe(pd.DataFrame([{
+                "Step": row["operation"], "Company": row["metadata"].get("ticker", ""),
+                "Seconds": row["duration_seconds"],
+                "Error": row["metadata"].get("error_kind", ""),
+                "Type": row["metadata"].get("error_type", ""),
+                "Attempt": row["metadata"].get("attempt"),
+            } for row in failures]), hide_index=True, width="stretch")
+        if summary.get("diagnostic_counts"):
+            st.json(summary["diagnostic_counts"])
+        if summary.get("audit_findings"):
+            st.write("Evidence audit findings")
+            st.dataframe(pd.DataFrame(summary["audit_findings"]), hide_index=True,
+                         width="stretch")
+        usage = summary.get("llm_usage", {})
+        if any(value is not None for value in usage.values()):
+            st.caption(f"Provider-reported tokens: input={usage.get('input_tokens')}, "
+                       f"output={usage.get('output_tokens')}, "
+                       f"reasoning={usage.get('reasoning_tokens')}. "
+                       "Only responses with available usage are counted.")
+        directory = run_directory(mode, selected)
+        st.caption(f"Local logs: {directory}")
+        for filename, label, mime in (
+            ("summary.json", "Download timing summary", "application/json"),
+            ("events.jsonl", "Download event log", "application/x-ndjson"),
+        ):
+            try:
+                data = (directory / filename).read_bytes()
+            except OSError:
+                st.caption(f"{filename} is unavailable.")
+                continue
+            st.download_button(label, data, file_name=f"{selected}-{filename}", mime=mime,
+                               key=f"{mode}-{selected}-{filename}")
+        st.caption("Logs contain timings, counts and error classifications; prompts, document "
+                   "text, model answers, credentials and raw exception messages are excluded.")
 
 
 def render_report_header(stored: StoredReport) -> None:
@@ -453,7 +525,6 @@ displayed_report = validated_report
 
 if run_clicked:
     try:
-        settings.validate_for_run()
         if not manager.start(settings, store):
             st.warning("A report refresh is already running. This click did not start a duplicate.")
     except Exception as exc:  # noqa: BLE001 - fail before launching the background worker.
@@ -482,6 +553,7 @@ for preload_error in preload_errors:
 @st.fragment(run_every=1.0)
 def refresh_fragment() -> None:
     render_refresh_panel(manager, selected_mode=mode)
+    render_run_diagnostics(mode)
 
 
 refresh_fragment()

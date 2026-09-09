@@ -39,6 +39,7 @@ from .scoring import (
     rank_companies,
     research_confidence,
 )
+from .tracing import event, traced
 
 FIXED_TITLE = "PNGJL Competitive Investment Scoring Briefing"
 
@@ -135,6 +136,7 @@ class PublicationValidationError(ValueError):
         )
 
 
+@traced("report.publication_scan")
 def scan_for_publication(
     briefing: FinalBriefing,
     trace: list[TraceEvent] | tuple[TraceEvent, ...],
@@ -513,6 +515,9 @@ def scan_for_publication(
             "Rendered Markdown is stale or inconsistent with the final structured report.",
         )
 
+    event("publication.result", passed=not issues, issue_count=len(issues))
+    for issue in issues:
+        event("publication.issue", code=issue.code, ticker=issue.company_ticker)
     return PublicationScan(issues=tuple(issues), recomputed_audit=recomputed_audit)
 
 

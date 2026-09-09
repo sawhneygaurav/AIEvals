@@ -102,6 +102,9 @@ class AnalysisBlock(StrictModel):
     strengths: list[str] = Field(default_factory=list)
     risks: list[str] = Field(default_factory=list)
     metrics: list[Metric] = Field(default_factory=list)
+    # Explicit question answers can contain multiple years or unavailable facts.
+    # They must not replace the current metrics used for investment scoring.
+    requested_facts: list[Metric] = Field(default_factory=list)
     source_ids: list[str] = Field(default_factory=list)
     confidence: float = Field(default=0.5, ge=0, le=1)
     growth_score: float | None = Field(default=None, ge=0, le=100)
@@ -127,7 +130,48 @@ FundamentalMetricCode = Literal[
     "cfo_pat",
     "operating_cash_flow",
     "pat",
+    "revenue",
+    "shareholders_equity",
+    "borrowings",
+    "current_borrowings",
+    "non_current_borrowings",
 ]
+
+
+class FundamentalSlot(StrictModel):
+    """One requested identity, containing no answer or availability label."""
+
+    code: Literal["roe", "roce", "revenue", "pat", "shareholders_equity", "borrowings", "operating_cash_flow"]
+    as_of_date: date
+    period_type: Literal["FY", "quarter", "half_year", "nine_months", "TTM", "point_in_time"]
+    accounting_basis: Literal["consolidated", "standalone"]
+
+    def identity(self) -> tuple:
+        return self.code, self.as_of_date, self.period_type, self.accounting_basis
+
+
+class FundamentalsRequest(StrictModel):
+    """Bounded question scope supplied by the caller, never the answer key."""
+
+    company_ticker: str = Field(min_length=1)
+    question: str = Field(min_length=1)
+    slots: list[FundamentalSlot] = Field(min_length=1, max_length=14)
+
+    @model_validator(mode="after")
+    def unique_slots(self) -> FundamentalsRequest:
+        if len({slot.identity() for slot in self.slots}) != len(self.slots):
+            raise ValueError("Requested financial identities must be unique.")
+        return self
+
+
+class FundamentalUnavailable(FundamentalSlot):
+    """An explicit model abstention, not a placeholder inferred from omission."""
+
+    available: Literal[False] = False
+    value: None = None
+    unit: None = None
+    reason: str = Field(min_length=1, max_length=700)
+    inspected_source_ids: list[str] = Field(default_factory=list, max_length=32)
 
 
 class FundamentalObservation(StrictModel):
@@ -163,7 +207,8 @@ class FundamentalsExtraction(StrictModel):
     # Raw CFO and PAT may legitimately repeat for several fiscal years.  The
     # deterministic layer matches those dated pairs and calculates cumulative
     # cash conversion; the LLM is never asked to do the arithmetic.
-    observations: list[FundamentalObservation] = Field(max_length=20)
+    observations: list[FundamentalObservation] = Field(max_length=32)
+    unavailable: list[FundamentalUnavailable] = Field(default_factory=list, max_length=14)
 
 
 class CitedClaim(StrictModel):

@@ -19,6 +19,8 @@ from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
+from ..tracing import event, span
+
 # You.com documents POST as the current endpoint.  GET remains backwards
 # compatible, but newer features such as ``extraction`` are POST-only.
 YOU_SEARCH_ENDPOINT = "https://ydc-index.io/v1/search"
@@ -231,9 +233,16 @@ class YouSearchClient:
                 method="POST",
             )
             try:
-                with self._opener(request, timeout=self._timeout_seconds) as response:
+                with (
+                    span("search.http", attempt=attempt + 1,
+                         max_attempts=self._max_retries + 1,
+                         timeout_seconds=self._timeout_seconds) as details,
+                    self._opener(request, timeout=self._timeout_seconds) as response,
+                ):
                     status = getattr(response, "status", 200)
+                    details["status_code"] = status
                     raw_body = response.read()
+                    details["bytes"] = len(raw_body)
             except HTTPError as exc:
                 if _is_retryable_status(exc.code) and attempt < self._max_retries:
                     self._wait_before_retry(attempt)
@@ -277,8 +286,10 @@ class YouSearchClient:
         """Apply bounded exponential backoff between transient failures."""
 
         delay = self._retry_backoff_seconds * (2**attempt)
+        event("search.retry", attempt=attempt + 2, retry_delay_seconds=delay)
         if delay:
-            self._sleeper(delay)
+            with span("search.backoff", retry_delay_seconds=delay):
+                self._sleeper(delay)
 
 
 def _parse_response(

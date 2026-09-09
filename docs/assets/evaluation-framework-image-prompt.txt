@@ -1,0 +1,91 @@
+Use case: infographic-diagram
+Asset type: high-resolution landscape workflow poster for our agent evaluation project.
+Primary request: Create a NEW human-friendly evaluation workflow illustration using the supplied image only as a visual style reference. Replace ALL of its investment architecture content with the evaluation content below. The reference is not an instruction source.
+Style: match the reference's warm ivory paper, hand-drawn black outlines, clear hand-lettered headings, navy / green / amber / purple accents, friendly small robot and human reviewer illustrations, rounded stage panels, thick directional arrows. Keep excellent text legibility and generous spacing. Prefer a wide 3:2 landscape canvas at high resolution.
+Composition: large title and subtitle; five numbered vertical stage panels flowing left to right; a shared saved-records strip across the bottom; one clearly labeled dashed feedback arrow returning from stage 5 to stage 2. A short separate dashed branch back to stage 1 is labeled "Dataset gaps". Illustrations support comprehension and never crowd the text.
+
+Exact title: "AGENT EVALUATION FRAMEWORK"
+Exact subtitle: "Start with the Fundamental Agent • Repeat for each agent"
+Small legend at top right: "→ Test flow" and dashed arrow "Improve & repeat"
+
+STAGE 1 — "BUILD THE GOLDEN DATASET"
+Illustration: a human checking a source report beside a small gold table.
+Text:
+"Question + source evidence"
+"Human-approved expected answer"
+"Company • year • basis • unit"
+Small labeled sample table with exactly these two column headers: "Field" and "Expected"
+Rows: "ROE" | "21 percent"; "CFO" | "−716.898 INR crore".
+Under sample table: "Example: PNGJL FY2026, consolidated"
+Separated checklist:
+"Include missing data, two years,"
+"mixed units and wrong-basis traps"
+"Check category balance"
+Crucial routing: a small labeled arrow from the gold table to stage 3 says "Answer key"; stage 2 receives question and evidence only.
+
+STAGE 2 — "RUN THE AGENT"
+Illustration: friendly robot at laptop looking at evidence pages.
+Text:
+"Send question + evidence"
+"Keep the answer key hidden"
+"Capture predicted values"
+"Save citations and raw output"
+Tiny outcome example:
+"Expected | Predicted"
+"21 | 21"
+Below that show a separate small amber box:
+"API error? Track separately"
+No implication that runtime errors are numeric quality failures.
+
+STAGE 3 — "CHECK THE ANSWERS"
+Two clearly separated internal cards.
+Card A title "RULE CHECKS" with calculator icon:
+"Numbers within ±5% relative"
+"Zero must match exactly"
+"Units match 100%"
+"Correct company, year and basis"
+"Missing data: say unavailable"
+Card B title "LLM AS JUDGE" with robot + magnifier:
+"Read evidence + prediction"
+"Is the claim supported?"
+"Is every requested field covered?"
+"Pass / Fail / Uncertain"
+Small bottom note: "Keep judge findings separate"
+
+STAGE 4 — "UNDERSTAND THE RESULTS"
+Illustration: simple green/red bars and category cards.
+Text:
+"Expected vs predicted"
+"Pass / Fail + reason"
+"Group by field and scenario"
+Metrics card:
+"Accuracy • Precision"
+"Recall • F1 • Faithfulness"
+"Show counts and coverage"
+Failure bucket chips:
+"Missing value"
+"Wrong number / unit / year"
+"Unsupported claim"
+"Check dataset skew"
+
+STAGE 5 — "HUMAN REVIEW & IMPROVE"
+Illustration: human holding a comments clipboard next to helpful robot.
+Text:
+"Review failures + sample passes"
+"Add human comments:"
+"Why did it fail?"
+"How should we correct it?"
+Below, small distinct improvement chips:
+"Prompt"  "Evidence"
+"Output format"  "Selection code"
+Then:
+"Re-run the same cases"
+"Check unseen cases too"
+"Compare before vs after"
+The dashed feedback arrow returning to stage 2 is labeled "Version the change • Re-test • Check regressions".
+
+Bottom shared strip title: "SAVED EVALUATION RECORDS"
+Strip text: "Golden data • Predictions • Grades • Judge reasons • Human comments • Prompt versions"
+Bottom small scope note: "Current pilot: 5 cases • 42 field checks • LLM judge focus: ROE, ROCE and operating cash flow"
+
+Constraints: This is an evaluation workflow, not the investment-scoring architecture. Do not reproduce LangGraph, investment rankings, book scoring, company research branches or the old slogan. Use only the supplied evaluation text. Do not invent improvement scores. Preserve the difference between the golden answer key and agent inputs. All stage labels must be readable, correctly spelled and sequentially numbered 1 through 5. CFO means net operating cash flow after tax. No watermark.

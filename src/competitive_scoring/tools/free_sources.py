@@ -33,6 +33,9 @@ import httpx
 import pandas as pd
 from pypdf import PdfReader
 
+from ..tracing import event, resource_id, span, traced
+from .document_cache import CachedDocument, DocumentCache, digest
+
 SourceType = Literal[
     "official_page",
     "official_document",
@@ -357,6 +360,7 @@ class FreeSourceCollector:
         self._max_documents = max_documents_per_company
         self._max_excerpt_chars = max_excerpt_chars
         self._max_pdf_pages = max_pdf_pages
+        self._document_cache = DocumentCache.from_env()
 
     def close(self) -> None:
         self._client.close()
@@ -367,6 +371,7 @@ class FreeSourceCollector:
     def __exit__(self, *_args: object) -> None:
         self.close()
 
+    @traced("sources.official_and_uploads")
     def collect(
         self,
         tickers: Iterable[str] | None = None,
@@ -436,6 +441,7 @@ class FreeSourceCollector:
 
         return FreeSourceCollection(records=tuple(records), warnings=tuple(warnings))
 
+    @traced("sources.official_company")
     def _collect_official(
         self, profile: CompanyProfile
     ) -> tuple[list[FreeSourceRecord], list[str]]:
@@ -527,6 +533,7 @@ class FreeSourceCollector:
             )
         return records, warnings
 
+    @traced("sources.page")
     def _fetch_official_page(
         self,
         profile: CompanyProfile,
@@ -613,6 +620,7 @@ class FreeSourceCollector:
                 [warning],
             )
 
+    @traced("sources.document")
     def _fetch_official_document(
         self, profile: CompanyProfile, link: _Link
     ) -> tuple[FreeSourceRecord, str | None]:
@@ -624,15 +632,12 @@ class FreeSourceCollector:
             retrieval_status="failed",
         )
         try:
-            response = self._safe_get(
-                link.url,
-                profile.linked_document_hosts,
-                byte_limit=_DOCUMENT_BYTE_LIMIT,
-            )
+            document, cache_allowed = self._get_document(link.url, profile.linked_document_hosts)
             excerpt = _extract_pdf_text(
-                response.content,
+                document.content,
                 max_pages=self._max_pdf_pages,
                 max_chars=self._max_excerpt_chars,
+                cache=self._document_cache if cache_allowed else None,
             )
             if not excerpt:
                 raise ValueError("the PDF contained no extractable text")
@@ -640,7 +645,7 @@ class FreeSourceCollector:
                 "primary_company",
                 ("official", "investor_relations", "document", "pdf"),
                 retrieval_status="retrieved",
-                content_type=response.headers.get("content-type", ""),
+                content_type=document.content_type,
             )
             return (
                 FreeSourceRecord(
@@ -673,14 +678,80 @@ class FreeSourceCollector:
                 ),
             )
 
+    def _get_document(
+        self, url: str, allowed_hosts: tuple[str, ...]
+    ) -> tuple[CachedDocument, bool]:
+        # Always visit the current allowlisted origin. Cached bytes alone never
+        # establish freshness, and an unavailable origin must remain a warning.
+        url = _validated_url(url, allowed_hosts)
+        cache = self._document_cache
+        cached = cache.load_document(url, max_bytes=_DOCUMENT_BYTE_LIMIT) if cache else None
+        if cached:
+            try:
+                _validated_url(cached.final_url, allowed_hosts)
+            except ValueError:
+                event("diagnostic", code="DOCUMENT_CACHE_READ_FAILED")
+                cached = None
+        response = self._safe_get(
+            url, allowed_hosts, byte_limit=_DOCUMENT_BYTE_LIMIT,
+            conditional_url=cached.final_url if cached else None,
+            validators=cached.validators if cached else None,
+        )
+        cache_allowed = "no-store" not in {
+            directive.strip().lower() for directive in response.headers.get("cache-control", "").split(",")
+        }
+        if response.status_code == 304:
+            # _safe_get only accepts 304 for the exact URL sent validators.
+            assert cached is not None
+            document = CachedDocument(
+                content=cached.content, final_url=str(response.url),
+                content_type=cached.content_type,
+                etag=response.headers.get("etag", cached.etag),
+                last_modified=response.headers.get("last-modified", cached.last_modified),
+            )
+            outcome = "revalidated"
+        else:
+            document = CachedDocument(
+                content=response.content, final_url=str(response.url),
+                content_type=response.headers.get("content-type", ""),
+                etag=response.headers.get("etag", ""),
+                last_modified=response.headers.get("last-modified", ""),
+            )
+            outcome = "downloaded"
+        event("document.cache", outcome=outcome, resource_id=resource_id(url),
+              bytes=len(document.content))
+        if cache:
+            if cache_allowed:
+                # Skip rewriting a large blob when its validated metadata is unchanged.
+                if document != cached:
+                    cache.save_document(url, document)
+            else:
+                cache.invalidate_document(url)
+        return document, cache_allowed
+
     def _safe_get(
-        self, url: str, allowed_hosts: tuple[str, ...], *, byte_limit: int
+        self, url: str, allowed_hosts: tuple[str, ...], *, byte_limit: int,
+        conditional_url: str | None = None, validators: dict[str, str] | None = None,
     ) -> httpx.Response:
         """GET an allowlisted HTTPS URL while validating every redirect hop."""
 
         current = _validated_url(url, allowed_hosts)
         for _hop in range(4):
-            response = self._client.get(current, follow_redirects=False)
+            headers = (
+                validators if conditional_url and httpx.URL(current) == httpx.URL(conditional_url)
+                else None
+            )
+            with span("sources.http", host=urlsplit(current).hostname,
+                      resource_id=resource_id(current), attempt=_hop + 1) as details:
+                response = self._client.get(current, follow_redirects=False, headers=headers)
+                details.update(status_code=response.status_code, bytes=len(response.content))
+                # Keep redirects unchanged, but classify failing HTTP responses in the trace.
+                if response.status_code >= 400:
+                    response.raise_for_status()
+                if response.status_code == 304:
+                    if not headers:
+                        raise ValueError("unexpected 304 without a validated cache entry")
+                    return response
             if response.status_code in {301, 302, 303, 307, 308}:
                 location = response.headers.get("location")
                 if not location:
@@ -772,6 +843,7 @@ class FreeSourceCollector:
                 )
         return records, warnings
 
+    @traced("sources.upload")
     def _read_company_document(self, path: Path) -> tuple[str, dict[str, Any]]:
         _validate_local_file(path)
         suffix = path.suffix.lower()
@@ -846,6 +918,7 @@ def _normalize_tickers(tickers: Iterable[str] | None) -> tuple[list[str], list[s
     return normalized, warnings
 
 
+@traced("html.parse")
 def _parse_html(content: bytes, encoding: str | None) -> _PageParser:
     parser = _PageParser()
     parser.feed(content.decode(encoding or "utf-8", errors="replace"))
@@ -1084,11 +1157,21 @@ def _without_fragment(url: str) -> str:
     return urlunsplit((split.scheme, split.netloc, split.path, split.query, ""))
 
 
-def _extract_pdf_text(content: bytes, *, max_pages: int, max_chars: int) -> str:
+@traced("pdf.extract")
+def _extract_pdf_text(
+    content: bytes, *, max_pages: int, max_chars: int, cache: DocumentCache | None = None
+) -> str:
     if len(content) > _DOCUMENT_BYTE_LIMIT:
         raise ValueError("PDF exceeds the local byte limit")
+    content_hash = digest(content)
+    if cache:
+        cached = cache.load_excerpt(content_hash, max_pages=max_pages, max_chars=max_chars)
+        event("pdf.cache", outcome="hit" if cached is not None else "miss")
+        if cached is not None:
+            return cached
     reader = PdfReader(BytesIO(content), strict=False)
     page_count = len(reader.pages)
+    event("pdf.input", pages=page_count, bytes=len(content))
     if page_count == 0:
         return ""
 
@@ -1098,22 +1181,23 @@ def _extract_pdf_text(content: bytes, *, max_pages: int, max_chars: int) -> str:
         )
     scan_indices = list(range(page_count))
 
-    # ``plain`` extraction is better for keyword discovery, while ``layout``
-    # keeps a financial table's label and values on the same row.  Keep both:
-    # using plain text alone forced Kimi to guess which number belonged to the
-    # operating-cash row after pypdf moved every value to the bottom of a page.
+    # Scan every page in plain mode to find evidence anywhere in the filing.
+    # Layout extraction is expensive; only selected pages need that second pass.
     page_text: dict[int, str] = {}
     page_output_text: dict[int, str] = {}
-    for index in scan_indices:
-        try:
-            page = reader.pages[index]
-            text = _clean_text(page.extract_text() or "")
-            layout_text = _clean_text(page.extract_text(extraction_mode="layout") or "")
-        except Exception:  # noqa: BLE001, S112 - retain the rest of a malformed filing
-            continue
-        if text:
-            page_text[index] = text
-            page_output_text[index] = layout_text or text
+    cacheable = True
+    with span("pdf.scan_pages"):
+        for index in scan_indices:
+            try:
+                page = reader.pages[index]
+                text = _clean_text(page.extract_text() or "")
+            except Exception as exc:  # noqa: BLE001 - retain other pages
+                cacheable = False
+                event("diagnostic", code="PDF_PAGE_EXTRACTION_FAILED",
+                      error_type=type(exc).__name__)
+                continue
+            if text:
+                page_text[index] = text
     if not page_text:
         return ""
 
@@ -1207,6 +1291,19 @@ def _extract_pdf_text(content: bytes, *, max_pages: int, max_chars: int) -> str:
     for index in sorted(page_text)[:2]:
         add(index)
 
+    # Preserve financial table rows, headings, years and units in the same mode
+    # used before this optimization. If a selected page cannot be laid out, fail
+    # this document rather than treating potentially detached numbers as evidence.
+    with span("pdf.layout_selected", pages=len(selected)):
+        for index in selected:
+            try:
+                layout = _clean_text(reader.pages[index].extract_text(extraction_mode="layout") or "")
+                page_output_text[index] = layout or page_text[index]
+            except Exception as exc:
+                event("diagnostic", code="PDF_LAYOUT_EXTRACTION_FAILED",
+                      error_type=type(exc).__name__)
+                raise ValueError("selected PDF evidence page layout extraction failed") from exc
+
     # Do not concatenate full pages and cut only at the end. That old approach
     # meant one dense ratio page could consume the entire 12k character budget,
     # even though a later selected page contained the required cash-flow row.
@@ -1221,7 +1318,10 @@ def _extract_pdf_text(content: bytes, *, max_pages: int, max_chars: int) -> str:
         )
         for index, weight in zip(selected, weights, strict=True)
     ]
-    return _truncate(_clean_text(" ".join(chunks)), max_chars)
+    excerpt = _truncate(_clean_text(" ".join(chunks)), max_chars)
+    if cache and cacheable and excerpt:
+        cache.save_excerpt(content_hash, excerpt, max_pages=max_pages, max_chars=max_chars)
+    return excerpt
 
 
 def _pdf_page_scores(text: str) -> tuple[int, int, int]:
@@ -1389,6 +1489,7 @@ def _validate_local_file(path: Path) -> None:
         raise ValueError(f"file exceeds the {_LOCAL_FILE_BYTE_LIMIT}-byte limit")
 
 
+@traced("upload.table")
 def _read_table(path: Path) -> pd.DataFrame:
     _validate_local_file(path)
     suffix = path.suffix.lower()

@@ -25,6 +25,7 @@ from .models import FinalBriefing, TraceEvent
 from .progress import ProgressEvent, weight_for_key
 from .publication import scan_for_publication
 from .report_store import ReportStore
+from .tracing import event, trace_run
 
 RunStatus = Literal["idle", "running", "succeeded", "unvalidated", "failed"]
 ResearchRunner = Callable[..., tuple[FinalBriefing, list[TraceEvent]]]
@@ -133,6 +134,18 @@ class RunManager:
 
     def _run(self, run_id: str, settings: Settings, store: ReportStore) -> None:
         try:
+            with trace_run(settings, run_id=run_id) as diagnostics:
+                self._run_workflow(run_id, settings, store)
+                snapshot = self.snapshot()
+                diagnostics.status = snapshot.status
+                event("run.result", outcome=snapshot.status, report_id=snapshot.report_id,
+                      error_type=snapshot.error_type)
+        finally:
+            # Completion includes flushing the diagnostics summary to disk.
+            self._finished.set()
+
+    def _run_workflow(self, run_id: str, settings: Settings, store: ReportStore) -> None:
+        try:
             briefing, trace = self._runner(
                 settings,
                 progress_callback=lambda event: self._on_progress(run_id, event),
@@ -144,6 +157,7 @@ class RunManager:
                     "trigger": "streamlit_manual",
                     "provider": settings.llm_provider if settings.mode == "live" else "offline",
                     "model": settings.llm_model or "deterministic-demo",
+                    "run_id": run_id,
                 },
             )
             # Never trust only the graph's boolean audit flag here.  The shared
@@ -194,8 +208,6 @@ class RunManager:
                 error_type=type(exc).__name__,
                 error_detail=detail[:600],
             )
-        finally:
-            self._finished.set()
 
     def _finish(
         self,

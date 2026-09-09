@@ -1,0 +1,223 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A clear guide to the code · PNGJL</title><style>
+:root{--ink:#16273f;--muted:#5b6874;--green:#28644d;--gold:#ba7425;--line:#e1ddd3;--paper:#fcfaf5;--navy:#142c47}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--green);text-underline-offset:3px}a:hover{color:var(--gold)}
+.top{max-width:1480px;margin:auto;padding:32px 48px 25px;display:flex;justify-content:space-between;gap:24px;font-size:13px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase}.top a{text-decoration:none}.top .brand{color:var(--navy)}.top .brand span{color:var(--gold);margin-right:12px}
+.hero{background:var(--navy);color:#fff;margin:0 auto;max-width:1384px;padding:54px 62px 44px;border-radius:18px;position:relative}.eyebrow{font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:#e8bc77;margin:0 0 14px}.hero h1{font-size:clamp(32px,4.6vw,58px);line-height:1.13;letter-spacing:-1.5px;max-width:1000px;margin:0 0 19px}.hero .sub{color:#d8e1ea;max-width:880px;line-height:1.6;margin:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:32px;padding-top:25px;border-top:1px solid #3a5067}.stats strong{display:block;font-size:30px;color:#f2ca91;line-height:1.2}.stats span{font-size:13px;color:#d8e1ea}.dateline{font-size:12px;margin-top:18px;color:#a9becf}
+.layout{display:grid;grid-template-columns:240px minmax(0,1fr);max-width:1384px;margin:42px auto 90px;gap:48px;padding:0 28px}aside{align-self:start;position:sticky;top:24px;max-height:92vh;overflow:auto;padding-right:14px}aside .label{font-size:11px;color:var(--gold);font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}aside a{display:block;font-size:13px;line-height:1.45;padding:7px 0;text-decoration:none;color:var(--muted);border-bottom:1px solid #ebe7df}aside .download{font-weight:650;color:var(--green);margin-top:18px;border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+article{min-width:0}h2{font-size:29px;line-height:1.28;letter-spacing:-.5px;margin:64px 0 22px;padding-top:22px;border-top:2px solid var(--line);scroll-margin-top:20px}h2:first-child{margin-top:0;padding-top:0;border:0}h3{font-size:21px;margin:30px 0 12px;line-height:1.4}p{margin:0 0 19px}strong{font-weight:700}li{margin-bottom:11px}ul,ol{padding-left:25px;margin:18px 0 25px}code{font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;background:#eeeae1;border-radius:4px;padding:3px 5px;overflow-wrap:anywhere}pre{background:#edf1f1;border:1px solid #d8e1dd;border-left:4px solid var(--green);border-radius:8px;padding:19px 23px;margin:22px 0 28px;overflow:auto}pre code{font-size:13px;padding:0;background:none;overflow-wrap:normal}
+figure{margin:24px 0 20px;background:#fff8e9;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 10px 30px #16273f0a}figure img{display:block;width:100%;height:auto}figcaption{padding:12px 20px;font-size:12px;color:var(--muted);background:#f6f2e8}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;margin:23px 0 30px}table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.55}th{text-align:left;background:#e9ede8;color:#264734;padding:13px 16px;font-weight:700}td{padding:12px 16px;border-top:1px solid var(--line);vertical-align:top}tbody tr:nth-child(even){background:#f4f2ec}td code{font-size:12px}.footer{border-top:1px solid var(--line);padding:30px 48px;color:var(--muted);font-size:12px;max-width:1384px;margin:auto;display:flex;justify-content:space-between;gap:20px}
+@media(max-width:960px){.top{padding:24px}.hero{margin:0 16px;padding:34px 28px}.layout{grid-template-columns:1fr;gap:28px;padding:0 25px;margin-top:30px}aside{position:static;max-height:250px;border-bottom:1px solid var(--line);padding-bottom:20px}aside a{display:inline-block;padding:7px 10px;margin-right:6px}aside .download{display:inline-block}.stats{gap:12px}.stats strong{font-size:25px}h2{font-size:25px}.footer{padding:24px}}
+@media print{body{font-size:11pt;background:white}.top,aside,.footer{display:none}.hero{padding:24px;background:#fff;color:#16273f;border:1px solid #ddd}.hero .sub,.stats span,.dateline{color:#555}.stats strong,.eyebrow{color:#7b5220}.hero h1{font-size:29pt}.layout{display:block;padding:0;margin-top:25px}h2{break-after:avoid;break-before:auto;font-size:20pt}h3{break-after:avoid}figure,tr,pre{break-inside:avoid}.table-wrap{overflow:visible}a{color:inherit}table{font-size:10pt}code{font-size:9pt}}
+</style></head><body>
+<header class="top"><a class="brand" href="index.html"><span>◆</span> PNGJL · code & evidence</a><a href="live-refresh-review.html">Live run review ↗</a></header>
+<section class="hero"><div class="eyebrow">Beginner-friendly documentation · September 2026</div><h1>A clear guide to the code</h1><p class="sub">Follow the four-stage workflow, understand each logical role, and learn how evidence becomes a checked research brief.</p><div class="stats"><div><strong>39.66s</strong><span>Latest validated live run</span></div><div><strong>11 / 11</strong><span>PDFs revalidated · excerpt cache hits</span></div><div><strong>208</strong><span>Passing offline tests</span></div></div><div class="dateline">Verified 5 September 2026 · Report 5804e0cb… · Run c5f2bf2b…</div></section>
+<div class="layout"><aside><div class="label">On this page</div><a href="#a-beginner-s-guide-to-the-code">A beginner’s guide to the code</a><a href="#the-whole-system-in-one-picture">The whole system in one picture</a><a href="#your-first-five-minutes">Your first five minutes</a><a href="#stage-1-set-up-the-comparison">Stage 1 — Set up the comparison</a><a href="#stage-2-research-each-company">Stage 2 — Research each company</a><a href="#stage-3-apply-the-book-and-audit-the-evidence">Stage 3 — Apply the book and audit the evidence</a><a href="#stage-4-blend-scores-and-publish">Stage 4 — Blend scores and publish</a><a href="#ten-logical-roles-and-their-code">Ten logical roles and their code</a><a href="#a-guided-tour-of-the-project-files">A guided tour of the project files</a><a href="#where-the-data-lives">Where the data lives</a><a href="#settings-you-are-likely-to-use">Settings you are likely to use</a><a href="#how-to-read-a-trace-without-being-a-programmer">How to read a trace without being a programmer</a><a href="#common-problems-and-what-to-inspect">Common problems and what to inspect</a><a href="#what-the-checks-establish-and-what-remains-limited">What the checks establish — and what remains limited</a><a href="#tests-and-safe-maintenance">Tests and safe maintenance</a><a href="#small-glossary">Small glossary</a><a class="download" href="CODE_GUIDE.md">Read the Markdown source ↗</a><a class="download" href="assets/architecture-current.png">Open the architecture poster ↗</a></aside><article><h2 id="a-beginner-s-guide-to-the-code">A beginner’s guide to the code</h2>
+<p>This application turns company evidence into a consistent comparison of PNGJL, Kalyan Jewellers, Senco Gold, and Thangamayil Jewellery. It collects evidence, extracts useful facts, applies fixed scoring rules, checks the assembled result, and displays a ranked research brief in Streamlit.</p>
+<p>Think of it as a research team sharing a notebook. Some roles read documents, some calculate numbers, and one checks whether the completed report meets the application’s release rules. A “logical agent” means a responsibility in this team; it does not necessarily mean a separate AI model call.</p>
+<p><strong>Read this first:</strong> a passed audit means the report passed the checks implemented in this code. It is not a guarantee that every source fact is correct or that an investment will perform well. The system is a research aid.</p>
+<p>Documentation checked against the working code on <strong>5 September 2026</strong>. The <a href="live-refresh-review.html">live refresh review</a> records the successful 39.66-second run, the preceding rejected attempt, and the remaining limitations.</p>
+<h2 id="the-whole-system-in-one-picture">The whole system in one picture</h2>
+<figure><a href="assets/architecture-current.png" target="_blank"><img src="assets/architecture-current.png" alt="Current implementation: four stages, company branches, local PDF cache, shared Kimi dossier, book scoring, audit and publication" width="1536" height="1024"></a><figcaption>Current implementation · Select the diagram to view it at full size.</figcaption></figure>
+<p>This illustration follows the supplied reference’s style but describes the current code. Its companion <a href="architecture.mmd">editable flowchart</a> gives the precise dependencies. The original reference is an expression of intent, not an instruction to the application and not evidence that every pictured feature exists.</p>
+<p>Black arrows mean “wait, then continue.” Green branches mean work can proceed in parallel. A <strong>join</strong> waits for all required branches. The shared-state band represents the structured information passed between graph nodes. Timing logs are separate files, rather than extra investment evidence.</p>
+<h2 id="your-first-five-minutes">Your first five minutes</h2>
+<ol>
+<li>Open the app at <code>http://localhost:8501</code> and select <strong>live</strong> mode.</li>
+<li>Check that You.com, Nebius, and the private investing book are configured.</li>
+<li>Read the saved report’s date and report ID. Opening the page loads a saved report; it does not automatically buy another round of API calls.</li>
+<li>Choose <strong>Run all agents</strong> when you want fresh research. The previous validated report remains visible while the new run works.</li>
+<li>Expand <strong>Run timings and logs</strong> to inspect the run’s status, active work, slow operations, and downloadable diagnostics.</li>
+</ol>
+<p>A new report appears only when it passes publication checks. If a run is rejected, inspect its diagnostics before assuming the old visible report is new. The saved report timestamp and the latest run timestamp answer different questions.</p>
+<p>To start the interface from Terminal in this project folder:</p>
+<pre><code>cd /Users/gauravsawhney/Desktop/multi-agent
+.venv/bin/streamlit run streamlit_app.py --server.port 8501 --server.headless true</code></pre>
+<p>Use the existing server if it is already running. After application code changes, restart that server to ensure imported modules are refreshed. To perform a live refresh from Terminal using the same graph and report store:</p>
+<pre><code>PYTHONPATH=src .venv/bin/python -u scripts/run_live_refresh.py</code></pre>
+<p>This command uses the configured live services, prints progress, writes run logs, and promotes a new report only if the release checks pass. Demo mode instead uses invented, frozen company facts; its results must not be read as current research.</p>
+<h2 id="stage-1-set-up-the-comparison">Stage 1 — Set up the comparison</h2>
+<p><code>config.py</code> loads <code>.env</code> and environment settings. Run validation checks the required connections and book location. <code>graph.py</code> creates the target and selects the three fixed peers. The peer list is reviewed policy, not a new model-generated selection on each run.</p>
+<p>The graph then creates four company workers. All four may run together, subject to the configured worker limit. Each company keeps its own sources and analysis. Shared results are merged by ticker so one company cannot overwrite another’s work.</p>
+<h2 id="stage-2-research-each-company">Stage 2 — Research each company</h2>
+<h3 id="collect-sources">Collect sources</h3>
+<p><code>agents.gather_sources()</code> issues seven You.com searches per company: business, fundamentals, growth, cash quality, management, valuation, and news. These searches are currently sequential within each company; the four company branches overlap. The cash-quality search is restricted to TipRanks by the current implementation.</p>
+<p><code>tools/free_sources.py</code> then visits reviewed NSE/company pages and a small number of relevant PDFs linked by those pages. Host allowlists, redirect checks, and size limits constrain these downloads. Generic navigation pages are retained as references where appropriate, rather than treated as company-specific facts.</p>
+<p>User-supplied Screener exports and company documents can fill gaps. The direct collector reads Screener through uploads and adds Economic Times and Moneycontrol as manual reference links. Separately, You.com may return snippets from these domains; those search results are not excluded by the manual-reference filter.</p>
+<h3 id="reuse-unchanged-filings">Reuse unchanged filings</h3>
+<p><code>tools/document_cache.py</code> stores public PDF bytes and extracted excerpts locally. Every run still discovers the current report links and checks the selected PDF with its source server. When the server confirms an unchanged file with HTTP 304, the application reuses the stored bytes. If validators are unavailable, it downloads the file again and compares its content fingerprint.</p>
+<p>For a new or changed PDF, plain text is extracted from every page, up to the 600-page safety limit. The code selects at most four useful evidence pages and performs the more expensive layout extraction only on those pages. This keeps table values with their labels while avoiding a second extraction of hundreds of unused pages. Page markers such as <code>[PDF page 154]</code> survive in the excerpt.</p>
+<p>An excerpt cache entry depends on the PDF content, pypdf version, extraction-policy version, and page/text limits. Changing any of these causes fresh extraction. Damaged entries become misses. A failed freshness check does not silently reuse stale evidence. Selected-page layout failures remain source failures.</p>
+<p>The default cache is <code>outputs/document_cache/</code>. It does not store the private book or user uploads. There is no automatic eviction; it can be cleared while runs are stopped. Set <code>COMPETITIVE_SCORING_DOCUMENT_CACHE_DIR=off</code> to disable it.</p>
+<h3 id="extract-one-shared-dossier">Extract one shared dossier</h3>
+<p>After source collection, two branches start together: Kimi extracts a company dossier, while Python retrieves chart data and computes technical indicators.</p>
+<p>The dossier is a structured package containing business, management, fundamentals, and valuation observations. <code>llm.py</code> requests structured output; <code>models.py</code> validates its shape. A valid JSON object can still contain incomplete evidence, so later checks also examine source IDs, dates, units, comparability, and plausibility.</p>
+<p>Business, Fundamentals, and Management consume their sections of the shared dossier. The normal production path therefore needs <strong>four dossier model calls for four companies</strong>, not one paid call for every logical role. A company with missing fundamental observations may make one additional targeted repair call.</p>
+<p>Each Fundamentals model response is limited to 20 observations. The application can combine more than 20 observations from the original response, deterministic extraction, and a repair. Every observation is checked; the combined list must not be truncated to the per-response limit. This distinction was fixed after the rejected refresh described in the trace review.</p>
+<h3 id="join-the-specialists-and-score-valuation">Join the specialists and score valuation</h3>
+<p>Business, Fundamentals, Management, and Technicals must all finish before that company’s Valuation role runs. Technicals calculate close, SMA20, SMA50, and Wilder RSI(14) locally from Yahoo chart data.</p>
+<p>The current live valuation score is deterministic:</p>
+<pre><code>valuation = clamp(15, 90, 92 − 1.35 × TTM P/E + 0.25 × growth score)</code></pre>
+<p>“Clamp” means keep the result within the stated minimum and maximum. This is a ratio/growth scoring heuristic. Live code does <strong>not</strong> yet implement discounted cash-flow valuation or bull/base/bear fair-value prices shown in the original intent diagram. After valuation, each worker assembles its company report.</p>
+<h2 id="stage-3-apply-the-book-and-audit-the-evidence">Stage 3 — Apply the book and audit the evidence</h2>
+<p>When all four company reports are complete, <code>rag.py</code> prepares the local Chroma index for the licensed copy of <em>Peaceful Investing</em>. It splits the text into page-aware chunks and uses a small, deterministic local hashing embedder. No external embedding service is required for this book index.</p>
+<p><code>book_policy.py</code> retrieves passages from defined chapter/page ranges and applies fixed rules to the company evidence. Book text supplies the methodology; it is not a source for current revenue, profit, or market prices. The book stays local; the current live LLM path receives company evidence, not the book’s text.</p>
+<div class="table-wrap"><table><thead><tr><th>Book category</th><th>Weight</th></tr></thead><tbody>
+<tr><td>Financial strength</td><td>20</td></tr>
+<tr><td>Earnings quality and cash conversion</td><td>20</td></tr>
+<tr><td>Business moat and sustainable growth</td><td>20</td></tr>
+<tr><td>Management and capital allocation</td><td>20</td></tr>
+<tr><td>Valuation and margin of safety</td><td>15</td></tr>
+<tr><td>Credit and downside resilience</td><td>5</td></tr>
+</tbody></table></div>
+<p>Categories receive scores from 0 to 5 where evidence is available. A category needs both company evidence and a retrieved book citation to count as covered. At least 80% weighted coverage is required; the total is normalized over covered categories. Unknown evidence is not automatically scored as zero. A 95%-covered book score therefore does not mean every category has been established.</p>
+<p><code>agents.audit_results()</code> checks the assembled evidence and book scores. Only book retrieval/citation problems are eligible for the graph’s automatic audit retry loop, capped by <code>MAX_AUDIT_RETRIES</code> (currently 2). General failed company branches are not automatically resumed by this loop.</p>
+<h2 id="stage-4-blend-scores-and-publish">Stage 4 — Blend scores and publish</h2>
+<p><code>scoring.py</code> owns the final arithmetic. The model cannot change these weights:</p>
+<div class="table-wrap"><table><thead><tr><th>Core component</th><th>Weight</th></tr></thead><tbody>
+<tr><td>Fundamentals</td><td>25%</td></tr>
+<tr><td>Growth</td><td>20%</td></tr>
+<tr><td>Valuation</td><td>25%</td></tr>
+<tr><td>Management</td><td>20%</td></tr>
+<tr><td>Technicals</td><td>10%</td></tr>
+</tbody></table></div>
+<pre><code>Core = 0.25F + 0.20G + 0.25V + 0.20M + 0.10T
+Final = 0.80 × Core + 0.20 × Book</code></pre>
+<p>Business analysis informs the research and book assessment but is not added as a sixth Core component. Growth comes from the Fundamentals block.</p>
+<p>For an arithmetic-only example, F=70, G=80, V=60, M=75 and T=50 produce Core=68.5. With Book=80, Final=70.8. These example numbers are not company observations.</p>
+<p>Available companies are ordered by final score, then research confidence, then ticker for deterministic ties. Missing required evidence prevents a valid ranking.</p>
+<p><code>publication.py</code> independently recomputes key scores, ranks, confidence and audit results, and checks consistency with the rendered report. <code>report_store.py</code> writes an attempt and only replaces <code>latest.json</code> when publication passes. “Published” here means saved as the current report in this local application; it does not mean posted on the public internet.</p>
+<h2 id="ten-logical-roles-and-their-code">Ten logical roles and their code</h2>
+<div class="table-wrap"><table><thead><tr><th>Role</th><th>Responsibility</th><th>Where to start</th></tr></thead><tbody>
+<tr><td>1. Orchestrator</td><td>Configure, route, join and assemble the result</td><td><code>graph.py</code></td></tr>
+<tr><td>2. Fixed peer selection</td><td>Supply the reviewed four-company comparison</td><td><code>agents.discover_peers()</code></td></tr>
+<tr><td>3. Web and news</td><td>Search and collect dated source evidence</td><td><code>agents.gather_sources()</code></td></tr>
+<tr><td>4. Business</td><td>Explain business quality, strengths and risks</td><td><code>agents.analyze_business()</code></td></tr>
+<tr><td>5. Fundamentals</td><td>Validate observations, derive ratios, score quality/growth</td><td><code>agents.analyze_fundamentals()</code></td></tr>
+<tr><td>6. Management</td><td>Use cited governance and allocation evidence</td><td><code>agents.analyze_management()</code></td></tr>
+<tr><td>7. Valuation</td><td>Apply the live ratio/growth scoring rule</td><td><code>agents.analyze_valuation()</code></td></tr>
+<tr><td>8. Technicals</td><td>Calculate market indicators locally</td><td><code>agents.analyze_technicals()</code></td></tr>
+<tr><td>9. Book scorer</td><td>Retrieve local book passages and apply fixed rules</td><td><code>book_policy.py</code>, <code>rag.py</code></td></tr>
+<tr><td>10. Evidence auditor</td><td>Check completeness, provenance and book evidence</td><td><code>agents.audit_results()</code></td></tr>
+</tbody></table></div>
+<p>The shared dossier extractor is an implementation step supporting several roles. The number of graph nodes, model requests, and logical agents need not match.</p>
+<h2 id="a-guided-tour-of-the-project-files">A guided tour of the project files</h2>
+<p>Read the first five entries in order if you are learning the project.</p>
+<div class="table-wrap"><table><thead><tr><th>File</th><th>What it does</th></tr></thead><tbody>
+<tr><td><a href="../streamlit_app.py">streamlit_app.py</a></td><td>Sidebar controls, background refresh, saved-report display and diagnostics</td></tr>
+<tr><td><a href="../src/competitive_scoring/graph.py">graph.py</a></td><td>Workflow state, nodes, arrows, parallel company workers and joins</td></tr>
+<tr><td><a href="../src/competitive_scoring/models.py">models.py</a></td><td>Validated data contracts: identities, observations, analysis and reports</td></tr>
+<tr><td><a href="../src/competitive_scoring/agents.py">agents.py</a></td><td>Evidence selection, dossier translation, scoring inputs and audit checks</td></tr>
+<tr><td><a href="../src/competitive_scoring/scoring.py">scoring.py</a></td><td>Fixed Core/Final formulas and deterministic ranking</td></tr>
+<tr><td><a href="../src/competitive_scoring/config.py">config.py</a></td><td>Environment settings and run prerequisites</td></tr>
+<tr><td><a href="../src/competitive_scoring/llm.py">llm.py</a></td><td>Provider requests, structured output, concurrency slots and bounded attempts</td></tr>
+<tr><td><a href="../src/competitive_scoring/tools/free_sources.py">free_sources.py</a></td><td>Official pages/PDFs and local uploaded evidence</td></tr>
+<tr><td><a href="../src/competitive_scoring/tools/document_cache.py">document_cache.py</a></td><td>Atomic document cache and versioned excerpt reuse</td></tr>
+<tr><td><a href="../src/competitive_scoring/tools/you_search.py">you_search.py</a></td><td>You.com HTTP requests, responses and retries</td></tr>
+<tr><td><a href="../src/competitive_scoring/tools/market_data.py">market_data.py</a></td><td>Yahoo chart retrieval and technical calculations</td></tr>
+<tr><td><a href="../src/competitive_scoring/rag.py">rag.py</a></td><td>Local book chunking, indexing and retrieval</td></tr>
+<tr><td><a href="../src/competitive_scoring/book_policy.py">book_policy.py</a></td><td>Book category weights, scoring rules and coverage</td></tr>
+<tr><td><a href="../src/competitive_scoring/publication.py">publication.py</a></td><td>Final report consistency and release checks</td></tr>
+<tr><td><a href="../src/competitive_scoring/report_store.py">report_store.py</a></td><td>Attempts, history and atomic promotion of the current report</td></tr>
+<tr><td><a href="../src/competitive_scoring/run_manager.py">run_manager.py</a></td><td>Background job lifecycle and duplicate-run prevention in the UI</td></tr>
+<tr><td><a href="../src/competitive_scoring/progress.py">progress.py</a></td><td>Small progress messages shared by Terminal and Streamlit</td></tr>
+<tr><td><a href="../src/competitive_scoring/tracing.py">tracing.py</a></td><td>Run IDs, nested timers, event files and sanitized failure metadata</td></tr>
+<tr><td><a href="../src/competitive_scoring/report.py">report.py</a></td><td>Markdown rendering of the structured briefing</td></tr>
+<tr><td><a href="../src/competitive_scoring/presentation.py">presentation.py</a></td><td>User-facing tables and presentation helpers</td></tr>
+<tr><td><a href="../src/competitive_scoring/uploads.py">uploads.py</a></td><td>Validation and persistence of supplied files</td></tr>
+<tr><td><a href="../src/competitive_scoring/demo_data.py">demo_data.py</a></td><td>Invented reproducible demo evidence</td></tr>
+<tr><td><a href="../src/competitive_scoring/cli.py">cli.py</a></td><td>Command-line entry points</td></tr>
+<tr><td><a href="../scripts/run_live_refresh.py">run_live_refresh.py</a></td><td>Live refresh and validated report-store publication</td></tr>
+<tr><td><a href="../tests/">tests</a></td><td>Offline tests for formulas, sources, graph behavior, failures and UI</td></tr>
+</tbody></table></div>
+<h2 id="where-the-data-lives">Where the data lives</h2>
+<div class="table-wrap"><table><thead><tr><th>Location</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><code>.env</code></td><td>Machine-specific connection settings and secrets; ignored by Git</td></tr>
+<tr><td><code>data/private/</code></td><td>Local uploads and the private book index; ignored by Git</td></tr>
+<tr><td><code>outputs/document_cache/</code></td><td>Public filings and reusable extracted excerpts</td></tr>
+<tr><td><code>outputs/report_store/live/latest.json</code></td><td>Current validated live report</td></tr>
+<tr><td><code>outputs/report_store/live/latest_attempt.json</code></td><td>Most recent attempt, including a rejected attempt</td></tr>
+<tr><td><code>outputs/report_store/live/</code></td><td>Saved report history and metadata</td></tr>
+<tr><td><code>outputs/run_logs/live/&lt;run_id&gt;/</code></td><td>This run’s <code>summary.json</code> and <code>events.jsonl</code></td></tr>
+<tr><td><code>docs/</code></td><td>This guide, illustrated architecture and the dated trace review</td></tr>
+</tbody></table></div>
+<p>The configured LLM receives selected company evidence, including excerpts of uploaded files when supplied. Timing logs exclude prompts, document/book text, model answers, full source URLs and credentials. Saved research reports contain evidence excerpts and are a different kind of artifact from sanitized diagnostics.</p>
+<h2 id="settings-you-are-likely-to-use">Settings you are likely to use</h2>
+<div class="table-wrap"><table><thead><tr><th>Setting</th><th>Meaning</th></tr></thead><tbody>
+<tr><td><code>APP_MODE</code></td><td><code>live</code> for actual research, <code>demo</code> for illustrative data</td></tr>
+<tr><td><code>YDC_API_KEY</code></td><td>You.com connection credential</td></tr>
+<tr><td><code>LLM_PROVIDER</code>, <code>NEBIUS_MODEL</code></td><td>Provider and the model used for live extraction</td></tr>
+<tr><td><code>NEBIUS_API_STYLE</code></td><td>Endpoint style; this installation uses <code>chat_completions</code></td></tr>
+<tr><td><code>LLM_MAX_CONCURRENT_REQUESTS</code></td><td>Maximum simultaneous model requests; currently 4</td></tr>
+<tr><td><code>LLM_MAX_ATTEMPTS</code></td><td>Maximum attempts per structured request; currently 3</td></tr>
+<tr><td><code>LLM_REQUEST_TIMEOUT_SECONDS</code></td><td>Configured client timeout; currently 300 seconds</td></tr>
+<tr><td><code>RESEARCH_AS_OF</code></td><td>Optional research cutoff; blank means today for live mode</td></tr>
+<tr><td><code>MAX_WORKERS</code></td><td>Graph worker concurrency; currently 4</td></tr>
+<tr><td><code>MAX_AUDIT_RETRIES</code></td><td>Book citation/retrieval retry cap; currently 2</td></tr>
+<tr><td><code>BOOK_PDF_PATH</code>, <code>BOOK_INDEX_DIR</code></td><td>Licensed book file and local index location</td></tr>
+<tr><td><code>COMPETITIVE_SCORING_DOCUMENT_CACHE_DIR</code></td><td>Local filing cache directory, or <code>off</code></td></tr>
+<tr><td><code>COMPETITIVE_SCORING_RUN_LOG_DIR</code></td><td>Per-run timing log location</td></tr>
+</tbody></table></div>
+<p>Use <a href="../.env.example">.env.example</a> for the complete template. Do not copy live credentials into documentation. A global 16,384-token setting is a ceiling: the current dossier calls use 6,144 output tokens and a Fundamentals repair uses 3,072. Increasing concurrency does not help when the model queue is already empty.</p>
+<h2 id="how-to-read-a-trace-without-being-a-programmer">How to read a trace without being a programmer</h2>
+<p>Start with <code>summary.json</code>. Read <code>status</code>, <code>wall_seconds</code>, <code>errors</code>, <code>diagnostic_counts</code> and <code>audit_findings</code>. Then inspect the slowest operations. <code>events.jsonl</code> is the detailed timeline: each line is one JSON event.</p>
+<div class="table-wrap"><table><thead><tr><th>Trace item</th><th>Plain-English meaning</th></tr></thead><tbody>
+<tr><td><code>run_id</code></td><td>Unique label connecting the report with its logs</td></tr>
+<tr><td><code>ticker</code></td><td>Company to which the event belongs</td></tr>
+<tr><td><code>span_started</code> / <code>span_finished</code></td><td>Beginning and end of one timed operation</td></tr>
+<tr><td><code>parent_id</code></td><td>Which larger operation contains this step</td></tr>
+<tr><td><code>elapsed_seconds</code></td><td>Time since the run started</td></tr>
+<tr><td><code>duration_seconds</code></td><td>Time spent inside this completed step</td></tr>
+<tr><td><code>llm.queue_wait</code></td><td>Waiting for an available model-request slot</td></tr>
+<tr><td><code>llm.provider</code></td><td>Time inside the provider request and response handling</td></tr>
+<tr><td><code>document.cache: revalidated</code></td><td>Server confirmed that cached PDF bytes are unchanged</td></tr>
+<tr><td><code>pdf.cache: hit</code></td><td>Previously extracted text was reused</td></tr>
+<tr><td><code>pdf.scan_pages</code> / <code>pdf.layout_selected</code></td><td>Plain-page scan versus selected-page table extraction</td></tr>
+<tr><td><code>fundamentals.coverage</code></td><td>Whether required fundamental evidence is complete</td></tr>
+<tr><td><code>audit_result</code> / <code>publication.result</code></td><td>Evidence audit and final release-check results</td></tr>
+</tbody></table></div>
+<p>Durations include nested work and overlap across companies. Do not sum every operation to estimate total run time. The slowest company branch often determines when the graph can continue. A four-company sum of 130 seconds can fit inside a 40-second run when those branches overlap.</p>
+<p>Model token totals were unavailable in the reviewed live responses. JSON <code>null</code> means unknown, not zero cost. Similarly, a valid JSON response is not proof of complete financial evidence. Library diagnostics and report-blocking evidence warnings are recorded separately.</p>
+<h2 id="common-problems-and-what-to-inspect">Common problems and what to inspect</h2>
+<div class="table-wrap"><table><thead><tr><th>What you see</th><th>First thing to check</th></tr></thead><tbody>
+<tr><td>Run finishes but the visible report date does not change</td><td>Latest run status and publication issues; the last good report may have been retained</td></tr>
+<tr><td>Growth or Fundamentals “insufficient evidence”</td><td>Missing codes, accounting basis, comparable growth periods, and required protection categories</td></tr>
+<tr><td>Structured model output failed</td><td>Failed attempt’s schema/error classification and completion limit; do not substitute guessed numbers</td></tr>
+<tr><td>Long delay before model extraction starts</td><td>Source HTTP, PDF scan/layout, and cache hit/miss events</td></tr>
+<tr><td>Long model delay</td><td>Provider duration versus queue wait, request attempts and prompt size</td></tr>
+<tr><td>PDF warning</td><td>Whether it is a layout-library diagnostic or an actual source extraction failure</td></tr>
+<tr><td>Book is slow or unavailable</td><td>File readability, <code>book.hash</code>, index preparation, and resolved citations</td></tr>
+<tr><td>Cache is damaged or unwritable</td><td>Cache diagnostic codes; normal retrieval/extraction should continue</td></tr>
+</tbody></table></div>
+<p>The 5 September rejected run exposed a concrete merge defect: adding a cash/PAT history could push valid protection metrics out of a 20-row internal list. The fix preserves the full validated union without increasing the model’s wire limit. A failing-before/passing-after regression test covers this case. Process exit codes are also now classified separately from HTTP response codes in logs.</p>
+<h2 id="what-the-checks-establish-and-what-remains-limited">What the checks establish — and what remains limited</h2>
+<p><strong>Implemented checks:</strong> required companies and blocks; evidence references; normalized units and dates; compatible accounting basis and growth periods; minimum fundamental and book coverage; book citations; score/rank recomputation; and consistent report rendering. Publication rejects unresolved report warnings.</p>
+<p><strong>Fresh retrieval is different from a fresh accounting period.</strong> The current policy allows Fundamentals and Management observations up to 550 days old, Valuation observations up to 120 days, and Technicals up to 7 days. Older raw cash/PAT rows can contribute to matched history, but the derived series must end within the fundamental freshness window. Source catalogues may still expose old filings. A “latest run” does not imply that every observation is from this quarter.</p>
+<p><strong>Remaining limitations:</strong> valuation is a heuristic, audits do not independently prove every source claim, and source-ID/numeric corroboration is weaker than verifying each number against its exact table cell and column. Qualitative scores can vary between model runs. Confidence is a system estimate, not a calibrated probability of investment success. The book’s hashing embeddings are modest; credit-rating evidence remains absent in the reviewed run, leaving 95% coverage.</p>
+<p>Some citation URLs containing spaces render incorrectly in the app and Markdown report. The full URLs remain available in the structured report JSON. This is a display limitation, separate from whether a cited source supports a claim.</p>
+<p>The workflow has no durable checkpoint/resume mechanism for arbitrary company branches and no overall run deadline. Client timeouts are not a single end-to-end budget. A historical audit warning can also continue to block publication after a book retry; the clean successful run did not exercise that recovery case.</p>
+<p>Pinecone, parallelized searches within a company, prompt-size tuning, full fair-value scenarios, and a general resume mechanism are <strong>not part of the implemented PDF optimization</strong>. They remain separate design decisions.</p>
+<h2 id="tests-and-safe-maintenance">Tests and safe maintenance</h2>
+<p>Run the offline test suite and code checks from the project folder:</p>
+<pre><code>.venv/bin/python -m pytest -q
+.venv/bin/ruff check src tests scripts streamlit_app.py
+git diff --check</code></pre>
+<p>The reviewed code passed <strong>208 tests</strong>. Coverage includes company joins, scoring, publication rejection, local-book policy, source handling, cache revalidation, corrupt-cache recovery, financial-table preservation, merged evidence, and tracing. Tests use isolated temporary log/cache directories and do not perform paid live research. Live behavior is assessed separately in the dated refresh review.</p>
+<p>When changing PDF selection or formatting, bump <code>EXTRACTION_VERSION</code> so old excerpts cannot mask the new behavior. When changing scoring, update the independent publication checks and meaningful tests together. Keep <code>.env</code>, private documents, caches and generated reports out of Git. Documentation changes alone do not require another paid live run.</p>
+<h2 id="small-glossary">Small glossary</h2>
+<div class="table-wrap"><table><thead><tr><th>Term</th><th>Meaning here</th></tr></thead><tbody>
+<tr><td>Agent</td><td>A named responsibility, sometimes implemented entirely in Python</td></tr>
+<tr><td>Node / edge</td><td>A workflow step / the dependency connecting two steps</td></tr>
+<tr><td>Dossier</td><td>A company’s structured package of extracted evidence</td></tr>
+<tr><td>Shared state</td><td>The dictionaries and validated objects passed between nodes</td></tr>
+<tr><td>RAG</td><td>Retrieve relevant passages before applying their information</td></tr>
+<tr><td>Embedding</td><td>A numerical representation used to find related text</td></tr>
+<tr><td>Cache</td><td>Reusable work whose identity and freshness must be checked</td></tr>
+<tr><td>Hash</td><td>A content fingerprint used to detect changed files</td></tr>
+<tr><td>ETag / HTTP 304</td><td>A server’s version marker / confirmation that a file is unchanged</td></tr>
+<tr><td>Provenance</td><td>Where a fact came from and which period/basis it describes</td></tr>
+<tr><td>CFO / PAT</td><td>Cash flow from operations / profit after tax</td></tr>
+<tr><td>Consolidated / standalone</td><td>Group accounts / accounts for the individual legal entity</td></tr>
+<tr><td>Schema</td><td>Rules describing the allowed shape and types of data</td></tr>
+<tr><td>Publication gate</td><td>Checks a candidate report must pass before replacing the current report</td></tr>
+</tbody></table></div>
+<p>The illustrated summary was created with the built-in image-generation tool, using the user’s supplied diagram as a style reference. The full <a href="assets/diagram-prompts.txt">generation and correction prompts</a> are retained for reproducibility; the Markdown guide and editable flowchart are the technical reference.</p></article></div><footer class="footer"><span>Code checks consistency. Source facts still need verification.</span><a href="index.html">PNGJL code guide</a></footer></body></html>

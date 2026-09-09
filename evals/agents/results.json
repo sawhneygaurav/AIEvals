@@ -1,0 +1,426 @@
+{
+  "groups": {
+    "business": {
+      "cases": 5,
+      "completed": 5,
+      "checks": 12,
+      "check_pass": 12,
+      "judge_criteria": 12,
+      "judge_pass": 11,
+      "claim_supported": 14,
+      "case_pass": 4,
+      "judge_fail": 1,
+      "case_fail": 1,
+      "claim_not_applicable": 1
+    },
+    "management": {
+      "cases": 5,
+      "completed": 5,
+      "checks": 12,
+      "check_pass": 12,
+      "judge_criteria": 14,
+      "judge_pass": 14,
+      "claim_supported": 11,
+      "case_pass": 5,
+      "claim_not_applicable": 1
+    },
+    "valuation": {
+      "cases": 5,
+      "completed": 5,
+      "checks": 52,
+      "check_pass": 52,
+      "judge_criteria": 10,
+      "judge_pass": 9,
+      "claim_supported": 14,
+      "case_pass": 4,
+      "claim_not_applicable": 2,
+      "judge_fail": 1,
+      "case_fail": 1
+    },
+    "technicals": {
+      "cases": 6,
+      "completed": 6,
+      "checks": 66,
+      "check_pass": 66,
+      "case_pass": 6
+    },
+    "peers": {
+      "cases": 3,
+      "completed": 3,
+      "checks": 6,
+      "check_pass": 6,
+      "case_pass": 3
+    },
+    "sources": {
+      "cases": 4,
+      "completed": 4,
+      "checks": 11,
+      "check_pass": 11,
+      "case_pass": 4
+    },
+    "book": {
+      "cases": 5,
+      "completed": 5,
+      "checks": 18,
+      "check_pass": 18,
+      "case_pass": 5
+    },
+    "audit": {
+      "cases": 4,
+      "completed": 4,
+      "checks": 7,
+      "check_pass": 7,
+      "case_pass": 4
+    },
+    "orchestrator": {
+      "cases": 2,
+      "completed": 2,
+      "checks": 12,
+      "check_pass": 12,
+      "case_pass": 2
+    },
+    "combiner": {
+      "cases": 5,
+      "completed": 5,
+      "checks": 10,
+      "check_pass": 10,
+      "case_pass": 5
+    }
+  },
+  "cases": [
+    {
+      "case_id": "BUSINESS-001",
+      "status": "pass",
+      "scenario": "straightforward",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-live-02/BUSINESS-001"
+    },
+    {
+      "case_id": "BUSINESS-002",
+      "status": "pass",
+      "scenario": "plans_vs_execution",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-live-02/BUSINESS-002"
+    },
+    {
+      "case_id": "BUSINESS-003",
+      "status": "fail",
+      "scenario": "source_conflict",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-live-02/BUSINESS-003"
+    },
+    {
+      "case_id": "BUSINESS-004",
+      "status": "pass",
+      "scenario": "missing_evidence",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-live-02/BUSINESS-004"
+    },
+    {
+      "case_id": "BUSINESS-005",
+      "status": "pass",
+      "scenario": "adversarial",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-live-02/BUSINESS-005"
+    },
+    {
+      "case_id": "MANAGEMENT-001",
+      "status": "pass",
+      "scenario": "inquiry_vs_finding",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-live-02/MANAGEMENT-001"
+    },
+    {
+      "case_id": "MANAGEMENT-002",
+      "status": "pass",
+      "scenario": "execution_and_funding",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-live-02/MANAGEMENT-002"
+    },
+    {
+      "case_id": "MANAGEMENT-003",
+      "status": "pass",
+      "scenario": "missing_pledge",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-live-02/MANAGEMENT-003"
+    },
+    {
+      "case_id": "MANAGEMENT-004",
+      "status": "pass",
+      "scenario": "multiple_dates",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-live-02/MANAGEMENT-004"
+    },
+    {
+      "case_id": "MANAGEMENT-005",
+      "status": "pass",
+      "scenario": "missing_evidence",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-live-02/MANAGEMENT-005"
+    },
+    {
+      "case_id": "VALUATION-001",
+      "status": "pass",
+      "scenario": "straightforward",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-live-02/VALUATION-001"
+    },
+    {
+      "case_id": "VALUATION-002",
+      "status": "pass",
+      "scenario": "wrong_period",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-live-02/VALUATION-002"
+    },
+    {
+      "case_id": "VALUATION-003",
+      "status": "pass",
+      "scenario": "stale_evidence",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-live-02/VALUATION-003"
+    },
+    {
+      "case_id": "VALUATION-004",
+      "status": "fail",
+      "scenario": "source_conflict",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-live-02/VALUATION-004"
+    },
+    {
+      "case_id": "VALUATION-005",
+      "status": "pass",
+      "scenario": "partial_evidence",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-live-02/VALUATION-005"
+    },
+    {
+      "case_id": "TECHNICALS-001",
+      "status": "pass",
+      "scenario": "increasing_adjusted",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/TECHNICALS-001"
+    },
+    {
+      "case_id": "TECHNICALS-002",
+      "status": "pass",
+      "scenario": "flat",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/TECHNICALS-002"
+    },
+    {
+      "case_id": "TECHNICALS-003",
+      "status": "pass",
+      "scenario": "decreasing",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/TECHNICALS-003"
+    },
+    {
+      "case_id": "TECHNICALS-004",
+      "status": "pass",
+      "scenario": "fallback_raw",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/TECHNICALS-004"
+    },
+    {
+      "case_id": "TECHNICALS-005",
+      "status": "pass",
+      "scenario": "future_tail",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/TECHNICALS-005"
+    },
+    {
+      "case_id": "TECHNICALS-006",
+      "status": "pass",
+      "scenario": "insufficient_history",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/TECHNICALS-006"
+    },
+    {
+      "case_id": "PEERS-001",
+      "status": "pass",
+      "scenario": "valid_scope",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/PEERS-001"
+    },
+    {
+      "case_id": "PEERS-002",
+      "status": "pass",
+      "scenario": "invalid_OTHER_3",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/PEERS-002"
+    },
+    {
+      "case_id": "PEERS-003",
+      "status": "pass",
+      "scenario": "invalid_PNGJL_2",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/PEERS-003"
+    },
+    {
+      "case_id": "SOURCES-001",
+      "status": "pass",
+      "scenario": "deduplicate",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/SOURCES-001"
+    },
+    {
+      "case_id": "SOURCES-002",
+      "status": "pass",
+      "scenario": "future_result",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/SOURCES-002"
+    },
+    {
+      "case_id": "SOURCES-003",
+      "status": "pass",
+      "scenario": "search_failure",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/SOURCES-003"
+    },
+    {
+      "case_id": "SOURCES-004",
+      "status": "pass",
+      "scenario": "manual_only",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/SOURCES-004"
+    },
+    {
+      "case_id": "BOOK-001",
+      "status": "pass",
+      "scenario": "complete",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/BOOK-001"
+    },
+    {
+      "case_id": "BOOK-002",
+      "status": "pass",
+      "scenario": "threshold_80",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/BOOK-002"
+    },
+    {
+      "case_id": "BOOK-003",
+      "status": "pass",
+      "scenario": "below_threshold",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/BOOK-003"
+    },
+    {
+      "case_id": "BOOK-004",
+      "status": "pass",
+      "scenario": "no_passages",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/BOOK-004"
+    },
+    {
+      "case_id": "BOOK-005",
+      "status": "pass",
+      "scenario": "no_company_evidence",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/BOOK-005"
+    },
+    {
+      "case_id": "AUDIT-001",
+      "status": "pass",
+      "scenario": "clean",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/AUDIT-001"
+    },
+    {
+      "case_id": "AUDIT-002",
+      "status": "pass",
+      "scenario": "dangling_source",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/AUDIT-002"
+    },
+    {
+      "case_id": "AUDIT-003",
+      "status": "pass",
+      "scenario": "low_confidence",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/AUDIT-003"
+    },
+    {
+      "case_id": "AUDIT-004",
+      "status": "pass",
+      "scenario": "provider_warning",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/AUDIT-004"
+    },
+    {
+      "case_id": "ORCHESTRATOR-001",
+      "status": "pass",
+      "scenario": "complete",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/ORCHESTRATOR-001"
+    },
+    {
+      "case_id": "ORCHESTRATOR-002",
+      "status": "pass",
+      "scenario": "failed_book",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/ORCHESTRATOR-002"
+    },
+    {
+      "case_id": "COMBINER-001",
+      "status": "pass",
+      "scenario": "complete",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/COMBINER-001"
+    },
+    {
+      "case_id": "COMBINER-002",
+      "status": "pass",
+      "scenario": "unequal_weights",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/COMBINER-002"
+    },
+    {
+      "case_id": "COMBINER-003",
+      "status": "pass",
+      "scenario": "missing_component",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/COMBINER-003"
+    },
+    {
+      "case_id": "COMBINER-004",
+      "status": "pass",
+      "scenario": "missing_growth",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/COMBINER-004"
+    },
+    {
+      "case_id": "COMBINER-005",
+      "status": "pass",
+      "scenario": "manual_review",
+      "artifact_directory": "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02/COMBINER-005"
+    }
+  ],
+  "failure_buckets": {
+    "Source prioritization": 1,
+    "Missing conflict disclosure": 1
+  },
+  "source_runs": [
+    "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-offline-02",
+    "/Users/gauravsawhney/Desktop/multi-agent/outputs/evaluations/agents/2026-09-09-live-02"
+  ],
+  "metrics": {
+    "business": {
+      "case_pass_rate": 0.8,
+      "rule_check_pass_rate": 1.0,
+      "judge_criterion_pass_rate": 0.9166666666666666,
+      "judge_claim_span_faithfulness": 1.0
+    },
+    "management": {
+      "case_pass_rate": 1.0,
+      "rule_check_pass_rate": 1.0,
+      "judge_criterion_pass_rate": 1.0,
+      "judge_claim_span_faithfulness": 1.0
+    },
+    "valuation": {
+      "case_pass_rate": 0.8,
+      "rule_check_pass_rate": 1.0,
+      "judge_criterion_pass_rate": 0.9,
+      "judge_claim_span_faithfulness": 1.0
+    },
+    "technicals": {
+      "case_pass_rate": 1.0,
+      "rule_check_pass_rate": 1.0,
+      "judge_criterion_pass_rate": null,
+      "judge_claim_span_faithfulness": null
+    },
+    "peers": {
+      "case_pass_rate": 1.0,
+      "rule_check_pass_rate": 1.0,
+      "judge_criterion_pass_rate": null,
+      "judge_claim_span_faithfulness": null
+    },
+    "sources": {
+      "case_pass_rate": 1.0,
+      "rule_check_pass_rate": 1.0,
+      "judge_criterion_pass_rate": null,
+      "judge_claim_span_faithfulness": null
+    },
+    "book": {
+      "case_pass_rate": 1.0,
+      "rule_check_pass_rate": 1.0,
+      "judge_criterion_pass_rate": null,
+      "judge_claim_span_faithfulness": null
+    },
+    "audit": {
+      "case_pass_rate": 1.0,
+      "rule_check_pass_rate": 1.0,
+      "judge_criterion_pass_rate": null,
+      "judge_claim_span_faithfulness": null
+    },
+    "orchestrator": {
+      "case_pass_rate": 1.0,
+      "rule_check_pass_rate": 1.0,
+      "judge_criterion_pass_rate": null,
+      "judge_claim_span_faithfulness": null
+    },
+    "combiner": {
+      "case_pass_rate": 1.0,
+      "rule_check_pass_rate": 1.0,
+      "judge_criterion_pass_rate": null,
+      "judge_claim_span_faithfulness": null
+    }
+  }
+}

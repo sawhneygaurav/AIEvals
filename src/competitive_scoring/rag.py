@@ -19,6 +19,8 @@ from pathlib import Path
 
 from pypdf import PdfReader
 
+from .tracing import event, traced
+
 
 @dataclass(frozen=True, slots=True)
 class Chapter:
@@ -174,6 +176,7 @@ class BookKnowledgeBase:
     def manifest_path(self) -> Path:
         return self.index_dir / "manifest.json"
 
+    @traced("book.hash")
     def document_hash(self) -> str:
         """Hash the bytes so a changed edition automatically rebuilds its index."""
 
@@ -203,6 +206,7 @@ class BookKnowledgeBase:
             metadata={"hnsw:space": "cosine", "source": "private-local-pdf"},
         )
 
+    @traced("book.ensure_index")
     def ensure_index(self, *, force: bool = False) -> dict[str, int | str]:
         """Create the local index once, then reuse it on future app runs."""
 
@@ -214,6 +218,8 @@ class BookKnowledgeBase:
         if not force and self.manifest_path.exists():
             manifest = json.loads(self.manifest_path.read_text(encoding="utf-8"))
             if manifest.get("document_hash") == current_hash and collection.count() > 0:
+                event("book.index", outcome="reused", pages=int(manifest["pages"]),
+                      chunks=collection.count())
                 return {
                     "status": "ready",
                     "pages": int(manifest["pages"]),
@@ -232,6 +238,7 @@ class BookKnowledgeBase:
             metadata={"hnsw:space": "cosine", "source": "private-local-pdf"},
         )
 
+        event("book.index", outcome="rebuilding")
         reader = PdfReader(str(self.pdf_path))
         ids: list[str] = []
         documents: list[str] = []
@@ -283,6 +290,7 @@ class BookKnowledgeBase:
             "document_hash": current_hash,
         }
 
+    @traced("book.retrieve")
     def retrieve(
         self,
         query: str,

@@ -1,0 +1,1054 @@
+{
+  "reviewed_at": "2026-09-05T16:00:37.361901+05:30",
+  "report_id": "5804e0cb-e85b-4e2f-9334-c14c8af56bd1",
+  "published_run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+  "run_history": [
+    {
+      "run_id": "00407def96be4fe2887fa5e9af198a65",
+      "mode": "demo",
+      "status": "unvalidated",
+      "started_at": "2026-09-05T09:10:55.937469+00:00",
+      "wall_seconds": 0.001992,
+      "events_read": 7,
+      "started_spans": 1,
+      "finished_spans": 1,
+      "unclosed_spans": 0,
+      "orphan_finishes": 0,
+      "missing_parent_ids": 0,
+      "sequence_contiguous": true,
+      "diagnostic_counts": {},
+      "retry_count": null,
+      "failed_attempts": 0,
+      "errors": [
+        {
+          "sequence": 6,
+          "run_id": "00407def96be4fe2887fa5e9af198a65",
+          "timestamp": "2026-09-05T09:10:55.939340+00:00",
+          "elapsed_seconds": 0.001867,
+          "event": "run_error",
+          "metadata": {
+            "error_type": "SystemExit",
+            "status_code": 2,
+            "error_kind": "http_error"
+          }
+        }
+      ],
+      "event_counts": {
+        "run_started": 1,
+        "span_started": 1,
+        "publication.result": 1,
+        "publication.issue": 1,
+        "span_finished": 1,
+        "run_error": 1,
+        "run_finished": 1
+      }
+    },
+    {
+      "run_id": "630adba5afb349f1ace66475a59c7888",
+      "mode": "demo",
+      "status": "succeeded",
+      "started_at": "2026-09-05T09:10:56.159682+00:00",
+      "wall_seconds": 0.011762,
+      "events_read": 18,
+      "started_spans": 6,
+      "finished_spans": 6,
+      "unclosed_spans": 0,
+      "orphan_finishes": 0,
+      "missing_parent_ids": 0,
+      "sequence_contiguous": true,
+      "diagnostic_counts": {},
+      "retry_count": null,
+      "failed_attempts": 0,
+      "errors": [],
+      "event_counts": {
+        "run_started": 1,
+        "span_started": 6,
+        "span_finished": 6,
+        "publication.result": 3,
+        "run.result": 1,
+        "run_finished": 1
+      }
+    },
+    {
+      "run_id": "8c088720ec6c46a89714a1e4a3cf2ab5",
+      "mode": "demo",
+      "status": "unvalidated",
+      "started_at": "2026-09-05T09:10:56.201060+00:00",
+      "wall_seconds": 0.008096,
+      "events_read": 15,
+      "started_spans": 4,
+      "finished_spans": 4,
+      "unclosed_spans": 0,
+      "orphan_finishes": 0,
+      "missing_parent_ids": 0,
+      "sequence_contiguous": true,
+      "diagnostic_counts": {},
+      "retry_count": null,
+      "failed_attempts": 0,
+      "errors": [
+        {
+          "sequence": 14,
+          "run_id": "8c088720ec6c46a89714a1e4a3cf2ab5",
+          "timestamp": "2026-09-05T09:10:56.209004+00:00",
+          "elapsed_seconds": 0.007942,
+          "event": "run.result",
+          "parent_id": null,
+          "metadata": {
+            "outcome": "unvalidated",
+            "report_id": "b21ae073-47b8-4b5f-9fa2-03b2dcfab873",
+            "error_type": "EvidenceAudit"
+          }
+        }
+      ],
+      "event_counts": {
+        "run_started": 1,
+        "span_started": 4,
+        "span_finished": 4,
+        "publication.result": 2,
+        "publication.issue": 2,
+        "run.result": 1,
+        "run_finished": 1
+      }
+    },
+    {
+      "run_id": "9573f7b19e154eaaaef6d75988c68d64",
+      "mode": "demo",
+      "status": "completed",
+      "started_at": "2026-09-05T09:10:55.943044+00:00",
+      "wall_seconds": 0.004037,
+      "events_read": 7,
+      "started_spans": 2,
+      "finished_spans": 2,
+      "unclosed_spans": 0,
+      "orphan_finishes": 0,
+      "missing_parent_ids": 0,
+      "sequence_contiguous": true,
+      "diagnostic_counts": {},
+      "retry_count": null,
+      "failed_attempts": 0,
+      "errors": [],
+      "event_counts": {
+        "run_started": 1,
+        "span_started": 2,
+        "publication.result": 1,
+        "span_finished": 2,
+        "run_finished": 1
+      }
+    },
+    {
+      "run_id": "a801613631b64a07915e7138d11b3029",
+      "mode": "demo",
+      "status": "failed",
+      "started_at": "2026-09-05T09:10:56.187937+00:00",
+      "wall_seconds": 0.000971,
+      "events_read": 3,
+      "started_spans": 0,
+      "finished_spans": 0,
+      "unclosed_spans": 0,
+      "orphan_finishes": 0,
+      "missing_parent_ids": 0,
+      "sequence_contiguous": true,
+      "diagnostic_counts": {},
+      "retry_count": null,
+      "failed_attempts": 0,
+      "errors": [
+        {
+          "sequence": 2,
+          "run_id": "a801613631b64a07915e7138d11b3029",
+          "timestamp": "2026-09-05T09:10:56.188748+00:00",
+          "elapsed_seconds": 0.00081,
+          "event": "run.result",
+          "parent_id": null,
+          "metadata": {
+            "outcome": "failed",
+            "error_type": "RuntimeError"
+          }
+        }
+      ],
+      "event_counts": {
+        "run_started": 1,
+        "run.result": 1,
+        "run_finished": 1
+      }
+    },
+    {
+      "run_id": "b3a1459f3a1242789b8bfc6a4458a13b",
+      "mode": "demo",
+      "status": "unvalidated",
+      "started_at": "2026-09-05T09:10:56.191507+00:00",
+      "wall_seconds": 0.007208,
+      "events_read": 17,
+      "started_spans": 4,
+      "finished_spans": 4,
+      "unclosed_spans": 0,
+      "orphan_finishes": 0,
+      "missing_parent_ids": 0,
+      "sequence_contiguous": true,
+      "diagnostic_counts": {},
+      "retry_count": null,
+      "failed_attempts": 0,
+      "errors": [
+        {
+          "sequence": 16,
+          "run_id": "b3a1459f3a1242789b8bfc6a4458a13b",
+          "timestamp": "2026-09-05T09:10:56.198607+00:00",
+          "elapsed_seconds": 0.007099,
+          "event": "run.result",
+          "parent_id": null,
+          "metadata": {
+            "outcome": "unvalidated",
+            "report_id": "14db442c-bfe7-406d-b5dc-fe9694295c6c",
+            "error_type": "EvidenceAudit"
+          }
+        }
+      ],
+      "event_counts": {
+        "run_started": 1,
+        "span_started": 4,
+        "span_finished": 4,
+        "publication.result": 2,
+        "publication.issue": 4,
+        "run.result": 1,
+        "run_finished": 1
+      }
+    },
+    {
+      "run_id": "b830d43662c7437da05bf402f1a2e8df",
+      "mode": "demo",
+      "status": "interrupted",
+      "started_at": "2026-09-05T09:18:07.966839+00:00",
+      "wall_seconds": 65.396348,
+      "events_read": 93,
+      "started_spans": 45,
+      "finished_spans": 45,
+      "unclosed_spans": 0,
+      "orphan_finishes": 0,
+      "missing_parent_ids": 0,
+      "sequence_contiguous": true,
+      "diagnostic_counts": {},
+      "retry_count": 0,
+      "failed_attempts": 4,
+      "errors": [
+        {
+          "sequence": 92,
+          "run_id": "b830d43662c7437da05bf402f1a2e8df",
+          "timestamp": "2026-09-05T09:19:13.363397+00:00",
+          "elapsed_seconds": 65.396011,
+          "event": "run_error",
+          "metadata": {
+            "error_type": "KeyboardInterrupt",
+            "error_kind": "exception"
+          }
+        }
+      ],
+      "event_counts": {
+        "run_started": 1,
+        "span_started": 45,
+        "span_finished": 45,
+        "run_error": 1,
+        "run_finished": 1
+      }
+    },
+    {
+      "run_id": "e0774c6aadf04e86adeedcecc58c1f84",
+      "mode": "demo",
+      "status": "succeeded",
+      "started_at": "2026-09-05T09:10:56.174288+00:00",
+      "wall_seconds": 0.011465,
+      "events_read": 18,
+      "started_spans": 6,
+      "finished_spans": 6,
+      "unclosed_spans": 0,
+      "orphan_finishes": 0,
+      "missing_parent_ids": 0,
+      "sequence_contiguous": true,
+      "diagnostic_counts": {},
+      "retry_count": null,
+      "failed_attempts": 0,
+      "errors": [],
+      "event_counts": {
+        "run_started": 1,
+        "span_started": 6,
+        "span_finished": 6,
+        "publication.result": 3,
+        "run.result": 1,
+        "run_finished": 1
+      }
+    },
+    {
+      "run_id": "08352805d30f4962820e2700b36adc4e",
+      "mode": "live",
+      "status": "succeeded",
+      "started_at": "2026-09-05T09:35:09.943901+00:00",
+      "wall_seconds": 120.083542,
+      "events_read": 762,
+      "started_spans": 330,
+      "finished_spans": 330,
+      "unclosed_spans": 0,
+      "orphan_finishes": 0,
+      "missing_parent_ids": 0,
+      "sequence_contiguous": true,
+      "diagnostic_counts": {
+        "PDF_LIBRARY_WARNING": 13
+      },
+      "retry_count": 0,
+      "failed_attempts": 0,
+      "errors": [],
+      "event_counts": {
+        "run_started": 1,
+        "span_started": 330,
+        "span_finished": 330,
+        "search.accepted": 28,
+        "pdf.input": 11,
+        "evidence.collected": 4,
+        "diagnostic": 13,
+        "llm.completion": 5,
+        "fundamentals.coverage": 3,
+        "evidence.missing": 3,
+        "book.index": 29,
+        "audit_result": 1,
+        "publication.result": 3,
+        "run_finished": 1
+      }
+    },
+    {
+      "run_id": "72ed092816e44160bbd9e9a240655f90",
+      "mode": "live",
+      "status": "unvalidated",
+      "started_at": "2026-09-05T10:12:37.286716+00:00",
+      "wall_seconds": 42.245103,
+      "events_read": 809,
+      "started_spans": 333,
+      "finished_spans": 333,
+      "unclosed_spans": 0,
+      "orphan_finishes": 0,
+      "missing_parent_ids": 0,
+      "sequence_contiguous": true,
+      "diagnostic_counts": {},
+      "retry_count": 0,
+      "failed_attempts": 0,
+      "errors": [
+        {
+          "sequence": 808,
+          "run_id": "72ed092816e44160bbd9e9a240655f90",
+          "timestamp": "2026-09-05T10:13:19.531761+00:00",
+          "elapsed_seconds": 42.244696,
+          "event": "run_error",
+          "metadata": {
+            "error_type": "SystemExit",
+            "status_code": 2,
+            "error_kind": "http_error"
+          }
+        }
+      ],
+      "event_counts": {
+        "run_started": 1,
+        "span_started": 333,
+        "span_finished": 333,
+        "search.accepted": 28,
+        "document.cache": 11,
+        "pdf.cache": 11,
+        "pdf.input": 8,
+        "evidence.collected": 4,
+        "llm.completion": 5,
+        "evidence.missing": 3,
+        "fundamentals.coverage": 3,
+        "book.index": 29,
+        "audit_result": 1,
+        "audit.finding": 3,
+        "publication.result": 2,
+        "publication.issue": 32,
+        "run_error": 1,
+        "run_finished": 1
+      }
+    },
+    {
+      "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+      "mode": "live",
+      "status": "succeeded",
+      "started_at": "2026-09-05T10:19:11.566615+00:00",
+      "wall_seconds": 39.655309,
+      "events_read": 727,
+      "started_spans": 315,
+      "finished_spans": 315,
+      "unclosed_spans": 0,
+      "orphan_finishes": 0,
+      "missing_parent_ids": 0,
+      "sequence_contiguous": true,
+      "diagnostic_counts": {},
+      "retry_count": 0,
+      "failed_attempts": 0,
+      "errors": [],
+      "event_counts": {
+        "run_started": 1,
+        "span_started": 315,
+        "span_finished": 315,
+        "search.accepted": 28,
+        "document.cache": 11,
+        "pdf.cache": 11,
+        "evidence.collected": 4,
+        "llm.completion": 4,
+        "fundamentals.coverage": 4,
+        "book.index": 29,
+        "audit_result": 1,
+        "publication.result": 3,
+        "run_finished": 1
+      }
+    }
+  ],
+  "latest_summary": {
+    "schema_version": 1,
+    "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+    "mode": "live",
+    "started_at": "2026-09-05T10:19:11.566615+00:00",
+    "status": "succeeded",
+    "wall_seconds": 39.655309,
+    "settings": {
+      "provider": "nebius",
+      "model": "moonshotai/Kimi-K3",
+      "as_of": "2026-09-05",
+      "api_style": "chat_completions",
+      "max_attempts": 3,
+      "timeout_seconds": 300.0,
+      "concurrency": 4
+    },
+    "event_count": 727,
+    "io_error": null,
+    "timing_note": "Durations include children and overlap across parallel work; do not sum them to estimate run wall time.",
+    "operations": [
+      {
+        "operation": "graph.company_worker",
+        "count": 4,
+        "total_seconds": 130.028705,
+        "max_seconds": 38.294768,
+        "failed": 0
+      },
+      {
+        "operation": "graph.company_dossier_extractor",
+        "count": 4,
+        "total_seconds": 94.217121,
+        "max_seconds": 30.703743,
+        "failed": 0
+      },
+      {
+        "operation": "llm.generate",
+        "count": 4,
+        "total_seconds": 94.00542,
+        "max_seconds": 30.643874,
+        "failed": 0
+      },
+      {
+        "operation": "llm.attempt",
+        "count": 4,
+        "total_seconds": 93.985498,
+        "max_seconds": 30.63844,
+        "failed": 0
+      },
+      {
+        "operation": "llm.provider",
+        "count": 4,
+        "total_seconds": 93.935311,
+        "max_seconds": 30.633716,
+        "failed": 0
+      },
+      {
+        "operation": "run.workflow",
+        "count": 1,
+        "total_seconds": 39.561185,
+        "max_seconds": 39.561185,
+        "failed": 0
+      },
+      {
+        "operation": "graph.source_research_agent",
+        "count": 4,
+        "total_seconds": 35.501224,
+        "max_seconds": 12.503503,
+        "failed": 0
+      },
+      {
+        "operation": "search.query",
+        "count": 28,
+        "total_seconds": 23.412074,
+        "max_seconds": 1.065174,
+        "failed": 0
+      },
+      {
+        "operation": "search.http",
+        "count": 28,
+        "total_seconds": 23.301432,
+        "max_seconds": 1.063014,
+        "failed": 0
+      },
+      {
+        "operation": "sources.official_and_uploads",
+        "count": 4,
+        "total_seconds": 12.056064,
+        "max_seconds": 6.766523,
+        "failed": 0
+      },
+      {
+        "operation": "sources.official_company",
+        "count": 4,
+        "total_seconds": 12.049337,
+        "max_seconds": 6.765264,
+        "failed": 0
+      },
+      {
+        "operation": "sources.http",
+        "count": 31,
+        "total_seconds": 11.318999,
+        "max_seconds": 2.629627,
+        "failed": 0
+      },
+      {
+        "operation": "sources.page",
+        "count": 16,
+        "total_seconds": 10.322157,
+        "max_seconds": 2.646622,
+        "failed": 0
+      },
+      {
+        "operation": "graph.book_worker",
+        "count": 4,
+        "total_seconds": 2.715901,
+        "max_seconds": 0.680391,
+        "failed": 0
+      },
+      {
+        "operation": "book.ensure_index",
+        "count": 29,
+        "total_seconds": 2.232612,
+        "max_seconds": 0.57418,
+        "failed": 0
+      },
+      {
+        "operation": "book.retrieve",
+        "count": 24,
+        "total_seconds": 2.17438,
+        "max_seconds": 0.110655,
+        "failed": 0
+      },
+      {
+        "operation": "sources.document",
+        "count": 11,
+        "total_seconds": 1.679717,
+        "max_seconds": 0.557795,
+        "failed": 0
+      },
+      {
+        "operation": "graph.technicals_agent",
+        "count": 4,
+        "total_seconds": 1.030059,
+        "max_seconds": 0.371984,
+        "failed": 0
+      },
+      {
+        "operation": "market.fetch_and_calculate",
+        "count": 4,
+        "total_seconds": 0.805155,
+        "max_seconds": 0.303602,
+        "failed": 0
+      },
+      {
+        "operation": "book.hash",
+        "count": 33,
+        "total_seconds": 0.788911,
+        "max_seconds": 0.0629,
+        "failed": 0
+      },
+      {
+        "operation": "market.http",
+        "count": 4,
+        "total_seconds": 0.765108,
+        "max_seconds": 0.288211,
+        "failed": 0
+      },
+      {
+        "operation": "graph.prepare_book",
+        "count": 1,
+        "total_seconds": 0.575231,
+        "max_seconds": 0.575231,
+        "failed": 0
+      },
+      {
+        "operation": "graph.fundamentals_agent",
+        "count": 4,
+        "total_seconds": 0.279235,
+        "max_seconds": 0.072759,
+        "failed": 0
+      },
+      {
+        "operation": "graph.management_agent",
+        "count": 4,
+        "total_seconds": 0.276463,
+        "max_seconds": 0.07129,
+        "failed": 0
+      },
+      {
+        "operation": "graph.business_agent",
+        "count": 4,
+        "total_seconds": 0.275101,
+        "max_seconds": 0.072385,
+        "failed": 0
+      },
+      {
+        "operation": "html.parse",
+        "count": 16,
+        "total_seconds": 0.257376,
+        "max_seconds": 0.037222,
+        "failed": 0
+      },
+      {
+        "operation": "pdf.extract",
+        "count": 11,
+        "total_seconds": 0.097032,
+        "max_seconds": 0.044161,
+        "failed": 0
+      },
+      {
+        "operation": "run.runtime_setup",
+        "count": 1,
+        "total_seconds": 0.060681,
+        "max_seconds": 0.060681,
+        "failed": 0
+      },
+      {
+        "operation": "report.save",
+        "count": 1,
+        "total_seconds": 0.02693,
+        "max_seconds": 0.02693,
+        "failed": 0
+      },
+      {
+        "operation": "llm.queue_wait",
+        "count": 4,
+        "total_seconds": 0.01648,
+        "max_seconds": 0.010348,
+        "failed": 0
+      },
+      {
+        "operation": "report.promote",
+        "count": 1,
+        "total_seconds": 0.01251,
+        "max_seconds": 0.01251,
+        "failed": 0
+      },
+      {
+        "operation": "report.publication_scan",
+        "count": 3,
+        "total_seconds": 0.010788,
+        "max_seconds": 0.003877,
+        "failed": 0
+      },
+      {
+        "operation": "report.write_attempt",
+        "count": 1,
+        "total_seconds": 0.008127,
+        "max_seconds": 0.008127,
+        "failed": 0
+      },
+      {
+        "operation": "graph.valuation_agent",
+        "count": 4,
+        "total_seconds": 0.004158,
+        "max_seconds": 0.001128,
+        "failed": 0
+      },
+      {
+        "operation": "graph.assemble_company",
+        "count": 4,
+        "total_seconds": 0.003763,
+        "max_seconds": 0.001195,
+        "failed": 0
+      },
+      {
+        "operation": "graph.final_synthesis",
+        "count": 1,
+        "total_seconds": 0.001499,
+        "max_seconds": 0.001499,
+        "failed": 0
+      },
+      {
+        "operation": "graph.book_join",
+        "count": 1,
+        "total_seconds": 0.001118,
+        "max_seconds": 0.001118,
+        "failed": 0
+      },
+      {
+        "operation": "graph.evidence_auditor",
+        "count": 1,
+        "total_seconds": 0.001109,
+        "max_seconds": 0.001109,
+        "failed": 0
+      },
+      {
+        "operation": "graph.company_join",
+        "count": 1,
+        "total_seconds": 0.000886,
+        "max_seconds": 0.000886,
+        "failed": 0
+      },
+      {
+        "operation": "run.preflight",
+        "count": 1,
+        "total_seconds": 0.000463,
+        "max_seconds": 0.000463,
+        "failed": 0
+      },
+      {
+        "operation": "graph.orchestrator_intake",
+        "count": 1,
+        "total_seconds": 0.000395,
+        "max_seconds": 0.000395,
+        "failed": 0
+      },
+      {
+        "operation": "graph.peer_discovery",
+        "count": 1,
+        "total_seconds": 0.000315,
+        "max_seconds": 0.000315,
+        "failed": 0
+      }
+    ],
+    "slowest_steps": [
+      {
+        "sequence": 711,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:51.190211+00:00",
+        "elapsed_seconds": 39.623269,
+        "event": "span_finished",
+        "span_id": "bf1a4acd04b54b0787b3646f5aa997d5",
+        "parent_id": null,
+        "operation": "run.workflow",
+        "status": "completed",
+        "duration_seconds": 39.561185,
+        "metadata": {}
+      },
+      {
+        "sequence": 490,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:49.926963+00:00",
+        "elapsed_seconds": 38.360031,
+        "event": "span_finished",
+        "span_id": "f59304b05f91401f83d3a4a5ac6e6f2b",
+        "parent_id": "bf1a4acd04b54b0787b3646f5aa997d5",
+        "operation": "graph.company_worker",
+        "status": "completed",
+        "duration_seconds": 38.294768,
+        "metadata": {
+          "ticker": "KALYANKJIL"
+        }
+      },
+      {
+        "sequence": 473,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:46.271393+00:00",
+        "elapsed_seconds": 34.704492,
+        "event": "span_finished",
+        "span_id": "29b49bdc22f54ebb83bd4c19e7ab6148",
+        "parent_id": "bf1a4acd04b54b0787b3646f5aa997d5",
+        "operation": "graph.company_worker",
+        "status": "completed",
+        "duration_seconds": 34.63896,
+        "metadata": {
+          "ticker": "THANGAMAYL"
+        }
+      },
+      {
+        "sequence": 478,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:49.850018+00:00",
+        "elapsed_seconds": 38.28309,
+        "event": "span_finished",
+        "span_id": "8aead002cb0d41b1a79141e509291b7e",
+        "parent_id": "f59304b05f91401f83d3a4a5ac6e6f2b",
+        "operation": "graph.company_dossier_extractor",
+        "status": "completed",
+        "duration_seconds": 30.703743,
+        "metadata": {
+          "ticker": "KALYANKJIL"
+        }
+      },
+      {
+        "sequence": 477,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:49.849806+00:00",
+        "elapsed_seconds": 38.282875,
+        "event": "span_finished",
+        "span_id": "6e883a8c9c374016bebd4eb9b208b1b6",
+        "parent_id": "8aead002cb0d41b1a79141e509291b7e",
+        "operation": "llm.generate",
+        "status": "completed",
+        "duration_seconds": 30.643874,
+        "metadata": {
+          "ticker": "KALYANKJIL"
+        }
+      },
+      {
+        "sequence": 476,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:49.849718+00:00",
+        "elapsed_seconds": 38.28279,
+        "event": "span_finished",
+        "span_id": "9dc464ae8c434e2082582c879957770e",
+        "parent_id": "6e883a8c9c374016bebd4eb9b208b1b6",
+        "operation": "llm.attempt",
+        "status": "completed",
+        "duration_seconds": 30.63844,
+        "metadata": {
+          "ticker": "KALYANKJIL",
+          "provider": "nebius",
+          "model": "moonshotai/Kimi-K3",
+          "schema": "CompanyDossierExtraction",
+          "attempt": 1,
+          "max_attempts": 3,
+          "max_tokens": 6144,
+          "prompt_chars": 51975
+        }
+      },
+      {
+        "sequence": 475,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:49.848757+00:00",
+        "elapsed_seconds": 38.281834,
+        "event": "span_finished",
+        "span_id": "eb50539c59cf4c77b70e627bd71f03fb",
+        "parent_id": "9dc464ae8c434e2082582c879957770e",
+        "operation": "llm.provider",
+        "status": "completed",
+        "duration_seconds": 30.633716,
+        "metadata": {
+          "ticker": "KALYANKJIL"
+        }
+      },
+      {
+        "sequence": 456,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:41.773594+00:00",
+        "elapsed_seconds": 30.206728,
+        "event": "span_finished",
+        "span_id": "551d6dcecc0e4453b20fb6266a487133",
+        "parent_id": "bf1a4acd04b54b0787b3646f5aa997d5",
+        "operation": "graph.company_worker",
+        "status": "completed",
+        "duration_seconds": 30.141306,
+        "metadata": {
+          "ticker": "SENCO"
+        }
+      },
+      {
+        "sequence": 439,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:38.585646+00:00",
+        "elapsed_seconds": 27.018808,
+        "event": "span_finished",
+        "span_id": "25d475acd1314c0b80bb036ab341373e",
+        "parent_id": "bf1a4acd04b54b0787b3646f5aa997d5",
+        "operation": "graph.company_worker",
+        "status": "completed",
+        "duration_seconds": 26.953671,
+        "metadata": {
+          "ticker": "PNGJL"
+        }
+      },
+      {
+        "sequence": 444,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:41.696625+00:00",
+        "elapsed_seconds": 30.129763,
+        "event": "span_finished",
+        "span_id": "a6d75611df49440bad855fefafec055a",
+        "parent_id": "551d6dcecc0e4453b20fb6266a487133",
+        "operation": "graph.company_dossier_extractor",
+        "status": "completed",
+        "duration_seconds": 22.24735,
+        "metadata": {
+          "ticker": "SENCO"
+        }
+      },
+      {
+        "sequence": 443,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:41.696298+00:00",
+        "elapsed_seconds": 30.129439,
+        "event": "span_finished",
+        "span_id": "4cbf90540cd645bcadcee0b29959b4a3",
+        "parent_id": "a6d75611df49440bad855fefafec055a",
+        "operation": "llm.generate",
+        "status": "completed",
+        "duration_seconds": 22.198411,
+        "metadata": {
+          "ticker": "SENCO"
+        }
+      },
+      {
+        "sequence": 442,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:41.696046+00:00",
+        "elapsed_seconds": 30.129188,
+        "event": "span_finished",
+        "span_id": "f76a38f659cc4ca385bedb5ae8a5b3c8",
+        "parent_id": "4cbf90540cd645bcadcee0b29959b4a3",
+        "operation": "llm.attempt",
+        "status": "completed",
+        "duration_seconds": 22.192286,
+        "metadata": {
+          "ticker": "SENCO",
+          "provider": "nebius",
+          "model": "moonshotai/Kimi-K3",
+          "schema": "CompanyDossierExtraction",
+          "attempt": 1,
+          "max_attempts": 3,
+          "max_tokens": 6144,
+          "prompt_chars": 52107
+        }
+      },
+      {
+        "sequence": 441,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:41.694078+00:00",
+        "elapsed_seconds": 30.127222,
+        "event": "span_finished",
+        "span_id": "39c18aa4484d456887e8c0574f1acfe1",
+        "parent_id": "f76a38f659cc4ca385bedb5ae8a5b3c8",
+        "operation": "llm.provider",
+        "status": "completed",
+        "duration_seconds": 22.161088,
+        "metadata": {
+          "ticker": "SENCO"
+        }
+      },
+      {
+        "sequence": 461,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:46.203054+00:00",
+        "elapsed_seconds": 34.636154,
+        "event": "span_finished",
+        "span_id": "efb4656186aa4594844d0c85cc203f96",
+        "parent_id": "29b49bdc22f54ebb83bd4c19e7ab6148",
+        "operation": "graph.company_dossier_extractor",
+        "status": "completed",
+        "duration_seconds": 22.062592,
+        "metadata": {
+          "ticker": "THANGAMAYL"
+        }
+      },
+      {
+        "sequence": 460,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:46.202878+00:00",
+        "elapsed_seconds": 34.635978,
+        "event": "span_finished",
+        "span_id": "9009b5d82bf440eca5a222724c8590b9",
+        "parent_id": "efb4656186aa4594844d0c85cc203f96",
+        "operation": "llm.generate",
+        "status": "completed",
+        "duration_seconds": 22.008792,
+        "metadata": {
+          "ticker": "THANGAMAYL"
+        }
+      },
+      {
+        "sequence": 459,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:46.202781+00:00",
+        "elapsed_seconds": 34.635881,
+        "event": "span_finished",
+        "span_id": "2369bd67ba8545269aadcd84ddcf16e4",
+        "parent_id": "9009b5d82bf440eca5a222724c8590b9",
+        "operation": "llm.attempt",
+        "status": "completed",
+        "duration_seconds": 22.004834,
+        "metadata": {
+          "ticker": "THANGAMAYL",
+          "provider": "nebius",
+          "model": "moonshotai/Kimi-K3",
+          "schema": "CompanyDossierExtraction",
+          "attempt": 1,
+          "max_attempts": 3,
+          "max_tokens": 6144,
+          "prompt_chars": 51416
+        }
+      },
+      {
+        "sequence": 458,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:46.201517+00:00",
+        "elapsed_seconds": 34.634623,
+        "event": "span_finished",
+        "span_id": "6db358e89e0f4006b85f374f8b0d3393",
+        "parent_id": "2369bd67ba8545269aadcd84ddcf16e4",
+        "operation": "llm.provider",
+        "status": "completed",
+        "duration_seconds": 21.998468,
+        "metadata": {
+          "ticker": "THANGAMAYL"
+        }
+      },
+      {
+        "sequence": 427,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:38.510430+00:00",
+        "elapsed_seconds": 26.943591,
+        "event": "span_finished",
+        "span_id": "19101619987046158a8729f3ad3d34c1",
+        "parent_id": "25d475acd1314c0b80bb036ab341373e",
+        "operation": "graph.company_dossier_extractor",
+        "status": "completed",
+        "duration_seconds": 19.203436,
+        "metadata": {
+          "ticker": "PNGJL"
+        }
+      },
+      {
+        "sequence": 426,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:38.510288+00:00",
+        "elapsed_seconds": 26.94345,
+        "event": "span_finished",
+        "span_id": "786772fc17e24ed49b6dd5faec84cd1a",
+        "parent_id": "19101619987046158a8729f3ad3d34c1",
+        "operation": "llm.generate",
+        "status": "completed",
+        "duration_seconds": 19.154343,
+        "metadata": {
+          "ticker": "PNGJL"
+        }
+      },
+      {
+        "sequence": 425,
+        "run_id": "c5f2bf2b70804a82b6d505e9faa58821",
+        "timestamp": "2026-09-05T10:19:38.510219+00:00",
+        "elapsed_seconds": 26.943382,
+        "event": "span_finished",
+        "span_id": "2447732cf9c443e092a7c3aee8e56547",
+        "parent_id": "786772fc17e24ed49b6dd5faec84cd1a",
+        "operation": "llm.attempt",
+        "status": "completed",
+        "duration_seconds": 19.149938,
+        "metadata": {
+          "ticker": "PNGJL",
+          "provider": "nebius",
+          "model": "moonshotai/Kimi-K3",
+          "schema": "CompanyDossierExtraction",
+          "attempt": 1,
+          "max_attempts": 3,
+          "max_tokens": 6144,
+          "prompt_chars": 52081
+        }
+      }
+    ],
+    "failed_attempts": [],
+    "llm_usage": {
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_tokens": null
+    },
+    "retry_count": 0,
+    "audit_findings": [],
+    "diagnostic_counts": {},
+    "active_steps": [],
+    "errors": []
+  }
+}

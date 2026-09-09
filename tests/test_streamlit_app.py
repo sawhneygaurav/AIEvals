@@ -23,6 +23,22 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 APP_PATH = PROJECT_ROOT / "streamlit_app.py"
 
 
+def test_failed_run_diagnostics_visible_without_a_published_report(monkeypatch, tmp_path):
+    from competitive_scoring.config import Settings
+    from competitive_scoring.tracing import span, trace_run
+
+    _configure_isolated_app(monkeypatch, tmp_path, mode="demo")
+    with pytest.raises(RuntimeError), trace_run(Settings()) as diagnostics, span("llm.provider"):
+        raise RuntimeError("private response must not appear in logs")
+    app = AppTest.from_file(str(APP_PATH)).run()
+    assert not app.exception
+    assert any(item.label == "Run timings and logs" for item in app.expander)
+    assert any(diagnostics.run_id in item.value for item in app.caption)
+    assert any(item.label == "Research run" for item in app.selectbox)
+    assert any("llm.provider" in str(item.value) for item in app.dataframe)
+    assert not any("private response" in str(item.value) for item in app.caption)
+
+
 def _briefing(*, mode: str, conclusion: str, audit_passed: bool = True) -> FinalBriefing:
     """Build a canonical sample and place the test marker in visible content."""
 

@@ -1,0 +1,226 @@
+{
+  "case_id": "FUND-PNGJL-FY2026-001",
+  "dataset_type": "real_source_pilot",
+  "agent": "Fundamentals",
+  "scenario": "all_seven_values_available",
+  "split": "development",
+  "reference_visibility": "Evaluator only; never include in agent input.",
+  "source_sha256": "146a6db89d5a39e890618e6e1dc29943bc1d5a157c330a2bf4feb33e14eacaae",
+  "expected_facts": [
+    {
+      "field": "roe",
+      "label": "ROE",
+      "expected_value": 21.0,
+      "unit": "percent",
+      "available": true,
+      "accounting_basis": "consolidated",
+      "period_type": "FY",
+      "period_end": "2026-03-31",
+      "relative_tolerance": 0.05,
+      "inclusive_lower_bound": 19.95,
+      "inclusive_upper_bound": 22.05,
+      "provenance": {
+        "source_id": "PNGJL-AR-2026",
+        "pdf_page_1_based": 116,
+        "printed_page": 228,
+        "statement_line": "Return on equity ratio, Note 44",
+        "raw_value": 0.21,
+        "raw_unit": "ratio",
+        "value_origin": "reported_ratio",
+        "normalization": "0.21 × 100 = 21 percent"
+      }
+    },
+    {
+      "field": "roce",
+      "label": "ROCE",
+      "expected_value": 30.0,
+      "unit": "percent",
+      "available": true,
+      "accounting_basis": "consolidated",
+      "period_type": "FY",
+      "period_end": "2026-03-31",
+      "relative_tolerance": 0.05,
+      "inclusive_lower_bound": 28.5,
+      "inclusive_upper_bound": 31.5,
+      "provenance": {
+        "source_id": "PNGJL-AR-2026",
+        "pdf_page_1_based": 116,
+        "printed_page": 229,
+        "statement_line": "Return on capital employed ratio, Note 44",
+        "raw_value": 0.3,
+        "raw_unit": "ratio",
+        "value_origin": "reported_ratio",
+        "normalization": "0.30 × 100 = 30 percent"
+      }
+    },
+    {
+      "field": "revenue",
+      "label": "Revenue from operations",
+      "expected_value": 10739.097,
+      "unit": "INR_crore",
+      "available": true,
+      "accounting_basis": "consolidated",
+      "period_type": "FY",
+      "period_end": "2026-03-31",
+      "relative_tolerance": 0.05,
+      "inclusive_lower_bound": 10202.14215,
+      "inclusive_upper_bound": 11276.05185,
+      "provenance": {
+        "source_id": "PNGJL-AR-2026",
+        "pdf_page_1_based": 92,
+        "printed_page": 181,
+        "statement_line": "Revenue from operations",
+        "raw_value": 107390.97,
+        "raw_unit": "INR_million",
+        "value_origin": "reported_amount",
+        "normalization": "107390.97 ÷ 10 = 10739.097 INR crore"
+      }
+    },
+    {
+      "field": "pat",
+      "label": "PAT",
+      "expected_value": 409.82,
+      "unit": "INR_crore",
+      "available": true,
+      "accounting_basis": "consolidated",
+      "period_type": "FY",
+      "period_end": "2026-03-31",
+      "relative_tolerance": 0.05,
+      "inclusive_lower_bound": 389.329,
+      "inclusive_upper_bound": 430.311,
+      "provenance": {
+        "source_id": "PNGJL-AR-2026",
+        "pdf_page_1_based": 92,
+        "printed_page": 181,
+        "statement_line": "Profit for the year net of tax from continuing operations",
+        "raw_value": 4098.2,
+        "raw_unit": "INR_million",
+        "value_origin": "reported_amount",
+        "normalization": "4098.20 ÷ 10 = 409.820 INR crore"
+      }
+    },
+    {
+      "field": "shareholders_equity",
+      "label": "Shareholders’ equity",
+      "expected_value": 1962.726,
+      "unit": "INR_crore",
+      "available": true,
+      "accounting_basis": "consolidated",
+      "period_type": "instant",
+      "period_end": "2026-03-31",
+      "relative_tolerance": 0.05,
+      "inclusive_lower_bound": 1864.5897,
+      "inclusive_upper_bound": 2060.8623,
+      "provenance": {
+        "source_id": "PNGJL-AR-2026",
+        "pdf_page_1_based": 92,
+        "printed_page": 180,
+        "statement_line": "Equity attributable to owners of the Company",
+        "raw_value": 19627.26,
+        "raw_unit": "INR_million",
+        "value_origin": "reported_amount",
+        "normalization": "19627.26 ÷ 10 = 1962.726 INR crore"
+      },
+      "definition": "Equity attributable to owners at year end. Non-controlling interest is nil, so total equity happens to equal this amount."
+    },
+    {
+      "field": "borrowings",
+      "label": "Total borrowings",
+      "expected_value": 1579.583,
+      "unit": "INR_crore",
+      "available": true,
+      "accounting_basis": "consolidated",
+      "period_type": "instant",
+      "period_end": "2026-03-31",
+      "relative_tolerance": 0.05,
+      "inclusive_lower_bound": 1500.60385,
+      "inclusive_upper_bound": 1658.56215,
+      "provenance": {
+        "source_id": "PNGJL-AR-2026",
+        "pdf_page_1_based": 92,
+        "printed_page": 180,
+        "statement_line": "Current borrowings plus non-current borrowings",
+        "raw_value": null,
+        "raw_unit": "INR_million",
+        "value_origin": "sum_of_reported_amounts",
+        "normalization": "(15692.18 + 103.65) ÷ 10 = 1579.583 INR crore",
+        "components": [
+          {
+            "statement_line": "Current borrowings",
+            "value": 15692.18,
+            "unit": "INR_million"
+          },
+          {
+            "statement_line": "Non-current borrowings",
+            "value": 103.65,
+            "unit": "INR_million"
+          }
+        ]
+      },
+      "definition": "Includes gold loans; excludes lease liabilities. Aggregated from two reported lines, not a separately reported total."
+    },
+    {
+      "field": "operating_cash_flow",
+      "label": "Operating cash flow",
+      "expected_value": -716.898,
+      "unit": "INR_crore",
+      "available": true,
+      "accounting_basis": "consolidated",
+      "period_type": "FY",
+      "period_end": "2026-03-31",
+      "relative_tolerance": 0.05,
+      "inclusive_lower_bound": -752.7429,
+      "inclusive_upper_bound": -681.0531,
+      "provenance": {
+        "source_id": "PNGJL-AR-2026",
+        "pdf_page_1_based": 93,
+        "printed_page": 182,
+        "statement_line": "Net cash inflow / (outflow) from operating activities",
+        "raw_value": -7168.98,
+        "raw_unit": "INR_million",
+        "value_origin": "reported_amount",
+        "normalization": "-7168.98 ÷ 10 = -716.898 INR crore"
+      },
+      "definition": "Published net operating cash flow after income taxes. Parentheses in the source denote an outflow."
+    }
+  ],
+  "grading_policy": {
+    "numeric_rule": "abs(actual - expected) <= 0.05 * abs(expected), inclusive; expected zero requires exact zero.",
+    "unit_rule": "Exact canonical unit required for every field: percent or INR_crore. Display equivalents % and ₹ crore mean these same units. Do not normalize a wrong output unit during grading.",
+    "identity_rule": "Company, requested financial concept, annual period or balance-sheet date, and consolidated basis must match. Numeric proximity alone is insufficient.",
+    "availability_rule": "All seven values are supported in this case; omission or unavailable is a failure for that field.",
+    "citation_rule": "Each value must cite supplied evidence that supports the concept, basis, period, sign and value, including components of an aggregation.",
+    "case_pass": "All seven requested facts must pass identity, number, unit and evidence checks. The unit match requirement is 100%.",
+    "metrics_status": "See metrics.md for the implemented pilot scoring contract."
+  },
+  "review_notes": [
+    "Consolidated Note 44 reports ROE as 0.21 and ROCE as 0.30. These are the canonical source values for this case, normalized to percentages.",
+    "The corporate KPI page (printed 21, physical PDF page 12) separately reports ROE 20.9% and ROCE 30.5%. They lie within the agreed numerical bands, but that page is not supplied in this pilot. Evidence support remains a separate check.",
+    "Do not infer extra ratio precision or change the company’s ratio definition.",
+    "Use the published operating cash flow total; rounded component lines need not sum exactly to it.",
+    "This case tests extraction, simple aggregation and unit conversion from supplied evidence; it does not test retrieval or all five planned scenarios.",
+    "Before the first run, map the seven requested fields to the production output contract. Revenue, shareholders’ equity and total borrowings require contract support beyond the currently allowed fundamental observation codes."
+  ],
+  "review": {
+    "status": "approved_for_pilot",
+    "prepared_by": "Codex",
+    "source_checked_on": "2026-09-07",
+    "source_checks": [
+      "Official report saved and SHA-256 recorded",
+      "Relevant financial tables and ratio pages visually inspected",
+      "Unit conversions and borrowings aggregation checked independently"
+    ],
+    "approved_by": "user",
+    "approved_at": "2026-09-07",
+    "requested_edits": [],
+    "approval_context": "ok i think we are on good track. Keep progressing"
+  },
+  "evaluation_runs": [
+    {
+      "run_path": "outputs/evaluations/fundamentals/2026-09-07-baseline-02",
+      "status": "fail",
+      "scope": "Existing production output, accepted case 1",
+      "completed_on": "2026-09-07"
+    }
+  ]
+}

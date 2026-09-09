@@ -1,5 +1,15 @@
 # PNGJL Competitive Investment Scoring
 
+New to the project? Start with the [illustrated beginner code guide](docs/index.html)
+or its [Markdown version](docs/CODE_GUIDE.md). The
+[5 September live refresh review](docs/live-refresh-review-2026-09-05.md) records
+the measured performance, trace checks, fixes, and remaining limitations.
+
+For agent evaluations, see the [44-case remaining-agent baseline](evals/agents/findings.md)
+and its [expected/predicted table](evals/agents/expected_vs_predicted.csv). These are
+synthetic development checks; live-search and private-book retrieval quality are
+outside that baseline's scope. Fundamentals retains its [separate evaluation suite](evals/README.md).
+
 A beginner-readable LangGraph project that compares **P N Gadgil Jewellers Limited
 (NSE: PNGJL)** with three listed jewellery peers, adds a 2–3 year investment
 research angle, and applies a private, page-cited framework from *Peaceful
@@ -141,6 +151,33 @@ screen with real workflow progress and an approximate ETA. An audit-passed run
 atomically replaces `latest.json`; an audit-failed attempt remains available for
 diagnosis but cannot replace a previously validated ranking.
 
+### Local filing cache
+
+Public company PDFs and their extracted excerpts are cached in
+`outputs/document_cache/`. Every run still fetches current IR/report catalogues
+and checks each selected PDF with its origin. ETag/Last-Modified validators allow
+an unchanged PDF to return HTTP 304 without transferring the file again. Without
+validators, the PDF is downloaded again; identical bytes can still reuse their
+extracted excerpt. Failed freshness checks never fall back to stale evidence.
+Responses marked `Cache-Control: no-store` are not added to this cache.
+
+The extractor scans all pages in plain mode, then extracts layout only for the
+selected evidence pages (at most four). This preserves the existing financial
+table formatting and page citations. Cached text is invalidated by changes in
+PDF content, pypdf version, extraction policy, or excerpt/page limits. Damaged or
+unwritable cache entries fall back to normal retrieval/extraction and produce
+diagnostic events. Failure to extract a selected page's layout is reported as a
+source failure and is never cached. Private uploads and the local book index are
+separate.
+
+Set `COMPETITIVE_SCORING_DOCUMENT_CACHE_DIR` to choose a different local directory,
+or `off` to disable caching. The cache contains public PDF bytes and evidence text,
+so keep it out of version control (the default `outputs/` is already ignored).
+There is no automatic eviction; remove the cache directory while runs are stopped
+to reclaim space. The next run recreates it. Run event logs expose `document.cache`
+download/revalidation events, `pdf.cache` hits/misses, and separate
+`pdf.scan_pages` / `pdf.layout_selected` timings.
+
 ## Live mode
 
 Live mode uses a hybrid research policy. **You.com is the first and primary
@@ -156,10 +193,10 @@ results with higher-authority or user-supplied material:
 4. Yahoo chart data is used only to calculate SMA20, SMA50, and Wilder RSI(14)
    locally.
 
-Screener is **upload-only**: the app never logs in to or scrapes screener.in.
-Economic Times and Moneycontrol remain **manual reference links only**; their
-pages are not automatically fetched, stored, summarized, or counted as scoring
-evidence.
+The direct collector reads Screener through uploads; it does not log in to or
+scrape screener.in. It adds Economic Times and Moneycontrol as manual reference
+links rather than directly fetching those pages. Separately, You.com may return
+snippets from these domains, and those search results can enter scoring evidence.
 
 Add both your You.com and Nebius settings to `.env`:
 
@@ -283,3 +320,59 @@ where the reproducible formulas and guardrails live.
 The code contains comments around decisions and boundaries—not comments that
 merely repeat the next line—so a novice can follow why each step exists.
 # CompetitiveAnalysis
+
+## Run timings and diagnostic logs
+
+Every research run now writes local diagnostics automatically, including failed
+preflight checks and runs that do not produce a publishable report. In Streamlit,
+open **Run timings and logs** to inspect the latest ten runs for the selected mode,
+compare operation timings, inspect failed attempts, and download the logs. This
+panel is independent of the last validated report. The CLI and live-refresh
+script print the diagnostic directory even when a run fails.
+
+```text
+outputs/run_logs/<demo-or-live>/<run-id>/
+  events.jsonl    append-only, flushed start/end events and diagnostics
+  summary.json   wall time, operation totals, slowest calls, failures, token usage
+```
+
+`COMPETITIVE_SCORING_RUN_LOG_DIR` optionally changes the log directory; relative
+paths resolve against the project root. Logs remain local and the default
+`outputs/` location is already ignored by Git. No external tracing service or
+additional API key is required.
+
+Each event includes a run ID, UTC timestamp, monotonic elapsed time, and, for
+operations, a span ID and parent span ID. Company labels stay attached through
+parallel LangGraph workers. Saved report metadata includes the same run ID.
+Timings cover source queries and retry backoff, individual HTTP requests, PDF
+scanning/extraction, local uploads, model slot wait time, provider time and each
+model attempt, book indexing/retrieval, evidence audit, publication checks, and
+report saving/export. Model request/response metadata includes the actual token
+budget, schema name, prompt character count, finish status and token usage when
+the SDK provides them. Missing usage stays unknown, not zero. Failed calls that
+later recover remain visible in diagnostics and do not add evidence-audit warnings.
+
+To locate a bottleneck, first compare `search.query`, `sources.http`,
+`pdf.scan_pages`, `llm.queue_wait`, and `llm.provider`. A long queue wait means
+requests are waiting for the shared concurrency gate; a long provider span means
+the SDK is waiting for or processing the response. Inspect parent span IDs to
+connect a provider call to its company, extraction step and attempt. Durations
+include child operations and overlap between parallel branches, so their totals
+must not be added together as overall run wall time.
+
+The event log is flushed as work happens; the summary is updated periodically
+and around potentially slow calls, then finalized when the run exits. If the
+process is killed, its last summary may still say `running`; the unpaired start
+events identify unfinished work. Completed statuses distinguish `succeeded`,
+`unvalidated` and `failed`; calling `run_research()` directly records `completed`
+when the graph finishes successfully, because publication belongs to its caller.
+
+Logs exclude prompts, document/book text, model answers, raw exception messages,
+credentials, full URLs, and uploaded filenames. HTTP hosts and opaque resource
+hashes identify fetches without retaining query strings or document names.
+Validation failures retain error types and known schema field names; library
+PDF warnings retain their source and count, not potentially private warning text.
+Logging I/O failures are reported without aborting the research itself. Old run
+logs are retained until you remove them; changing the log directory does not move
+existing history.
+# AIEvals

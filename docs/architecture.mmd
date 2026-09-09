@@ -1,0 +1,41 @@
+flowchart LR
+  subgraph SETUP[Stage 1: Setup]
+    A[Orchestrator: validate settings] --> B[Fixed peers: PNGJL, KALYANKJIL, SENCO, THANGAMAYL]
+  end
+  subgraph COMPANY[Stage 2: one company branch, repeated four times in parallel]
+    C[Seven You.com searches] --> D[Official pages / PDFs + optional uploads]
+    D --> E[Freshness check + local PDF cache]
+    E --> F[One shared Kimi dossier]
+    E --> T[Technicals: local indicators]
+    F --> BU[Business]
+    F --> FU[Fundamentals: optional one gap repair]
+    F --> MA[Management]
+    BU --> J{JOIN ALL four specialists}
+    FU --> J
+    MA --> J
+    T --> J
+    J --> V[Deterministic ratio / growth valuation]
+  end
+  B -->|four Send workers| C
+  V --> CJ{JOIN ALL companies}
+  subgraph BOOK[Stage 3: Book and audit]
+    P[Licensed book: local Chroma index] --> BS[Four book scorers in parallel]
+    BS --> BJ{JOIN ALL book scores}
+    BJ --> AU[Evidence auditor]
+    AU -. eligible book issues; max 2 retries .-> BS
+  end
+  CJ --> P
+  AU --> FS[Stage 4: Final = 80% Core + 20% Book]
+  FS --> PG{Publication checks}
+  PG -->|pass| R[Save new validated report]
+  PG -->|fail| OLD[Retain last validated report; save failed attempt]
+  R --> UI[Streamlit research brief]
+  OLD --> UI
+  STATE[(LangGraph shared state: company evidence, analyses, scores, citations, audit)]
+  LOG[(Separate local run logs: time, cache use, requests, retries, failures)]
+  COMPANY -.-> STATE
+  BOOK -.-> STATE
+  FS -.-> STATE
+  COMPANY -.-> LOG
+  BOOK -.-> LOG
+  PG -.-> LOG

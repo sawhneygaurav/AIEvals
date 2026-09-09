@@ -12,6 +12,8 @@ from urllib.parse import quote, urlencode
 
 import httpx
 
+from ..tracing import span, traced
+
 
 @dataclass(frozen=True, slots=True)
 class TechnicalSnapshot:
@@ -68,6 +70,7 @@ class YahooChartClient:
     def __init__(self, *, timeout: float = 20.0, transport: httpx.BaseTransport | None = None):
         self._client = httpx.Client(timeout=timeout, transport=transport)
 
+    @traced("market.fetch_and_calculate")
     def fetch(self, ticker: str, as_of: date | None = None) -> TechnicalSnapshot:
         """Fetch an as-of-bounded daily series and calculate technicals.
 
@@ -101,8 +104,10 @@ class YahooChartClient:
             }
         )
         url = f"https://query1.finance.yahoo.com/v8/finance/chart/{quote(symbol)}?{query}"
-        response = self._client.get(url, headers={"User-Agent": "competitive-scoring/0.1"})
-        response.raise_for_status()
+        with span("market.http", ticker=ticker) as details:
+            response = self._client.get(url, headers={"User-Agent": "competitive-scoring/0.1"})
+            details.update(status_code=response.status_code, bytes=len(response.content))
+            response.raise_for_status()
         payload: dict[str, Any] = response.json()
         result = payload["chart"]["result"][0]
 

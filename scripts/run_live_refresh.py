@@ -16,6 +16,7 @@ from competitive_scoring.graph import run_research
 from competitive_scoring.progress import ProgressEvent
 from competitive_scoring.publication import scan_for_publication
 from competitive_scoring.report_store import ReportStore
+from competitive_scoring.tracing import trace_run
 
 
 def _show_progress(event: ProgressEvent) -> None:
@@ -30,7 +31,14 @@ def main() -> None:
     """Build, audit, store, and report the result of one Kimi live run."""
 
     settings = Settings.from_env(mode="live")
-    settings.validate_for_run()
+    with trace_run(settings) as diagnostics:
+        try:
+            _refresh(settings, diagnostics)
+        finally:
+            print(f"Run diagnostics: {diagnostics.directory}", flush=True)
+
+
+def _refresh(settings: Settings, diagnostics) -> None:
     print(
         f"Starting live refresh with {settings.llm_provider}/{settings.llm_model}; "
         f"cutoff={settings.research_as_of.isoformat()}",
@@ -47,12 +55,14 @@ def main() -> None:
         trace,
         run_metadata={
             "trigger": "validated_live_refresh_script",
+            "run_id": diagnostics.run_id,
             "provider": settings.llm_provider,
             "model": settings.llm_model or "not configured",
         },
     )
     scan = scan_for_publication(stored.briefing, tuple(stored.trace))
     if not scan.passed:
+        diagnostics.status = "unvalidated"
         print(f"REJECTED report_id={stored.report_id}; issues={len(scan.issues)}", flush=True)
         for issue in scan.issues:
             ticker = f" [{issue.company_ticker}]" if issue.company_ticker else ""
@@ -65,6 +75,7 @@ def main() -> None:
         if item.rank is not None and item.final_score is not None
     )
     print(f"PUBLISHED report_id={stored.report_id}; {ranks}", flush=True)
+    diagnostics.status = "succeeded"
 
 
 if __name__ == "__main__":

@@ -484,7 +484,10 @@ def test_live_fundamentals_derives_cfo_pat_only_from_matching_cited_inputs() -> 
     assert conversion.formula == "operating_cash_flow / pat"
     assert conversion.input_metric_codes == ["operating_cash_flow", "pat"]
     assert conversion.source_ids == ["cash-source", "profit-source"]
-    assert all(metric.code not in {"operating_cash_flow", "pat"} for metric in block.metrics)
+    amounts = {metric.code: metric for metric in block.metrics}
+    assert amounts["operating_cash_flow"].value == 120
+    assert amounts["pat"].value == 100
+    assert amounts["operating_cash_flow"].unit == amounts["pat"].unit == "INR crore"
 
 
 def test_live_fundamentals_uses_one_targeted_gap_repair() -> None:
@@ -1446,3 +1449,36 @@ def settings_target():
     from competitive_scoring.models import CompanyIdentity
 
     return CompanyIdentity(name="P N Gadgil Jewellers Limited", ticker="PNGJL")
+
+
+def test_cash_history_repair_does_not_drop_valid_protection_metrics() -> None:
+    """The 20-row model limit must not truncate the merged evidence of two calls."""
+    from competitive_scoring.agents import _finish_live_fundamentals_analysis
+
+    initial = FundamentalsExtraction(observations=[
+        observation("roe", 18, "percent"), observation("roce", 20, "percent"),
+        observation("revenue_growth", 15, "percent"), observation("profit_growth", 20, "percent"),
+        observation("debt_equity", 0.5, "ratio"),
+        *[observation("roe", 19 + i, "percent") for i in range(13)],
+        observation("interest_coverage", 5, "ratio"), observation("current_ratio", 1.5, "ratio"),
+    ])
+
+    class CashHistoryRepair:
+        def generate(self, **kwargs):
+            assert 'Missing codes: cfo_pat, operating_cash_flow, pat' in kwargs['prompt']
+            return FundamentalsExtraction(observations=[
+                observation(code, value, 'INR_crore', as_of_date=date(year, 3, 31))
+                for year in range(2022, 2027)
+                for code, value in [('operating_cash_flow', 110), ('pat', 100)]
+            ])
+
+    source = evidence_item('official', 'Financial statements: ROE 18%, ROCE 20%, revenue growth '
+                           '15%, profit growth 20%, debt equity 0.5, interest coverage 5, current '
+                           'ratio 1.5 and cash flow 110 with PAT 100 crore for FY2022 to FY2026.')
+    runtime = RuntimeServices(settings=Settings(mode='live'), book_agent=object(), llm=CashHistoryRepair())
+    result = _finish_live_fundamentals_analysis(runtime, settings_target(), [source], initial=initial)
+    assert result.status == 'complete'
+    metrics = {metric.code: metric.value for metric in result.metrics}
+    assert metrics['interest_coverage'] == 5
+    assert metrics['current_ratio'] == 1.5
+    assert metrics['cfo_pat'] == 1.1

@@ -1,0 +1,272 @@
+{
+  "scope": "Entire proposed Fundamentals development suite, including review drafts",
+  "case_count": 5,
+  "field_slot_count": 42,
+  "case_scenarios": {
+    "total": 5,
+    "categories": [
+      {
+        "label": "all_values_available",
+        "count": 1,
+        "share": 0.2
+      },
+      {
+        "label": "missing_fields",
+        "count": 1,
+        "share": 0.2
+      },
+      {
+        "label": "two_years",
+        "count": 1,
+        "share": 0.2
+      },
+      {
+        "label": "accounting_basis",
+        "count": 1,
+        "share": 0.2
+      },
+      {
+        "label": "input_units",
+        "count": 1,
+        "share": 0.2
+      }
+    ]
+  },
+  "field_scenarios": {
+    "total": 42,
+    "categories": [
+      {
+        "label": "all_values_available",
+        "count": 7,
+        "share": 0.16666666666666666
+      },
+      {
+        "label": "missing_fields",
+        "count": 7,
+        "share": 0.16666666666666666
+      },
+      {
+        "label": "two_years",
+        "count": 14,
+        "share": 0.3333333333333333
+      },
+      {
+        "label": "accounting_basis",
+        "count": 7,
+        "share": 0.16666666666666666
+      },
+      {
+        "label": "input_units",
+        "count": 7,
+        "share": 0.16666666666666666
+      }
+    ]
+  },
+  "case_data_types": {
+    "total": 5,
+    "categories": [
+      {
+        "label": "real_report_excerpt",
+        "count": 3,
+        "share": 0.6
+      },
+      {
+        "label": "synthetic",
+        "count": 2,
+        "share": 0.4
+      }
+    ]
+  },
+  "case_families": {
+    "total": 5,
+    "categories": [
+      {
+        "label": "pngjl-fy2026",
+        "count": 3,
+        "share": 0.6
+      },
+      {
+        "label": "synthetic-jeweller",
+        "count": 2,
+        "share": 0.4
+      }
+    ]
+  },
+  "review_status": {
+    "total": 5,
+    "categories": [
+      {
+        "label": "approved_for_pilot",
+        "count": 5,
+        "share": 1.0
+      }
+    ]
+  },
+  "splits": {
+    "total": 5,
+    "categories": [
+      {
+        "label": "development",
+        "count": 5,
+        "share": 1.0
+      }
+    ]
+  },
+  "expected_availability": {
+    "total": 42,
+    "categories": [
+      {
+        "label": "available",
+        "count": 39,
+        "share": 0.9285714285714286
+      },
+      {
+        "label": "unavailable",
+        "count": 3,
+        "share": 0.07142857142857142
+      }
+    ]
+  },
+  "target_basis": {
+    "total": 42,
+    "categories": [
+      {
+        "label": "consolidated",
+        "count": 42,
+        "share": 1.0
+      }
+    ]
+  },
+  "target_period_ends": {
+    "total": 42,
+    "categories": [
+      {
+        "label": "2026-03-31",
+        "count": 35,
+        "share": 0.8333333333333334
+      },
+      {
+        "label": "2025-03-31",
+        "count": 7,
+        "share": 0.16666666666666666
+      }
+    ]
+  },
+  "target_period_types": {
+    "total": 42,
+    "categories": [
+      {
+        "label": "FY",
+        "count": 30,
+        "share": 0.7142857142857143
+      },
+      {
+        "label": "point_in_time",
+        "count": 12,
+        "share": 0.2857142857142857
+      }
+    ]
+  },
+  "expected_units": {
+    "total": 42,
+    "categories": [
+      {
+        "label": "percent",
+        "count": 12,
+        "share": 0.2857142857142857
+      },
+      {
+        "label": "INR_crore",
+        "count": 30,
+        "share": 0.7142857142857143
+      }
+    ]
+  },
+  "field_coverage": [
+    {
+      "field": "roe",
+      "total": 6,
+      "available": 5,
+      "unavailable": 1,
+      "negative": 0,
+      "zero": 0
+    },
+    {
+      "field": "roce",
+      "total": 6,
+      "available": 5,
+      "unavailable": 1,
+      "negative": 0,
+      "zero": 0
+    },
+    {
+      "field": "revenue",
+      "total": 6,
+      "available": 6,
+      "unavailable": 0,
+      "negative": 0,
+      "zero": 0
+    },
+    {
+      "field": "pat",
+      "total": 6,
+      "available": 6,
+      "unavailable": 0,
+      "negative": 0,
+      "zero": 0
+    },
+    {
+      "field": "shareholders_equity",
+      "total": 6,
+      "available": 6,
+      "unavailable": 0,
+      "negative": 0,
+      "zero": 0
+    },
+    {
+      "field": "borrowings",
+      "total": 6,
+      "available": 6,
+      "unavailable": 0,
+      "negative": 0,
+      "zero": 0
+    },
+    {
+      "field": "operating_cash_flow",
+      "total": 6,
+      "available": 5,
+      "unavailable": 1,
+      "negative": 3,
+      "zero": 1
+    }
+  ],
+  "real_source_reuse": {
+    "case_count": 3,
+    "companies": [
+      "PNGJL"
+    ],
+    "source_manifests": [
+      "pngjl_fy2026_input.json"
+    ],
+    "available_fact_entries": 25,
+    "distinct_available_fact_values": 14,
+    "repeated_fact_entries": 11,
+    "interpretation": "Repeated facts across controlled variants, not duplicate cases or independent reports."
+  },
+  "approved_subset": {
+    "case_count": 5,
+    "field_count": 42,
+    "available": 39
+  },
+  "always_available_baseline_accuracy": 0.9285714285714286,
+  "prediction_status_counts": {
+    "PASS": 32,
+    "FAIL": 10
+  },
+  "measured_pass_rate": 0.7619047619047619,
+  "input_sha256": {
+    "suite_references.jsonl": "59e19a4764c236aedb2a48c606cc5e1d243e240b8ee181a1d5ef59365d16a8fe",
+    "suite_inputs.jsonl": "1fc0b99bf5124c3956a8511e8b77b1e83cc1be7ff14950e35000e33bb04ef822",
+    "golden_dataset_with_predictions.csv": "faf5ea5eed74a61da536264568a39f64bb1afc94e1efeb580c220d708ee1019a"
+  }
+}
